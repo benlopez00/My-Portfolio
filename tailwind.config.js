@@ -7,7 +7,9 @@ module.exports = withMT({
     "./src/app/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {borderRadius: {
+      'card': '32px', // Set your desired border radius here
+    },},
   },
   plugins: [],
 });
