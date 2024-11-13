@@ -29,40 +29,78 @@ export default function Component() {
 				<Card className="col-span-1 aspect-[1/1] bg-blue-400 card">
 					<img src="/Big_Ben.jpg" alt="Big Ben" className="w-full h-full object-cover card" />
 				</Card>
-				<Card className="w-full h-full row-span-2 bg-green-400 card">
-					<CardBody className="text-center">
-						<Typography variant="h3">
-							Hola
+				<Card className="col-span-1 bg-blue-400 card p-4 w-[250px] h-[250px]">
+					<CardBody className="p-0">
+						<Typography variant="h4">
+							Hola, soy Ben
+						</Typography>
+						<Typography variant="paragraph">
+							un desarrollador web argentino.
+						</Typography>
+						<Typography variant="paragraph">
+							Me dedico a construir experiencias digitales que combinan funcionalidad y simplicidad para el usuario.
 						</Typography>
 					</CardBody>
 				</Card>
 				<Card className="card col-span-2 row-span-2 w-full h-full bg-white flex items-center p-3">
-					<div className="">
-						<Image
-							src="/perfil_Blanco.png"
-							alt="Profile illustration"
-							width={100}
-							height={100}
-							className="bg-orange-500 object-cover"
-						/>
-					</div>
+					<CardBody className="p-0">
+						<Typography variant="h2">
+							Qué hago mejor
+						</Typography>
+						<Typography variant="paragraph">
+							<ul>
+								<li># Backend con .NET y C#: Desarrollo de soluciones sólidas con .NET Core y ASP.NET MVC.</li>
+								<li># Frontend con ReactJS y Redux: Diseño de interfaces dinámicas, reutilizables y optimizadas para la gestión de estados.</li>
+								<li># Aplicaciones Móviles con Flutter: Experiencia en crear aplicaciones desde cero con Flutter, integrando soporte offline y almacenamiento local con SQLite.</li>
+								<li># Consultas Eficientes: Experiencia en LINQ y SQL para manejo de bases de datos.</li>
+								<li># UI con Material Design y Bootstrap: Creación de interfaces limpias y funcionales para distintos dispositivos.</li>
+								<li># Trabajo en equipo y colaboración: Experiencia trabajando en entornos colaborativos y metodologías ágiles.</li>
+							</ul>
+						</Typography>
+					</CardBody>
+				</Card>
+				<Card className="col-span-1 aspect-[1/1] bg-blue-400 card p-4">
 					<CardBody className="text-center">
 						<Typography variant="h3">
 							Hola
 						</Typography>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 aspect-[1/1] bg-blue-400 card">
+				<Card className="w-full h-full col-span-2 bg-red-400 card p-4">
 					<CardBody className="text-center">
 						<Typography variant="h3">
 							Hola
 						</Typography>
 					</CardBody>
 				</Card>
-				<Card className="w-full h-full row-span-2 bg-green-400 card">
-					<CardBody className="text-center">
+				<Card className="w-full h-full row-span-3 bg-green-400 card p-4">
+					<CardBody className="p-0">
 						<Typography variant="h3">
 							Hola
+						</Typography>
+						<Typography variant="paragraph">
+							Soy un desarrollador autodidacta y colaborador comprometido que se adapta rápidamente a nuevos entornos y desafíos tecnológicos. Mi experiencia en Alemania desarrollando aplicaciones clave en Flutter y ReactJS me ha permitido entender la importancia de un código limpio y de la experiencia del usuario. Disfruto de trabajar en equipo, donde puedo aportar mis conocimientos y aprender de otros. Busco oportunidades para seguir creciendo, aportar y hacer una diferencia en proyectos que tengan un impacto positivo en los usuarios.
+						</Typography>
+					</CardBody>
+				</Card>
+				<Card className="card col-span-2 row-span-2 w-full h-full bg-white flex items-center p-3">
+					<CardBody className="p-0">
+						<Typography variant="h2">
+							Experiencia
+						</Typography>
+						<Typography variant="lead">
+							Adata Software GmbH, Alemania (Jul '23 – Jun '24):
+						</Typography>
+						<Typography variant="paragraph">
+							Desarrollador Full Stack contribuyendo en el diseño y optimización de interfaces con ReactJS y Redux, así como en el desarrollo de una app móvil con Flutter. Integré APIs RESTful para conectar backend en .NET con Flutter y ReactJS, mejorando tanto el rendimiento del sistema como la experiencia del usuario.
+							Principales Logros:
+						</Typography>
+						<Typography variant="paragraph">
+							<ul>
+								<li># Rediseño del Portal Mitarbeiter para hacerlo responsive y dinámico.</li>
+								<li># Desarrollo de soluciones escalables y reutilizables en .NET y ReactJS.</li>
+								<li># Implementación de metodologías Agile/Scrum para gestionar y priorizar tareas.</li>
+							</ul>
 						</Typography>
 					</CardBody>
 				</Card>
