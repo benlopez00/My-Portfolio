@@ -4,7 +4,7 @@ import { Map, Marker } from '@vis.gl/react-maplibre';
 export default function LocationMap() {
 
 	return (
-		<Card className="col-span-1 card w-[250px] h-[250px]">
+		<Card className="col-span-1 overflow-hidden card w-[250px] h-[250px]">
 			<Map
 				initialViewState={{
 					longitude: -65.2038,
