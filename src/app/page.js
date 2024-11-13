@@ -2,6 +2,8 @@
 import { Card, CardHeader, CardBody, CardFooter, Typography, Button, } from "@material-tailwind/react";
 import { Car, Divide, FileText, MapPin, Music } from "lucide-react";
 import Image from "next/image";
+import MapCard from "./components/MapCard"; 
+import LocationMap from "./components/MapCard";
 
 export default function Component() {
 	return (
@@ -47,7 +49,7 @@ export default function Component() {
 						<Typography variant="h2">
 							Qué hago mejor
 						</Typography>
-						<Typography variant="paragraph">
+						<div>
 							<ul>
 								<li># Backend con .NET y C#: Desarrollo de soluciones sólidas con .NET Core y ASP.NET MVC.</li>
 								<li># Frontend con ReactJS y Redux: Diseño de interfaces dinámicas, reutilizables y optimizadas para la gestión de estados.</li>
@@ -56,7 +58,7 @@ export default function Component() {
 								<li># UI con Material Design y Bootstrap: Creación de interfaces limpias y funcionales para distintos dispositivos.</li>
 								<li># Trabajo en equipo y colaboración: Experiencia trabajando en entornos colaborativos y metodologías ágiles.</li>
 							</ul>
-						</Typography>
+						</div>
 					</CardBody>
 				</Card>
 				<Card className="col-span-1 aspect-[1/1] bg-blue-400 card p-4">
@@ -95,15 +97,16 @@ export default function Component() {
 							Desarrollador Full Stack contribuyendo en el diseño y optimización de interfaces con ReactJS y Redux, así como en el desarrollo de una app móvil con Flutter. Integré APIs RESTful para conectar backend en .NET con Flutter y ReactJS, mejorando tanto el rendimiento del sistema como la experiencia del usuario.
 							Principales Logros:
 						</Typography>
-						<Typography variant="paragraph">
+						<div>
 							<ul>
 								<li># Rediseño del Portal Mitarbeiter para hacerlo responsive y dinámico.</li>
 								<li># Desarrollo de soluciones escalables y reutilizables en .NET y ReactJS.</li>
 								<li># Implementación de metodologías Agile/Scrum para gestionar y priorizar tareas.</li>
 							</ul>
-						</Typography>
+						</div>
 					</CardBody>
 				</Card>
+				<LocationMap/>
 			</div>
 		</div>
 	)

@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./global.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
