@@ -17,7 +17,7 @@ export default function LocationMap() {
                 );
                 const data = response.data;
                 setWeather({
-                    temp: data.current.temp_c,
+                    temp: Math.round(data.current.temp_c),
                     condition: data.current.condition.text,
                     icon: data.current.condition.icon,
                 });
@@ -47,10 +47,16 @@ export default function LocationMap() {
                 <Marker longitude={-65.2038} latitude={-26.8303} pitchAlignment="map"></Marker>
             </Map>
             {weather && (
-                <div className="absolute bottom-2 right-2 bg-white/80 text-gray-800 p-1 rounded-full text-xs flex items-center space-x-1 shadow-md">
-                    <Clock format={'h:mma'} ticking={true} timezone="America/Rosario" />
-                    <span>{weather.temp}°C</span>
-                    <img src={weather.icon} alt={weather.condition} className="w-8 h-8" />
+                <div className="absolute bottom-2 right-[7px] bg-white/80 text-gray-800 px-1.5 py-1 rounded-full text-xs flex items-center shadow-md">
+                    <div className='flex justify-center items-center w-9 !my-0'>
+                        <Clock format={'hh:mm'} ticking={true} timezone="America/Rosario" />
+                    </div>
+                    <div className='!m-0'>
+                        <img src={weather.icon} alt={weather.condition} className="w-7 h-7" />
+                    </div>
+                    <div className='flex justify-center items-center w-9 !my-0 !mx-0'>
+                        <span>{weather.temp}°C</span>
+                    </div>
                 </div>
             )}
         </Card>
