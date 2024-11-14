@@ -47,7 +47,7 @@ export default function Component() {
 				<Card className="card col-span-2 row-span-2 w-full h-full bg-white flex items-center p-3">
 					<CardBody className="p-0">
 						<Typography variant="h2">
-							Qué hago mejor
+							Qué hago
 						</Typography>
 						<div>
 							<ul>
