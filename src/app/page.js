@@ -1,11 +1,29 @@
 'use client';
 import { Card, CardHeader, CardBody, CardFooter, Typography, Button, } from "@material-tailwind/react";
-import { Car, Divide, FileText, MapPin, Music } from "lucide-react";
 import Image from "next/image";
-import MapCard from "./components/MapCard"; 
-import LocationMap from "./components/MapCard";
+import dynamic from 'next/dynamic';
+import TechCarousel from "./components/TechCarousel"
+
+const LocationMap = dynamic(() => import('./components/MapCard.js'), {
+  ssr: false
+});
 
 export default function Component() {
+	const fotos = [
+		"/logos/bootstrap-svgrepo-com.svg", 
+		"/logos/dot-net.svg", 
+		"/logos/figma-svgrepo-com.svg", 
+		"/logos/github-142-svgrepo-com.svg", 
+		"/logos/jira-svgrepo-com.svg", "/logos/next.svg", 
+		"/logos/nextjs-svgrepo-com.svg", 
+		"/logos/nodejs-svgrepo-com.svg", 
+		"/logos/progress-blog-default-logo-transparent.png",
+		"/logos/react-svgrepo-com.svg", 
+		"/logos/sass-svgrepo-com.svg", 
+		"/logos/slack-svgrepo-com.svg", 
+		"/logos/sql-svgrepo-com.svg", 
+		"/logos/tailwind-svgrepo-com.svg"
+	]
 	return (
 		<div className="min-h-screen p-2 w-screen flex flex-col items-center gap-1.5" style={{backgroundColor: 'rgb(247, 242, 242)'}}>
 			<div className="w-full h-10">
