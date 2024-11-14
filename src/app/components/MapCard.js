@@ -2,9 +2,7 @@ import { Card } from '@material-tailwind/react';
 import axios from "axios";
 import { Map, Marker } from '@vis.gl/react-maplibre';
 import { useEffect, useState } from "react";
-import dynamic from 'next/dynamic';
-
-const Clock = dynamic(() => import('react-live-clock'), { ssr: false });
+import Clock from "react-live-clock";
 
 export default function LocationMap() {
     const [weather, setWeather] = useState(null);
@@ -48,13 +46,13 @@ export default function LocationMap() {
             </Map>
             {weather && (
                 <div className="absolute bottom-2 right-[7px] bg-white/80 text-gray-800 px-1.5 py-1 rounded-full text-xs flex items-center shadow-md">
-                    <div className='flex justify-center items-center w-9 !my-0'>
-                        <Clock format={'hh:mm'} ticking={true} timezone="America/Rosario" />
+                    <div className='flex justify-center items-center w-9 !my-0 leading-none'>
+                        <Clock noSsr={false} format={'hh:mm'} ticking={true} timezone="America/Rosario" />
                     </div>
                     <div className='!m-0'>
                         <img src={weather.icon} alt={weather.condition} className="w-7 h-7" />
                     </div>
-                    <div className='flex justify-center items-center w-9 !my-0 !mx-0'>
+                    <div className='flex justify-center items-center w-9 !my-0 !mx-0 leading-none'>
                         <span>{weather.temp}°C</span>
                     </div>
                 </div>

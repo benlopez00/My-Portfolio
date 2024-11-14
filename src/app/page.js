@@ -27,11 +27,11 @@ export default function Component() {
 					</div>
 				</div>
 			</div>
-			<div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(5, 250px)', gridAutoRows: '250px' }}>
-				<Card className="col-span-1 aspect-[1/1] bg-blue-400 card">
+			<div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(4, 270px)', gridAutoRows: '270px' }}>
+				<Card className="col-span-1 row-span-1 card">
 					<img src="/Big_Ben.jpg" alt="Big Ben" className="w-full h-full object-cover card" />
 				</Card>
-				<Card className="col-span-1 bg-blue-400 card p-4 w-[250px] h-[250px]">
+				<Card className="col-span-1 row-span-1 bg-blue-400 card p-4">
 					<CardBody className="p-0">
 						<Typography variant="h4">
 							Hola, soy Ben
@@ -44,7 +44,7 @@ export default function Component() {
 						</Typography>
 					</CardBody>
 				</Card>
-				<Card className="card col-span-2 row-span-2 w-full h-full bg-white flex items-center p-3">
+				<Card className="card col-span-2 row-span-2 bg-white flex items-center p-3">
 					<CardBody className="p-0">
 						<Typography variant="h2">
 							Qué hago
@@ -61,21 +61,20 @@ export default function Component() {
 						</div>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 aspect-[1/1] bg-blue-400 card p-4">
+				<Card className="col-span-2 row-span-1 bg-red-400 card p-4">
+					<CardBody>
+						<h2 className="text-lg font-bold mb-4">My Tech Stack</h2>
+						<TechCarousel images={fotos} />
+					</CardBody>
+				</Card>
+				<Card className="col-span-1 row-span-1 bg-blue-400 card p-4">
 					<CardBody className="text-center">
 						<Typography variant="h3">
 							Hola
 						</Typography>
 					</CardBody>
 				</Card>
-				<Card className="w-full h-full col-span-2 bg-red-400 card p-4">
-					<CardBody className="text-center">
-						<Typography variant="h3">
-							Hola
-						</Typography>
-					</CardBody>
-				</Card>
-				<Card className="w-full h-full row-span-3 bg-green-400 card p-4">
+				<Card className="col-span-1 row-span-3 bg-green-400 card p-4">
 					<CardBody className="p-0">
 						<Typography variant="h3">
 							Hola
@@ -85,7 +84,7 @@ export default function Component() {
 						</Typography>
 					</CardBody>
 				</Card>
-				<Card className="card col-span-2 row-span-2 w-full h-full bg-white flex items-center p-3">
+				<Card className="card col-span-2 row-span-2 bg-white flex items-center p-4">
 					<CardBody className="p-0">
 						<Typography variant="h2">
 							Experiencia
