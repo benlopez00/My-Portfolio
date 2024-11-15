@@ -1,8 +1,6 @@
-import { animate, motion, useMotionValue } from "framer-motion";
-import { useEffect, useState } from "react";
-import useMeasure from "react-use-measure";
+import React, { useEffect, useRef } from "react";
 
-export default function TechCarousel() {
+const Carousel = () => {
 	const images = [
 		"/logos/bootstrap-svgrepo-com.svg",
 		"/logos/dot-net.svg",
@@ -16,68 +14,79 @@ export default function TechCarousel() {
 		"/logos/sass-svgrepo-com.svg",
 		"/logos/slack-svgrepo-com.svg",
 		"/logos/sql-svgrepo-com.svg",
-		"/logos/tailwind-svgrepo-com.svg"
-	]
-	const RAPIDO = 25;
-	const LENTO = 75;
+		"/logos/tailwind-svgrepo-com.svg",
+	];
 
-	const [duracion, setDuracion] = useState(RAPIDO);
-	let [ref, { width }] = useMeasure();
+	const carouselRef = useRef(null);
+	let speed = 1;
+	let position = 0;
 
-	const xTranslation = useMotionValue(0);
-	const [mustFinish, setMustFinish] = useState(false);
-	const [rerender, setRerender] = useState(false);
+	const animate = () => {
+		position -= speed;
+		const scrollWidth = carouselRef.current.scrollWidth / 2; // Ancho del contenido duplicado
+		if (position <= -scrollWidth) {
+			position += scrollWidth; // Ajusta la posición sin saltos
+		}
+		carouselRef.current.style.transform = `translateX(${position}px)`;
+		requestAnimationFrame(animate);
+	};
+
 
 	useEffect(() => {
-		let controls;
-		let finalPosition = -width / 2 - 8;
-		console.log("este"+width);
-	
-		if (mustFinish) {
-			controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
-				ease: "linear",
-				duration: duracion * (1 - xTranslation.get() / finalPosition),
-				onComplete: () => {
-				setMustFinish(false);
-				setRerender(!rerender);
-				},
-			});
-		} else {
-			controls = animate(xTranslation, [0, finalPosition], {
-				ease: "linear",
-				duration: duracion,
-				repeat: Infinity,
-				repeatType: "loop",
-				repeatDelay: 0,
-			});
-		}	
-		return controls?.stop;
-	}, [rerender, xTranslation, duracion, width]);
+		const element = carouselRef.current;
+
+		const handleMouseEnter = () => (speed = 0.2);
+		const handleMouseLeave = () => (speed = 1);
+
+		element.addEventListener("mouseenter", handleMouseEnter);
+		element.addEventListener("mouseleave", handleMouseLeave);
+
+		requestAnimationFrame(animate);
+
+		return () => {
+		element.removeEventListener("mouseenter", handleMouseEnter);
+		element.removeEventListener("mouseleave", handleMouseLeave);
+		};
+	}, []);
 
 	return (
-		<div className="w-full py-8">
-			<motion.div
-				className="absolute left-0 flex gap-4"
-				style={{ x: xTranslation }}
-				ref={ref}
-				onHoverStart={() => {
-					setMustFinish(true);
-					setDuracion(LENTO);
-				}}
-				onHoverEnd={() => {
-					setMustFinish(true);
-					setDuracion(RAPIDO);
+		<div style={{ overflow: "hidden", width: "100%", height: "120px", position: "relative" }}>
+			<div
+				ref={carouselRef}
+				style={{
+					display: "flex",
+					width: "max-content",
+					willChange: "transform",
+					gap: "20px",
 				}}
 			>
-				{[...images, ...images].map((item, idx) => (
+				{images.concat(images).map((src, index) => (
+					<div
+						key={index}
+						style={{
+							width: "100px",
+							height: "100px",
+							backgroundColor: "green",
+							borderRadius: "12px",
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "center",
+						}}
+					>
 						<img
-							key={idx}
-							src={item}
-							alt="Technology logo"
-							className="w-16 h-16 object-contain mx-2"
+							src={src}
+							alt={`Logo ${index}`}
+							style={{
+								width: "70%",
+								height: "70%",
+								objectFit: "contain",
+							}}
 						/>
+					</div>
 				))}
-			</motion.div>
+			</div>
 		</div>
 	);
-}
+};
+
+export default Carousel;
