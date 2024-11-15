@@ -1,12 +1,8 @@
 'use client';
 import { Card, CardHeader, CardBody, CardFooter, Typography, Button, } from "@material-tailwind/react";
 import Image from "next/image";
-import dynamic from 'next/dynamic';
-import TechCarousel from "./components/TechCarousel"
-
-const LocationMap = dynamic(() => import('./components/MapCard.js'), {
-  ssr: false
-});
+import TechCarousel from "./components/TechCarousel";
+import LocationMap from './components/LocationMap.js';
 
 export default function Component() {
 	const fotos = [
@@ -118,7 +114,7 @@ export default function Component() {
 							<ul>
 								<li># Rediseño del Portal Mitarbeiter para hacerlo responsive y dinámico.</li>
 								<li># Desarrollo de soluciones escalables y reutilizables en .NET y ReactJS.</li>
-								<li># Implementación de metodologías Agile/Scrum para gestionar y priorizar tareas.</li>
+								<li># Implementación de metodologías Agile/Scrum para gestionar y ptiorizar tareas.</li>
 							</ul>
 						</div>
 					</CardBody>

@@ -30,7 +30,7 @@ export default function LocationMap() {
     }, [apiKey]);
 
     return (
-        <Card className="col-span-1 overflow-hidden card w-[250px] h-[250px] relative">
+        <Card className="col-span-1 overflow-hidden card w-[270px] h-[270px] relative">
             <Map
                 initialViewState={{
                     longitude: -65.2038,
@@ -39,7 +39,7 @@ export default function LocationMap() {
                     interactive: false
                 }}
                 mapStyle="https://tiles.openfreemap.org/styles/bright"
-                style={{ width: '250px', height: '250px' }}
+                style={{ width: '270px', height: '270px' }}
                 attributionControl={false}
             >
                 <Marker longitude={-65.2038} latitude={-26.8303} pitchAlignment="map"></Marker>
