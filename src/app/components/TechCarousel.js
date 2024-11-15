@@ -1,40 +1,83 @@
-import { motion, useAnimationFrame } from "framer-motion";
-import { useRef } from "react";
+import { animate, motion, useMotionValue } from "framer-motion";
+import { useEffect, useState } from "react";
+import useMeasure from "react-use-measure";
 
-export default function TechCarousel({ images }) {
-  const carouselRef = useRef(null);
+export default function TechCarousel() {
+	const images = [
+		"/logos/bootstrap-svgrepo-com.svg",
+		"/logos/dot-net.svg",
+		"/logos/figma-svgrepo-com.svg",
+		"/logos/github-142-svgrepo-com.svg",
+		"/logos/jira-svgrepo-com.svg",
+		"/logos/nextjs-svgrepo-com.svg",
+		"/logos/nodejs-svgrepo-com.svg",
+		"/logos/progress-blog-default-logo-transparent.png",
+		"/logos/react-svgrepo-com.svg",
+		"/logos/sass-svgrepo-com.svg",
+		"/logos/slack-svgrepo-com.svg",
+		"/logos/sql-svgrepo-com.svg",
+		"/logos/tailwind-svgrepo-com.svg"
+	]
+	const RAPIDO = 25;
+	const LENTO = 75;
 
-  var scrollSpeed = 50;
+	const [duracion, setDuracion] = useState(RAPIDO);
+	let [ref, { width }] = useMeasure();
 
-  useAnimationFrame((time, delta) => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft += (scrollSpeed * delta) / 1000;
+	const xTranslation = useMotionValue(0);
+	const [mustFinish, setMustFinish] = useState(false);
+	const [rerender, setRerender] = useState(false);
 
-      if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth / 2) {
-        carouselRef.current.scrollLeft = 0;
-      }
-    }
-  });
+	useEffect(() => {
+		let controls;
+		let finalPosition = -width / 2 - 8;
+		console.log("este"+width);
+	
+		if (mustFinish) {
+			controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+				ease: "linear",
+				duration: duracion * (1 - xTranslation.get() / finalPosition),
+				onComplete: () => {
+				setMustFinish(false);
+				setRerender(!rerender);
+				},
+			});
+		} else {
+			controls = animate(xTranslation, [0, finalPosition], {
+				ease: "linear",
+				duration: duracion,
+				repeat: Infinity,
+				repeatType: "loop",
+				repeatDelay: 0,
+			});
+		}	
+		return controls?.stop;
+	}, [rerender, xTranslation, duracion, width]);
 
-  return (
-    <div className="overflow-hidden w-full h-20 rounded-lg border border-gray-200 p-2">
-      <motion.div
-        ref={carouselRef}
-        className="flex space-x-4"
-        style={{ display: "flex", whiteSpace: "nowrap" }}
-        whileHover={{ scale: 1, transition: { duration: 0.5 } }}
-        onMouseEnter={() => (scrollSpeed = 10)}
-        onMouseLeave={() => (scrollSpeed = 50)}
-      >
-        {images.concat(images).map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt="Technology logo"
-            className="w-16 h-16 object-contain mx-2"
-          />
-        ))}
-      </motion.div>
-    </div>
-  );
+	return (
+		<div className="w-full py-8">
+			<motion.div
+				className="absolute left-0 flex gap-4"
+				style={{ x: xTranslation }}
+				ref={ref}
+				onHoverStart={() => {
+					setMustFinish(true);
+					setDuracion(LENTO);
+				}}
+				onHoverEnd={() => {
+					setMustFinish(true);
+					setDuracion(RAPIDO);
+				}}
+			>
+				{[...images, ...images].map((item, idx) => (
+						<img
+							key={idx}
+							src={item}
+							alt="Technology logo"
+							className="w-16 h-16 object-contain mx-2"
+						/>
+				))}
+			</motion.div>
+		</div>
+	);
 }

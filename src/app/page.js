@@ -5,21 +5,6 @@ import TechCarousel from "./components/TechCarousel";
 import LocationMap from './components/LocationMap.js';
 
 export default function Component() {
-	const fotos = [
-		"/logos/bootstrap-svgrepo-com.svg", 
-		"/logos/dot-net.svg", 
-		"/logos/figma-svgrepo-com.svg", 
-		"/logos/github-142-svgrepo-com.svg", 
-		"/logos/jira-svgrepo-com.svg", "/logos/next.svg", 
-		"/logos/nextjs-svgrepo-com.svg", 
-		"/logos/nodejs-svgrepo-com.svg", 
-		"/logos/progress-blog-default-logo-transparent.png",
-		"/logos/react-svgrepo-com.svg", 
-		"/logos/sass-svgrepo-com.svg", 
-		"/logos/slack-svgrepo-com.svg", 
-		"/logos/sql-svgrepo-com.svg", 
-		"/logos/tailwind-svgrepo-com.svg"
-	]
 	return (
 		<div className="min-h-screen p-2 w-screen flex flex-col items-center gap-1.5" style={{backgroundColor: 'rgb(247, 242, 242)'}}>
 			<div className="w-full h-10">
@@ -78,7 +63,7 @@ export default function Component() {
 				<Card className="col-span-2 row-span-1 bg-red-400 card p-4">
 					<CardBody>
 						<h2 className="text-lg font-bold mb-4">My Tech Stack</h2>
-						<TechCarousel images={fotos} />
+						<TechCarousel/>
 					</CardBody>
 				</Card>
 				<Card className="col-span-1 row-span-1 bg-blue-400 card p-4">
