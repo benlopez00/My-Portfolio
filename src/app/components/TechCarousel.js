@@ -15,6 +15,7 @@ const Carousel = () => {
 		"/logos/slack-svgrepo-com.svg",
 		"/logos/sql-svgrepo-com.svg",
 		"/logos/tailwind-svgrepo-com.svg",
+		"/logos/svelte-svgrepo-com.svg"
 	];
 
 	const carouselRef = useRef(null);
@@ -23,9 +24,9 @@ const Carousel = () => {
 
 	const animate = () => {
 		position -= speed;
-		const scrollWidth = carouselRef.current.scrollWidth / 2; // Ancho del contenido duplicado
+		const scrollWidth = (carouselRef.current.scrollWidth + 20) / 2;
 		if (position <= -scrollWidth) {
-			position += scrollWidth; // Ajusta la posición sin saltos
+			position = 0;
 		}
 		carouselRef.current.style.transform = `translateX(${position}px)`;
 		requestAnimationFrame(animate);
@@ -44,8 +45,8 @@ const Carousel = () => {
 		requestAnimationFrame(animate);
 
 		return () => {
-		element.removeEventListener("mouseenter", handleMouseEnter);
-		element.removeEventListener("mouseleave", handleMouseLeave);
+			element.removeEventListener("mouseenter", handleMouseEnter);
+			element.removeEventListener("mouseleave", handleMouseLeave);
 		};
 	}, []);
 
