@@ -3,16 +3,15 @@ import { Card, CardHeader, CardBody, CardFooter, Typography, Button, } from "@ma
 import Image from "next/image";
 import TechCarousel from "./components/TechCarousel";
 import LocationMap from './components/LocationMap.js';
+import BotonEstilo from "./components/BotonEstilo";
 
 export default function Component() {
 	return (
-		<div className="min-h-screen p-2 w-screen flex flex-col items-center gap-1.5" style={{backgroundColor: 'rgb(247, 242, 242)'}}>
+		<div className="min-h-screen p-2 w-screen flex flex-col items-center gap-1.5 bg-lightBackground dark:bg-darkBackground ">
 			<div className="w-full h-10">
 				<div className="flex flex-row justify-around">
-					<div>						
-						<Button size="sm" variant="text"><Image src="/spain-svgrepo-com.svg" alt="Español" width={22} height={22}/></Button>
-						<Button size="sm" variant="text"><Image src="/united-kingdom-uk-svgrepo-com.svg" alt="English" width={22} height={22}/></Button>
-						<Button size="sm" variant="text"><Image src="/germany-svgrepo-com.svg" alt="Deutsch" width={22} height={22}/></Button>
+					<div>
+						<BotonEstilo/>					
 					</div>
 					<div>						
 						<Button size="sm" variant="text"><Image src="/spain-svgrepo-com.svg" alt="Español" width={22} height={22}/></Button>
@@ -32,79 +31,104 @@ export default function Component() {
 				</Card>
 				<Card className="col-span-1 row-span-1 bg-blue-400 card p-4">
 					<CardBody className="p-0">
-						<Typography variant="h4">
+						<Typography variant="h1">
 							Hola, soy Ben
 						</Typography>
 						<Typography variant="paragraph">
-							un desarrollador web argentino.
+							desarrollador full stack
 						</Typography>
 						<Typography variant="paragraph">
-							Me dedico a construir experiencias digitales que combinan funcionalidad y simplicidad para el usuario.
+							Tucuman, Argentina
+						</Typography>
+					</CardBody>
+				</Card>
+				<Card className="col-span-2 row-span-1 bg-red-400 card p-4">
+					<CardHeader floated={false}>
+						<Typography variant="h1">
+							Mi Stack
+						</Typography>
+					</CardHeader>
+					<CardBody>
+						<TechCarousel/>
+					</CardBody>
+				</Card>
+				<Card className="col-span-1 row-span-1 bg-blue-400 card p-4 grid gap-5 justify-center content-center" style={{ gridTemplateColumns: 'repeat(2, 100px)', gridTemplateRows: 'repeat(2, 100px)' }}>
+					<Card className="flex items-center justify-center">
+						<a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl">
+							<img
+								src="/logos/linkedin-svgrepo-com.svg"
+								alt="LinkedIn"
+								className="w-12 h-12"
+							/>
+						</a>
+					</Card>
+					<Card className="flex items-center justify-center">
+						<a href="mailto:example@example.com" className="w-full h-full flex justify-center items-center rounded-xl">
+							<img
+								src="/logos/mail-svgrepo-com.svg"
+								alt="Mail"
+								className="w-12 h-12"
+							/>
+						</a>
+					</Card>
+					<Card className="flex items-center justify-center">
+						<a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl">
+							<img
+								src="/logos/instagram-svgrepo-com.svg"
+								alt="Instagram"
+								className="w-12 h-12"
+							/>
+						</a>
+					</Card>
+					<Card className="flex items-center justify-center">
+						<a href="https://example.com/resume" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl">
+							<img
+								src="/logos/document-svgrepo-com (1).svg"
+								alt="Resume"
+								className="w-12 h-12"
+							/>
+						</a>
+					</Card>
+				</Card>
+				<Card className="col-span-1 row-span-2 bg-green-400 card p-4">
+					<CardBody className="p-0">
+						<Typography variant="h3">
+							Hola
+						</Typography>
+						<Typography variant="paragraph">
+							Soy un desarrollador autodidacta y colabor
+						</Typography>
+					</CardBody>
+				</Card>
+				<LocationMap/>
+				<Card className="col-span-1 row-span-1 bg-blue-400 card p-4">
+					<CardBody className="text-center">
+					</CardBody>
+				</Card>
+				<Card className="card col-span-2 row-span-2 bg-white flex items-center p-3">
+					<CardBody className="p-0">
+						<Typography variant="h1">
+							Experiencia
+						</Typography>
+						<Typography variant="h2">
+							Adata Software Gmbh (Jul '23 – Jun '24)
+						</Typography>
+						<Typography>
+							Entre el 2023 y el 2024 viví en Alemania y en ese tiempo trabajé un año para Adata de forma presencial en Verden (Baja Sajonia). Allí trabajé junto a 2 desarrolladores en el desarrollo y soporte del Mitarbeiter Portal. ¿Qué es el Mitarbeiter Portal? Es una herramienta integral de recursos humanos que ayuda a pequeñas y medianas empresas a gestionar su personal de manera eficiente. Desde administrar horarios hasta facilitar la comunicación interna, este portal es el corazón organizativo para muchos negocios. Durante ese tiempo, me enfrenté a desafíos técnicos y creativos, pero cada tarea me dejó una enorme satisfacción. Algunas de las contribuciones que hice son:
 						</Typography>
 					</CardBody>
 				</Card>
 				<Card className="card col-span-2 row-span-2 bg-white flex items-center p-3">
 					<CardBody className="p-0">
-						<Typography variant="h2">
-							Qué hago
-						</Typography>
-						<div>
-							<ul>
-								<li># Backend con .NET y C#: Desarrollo de soluciones sólidas con .NET Core y ASP.NET MVC.</li>
-								<li># Frontend con ReactJS y Redux: Diseño de interfaces dinámicas, reutilizables y optimizadas para la gestión de estados.</li>
-								<li># Aplicaciones Móviles con Flutter: Experiencia en crear aplicaciones desde cero con Flutter, integrando soporte offline y almacenamiento local con SQLite.</li>
-								<li># Consultas Eficientes: Experiencia en LINQ y SQL para manejo de bases de datos.</li>
-								<li># UI con Material Design y Bootstrap: Creación de interfaces limpias y funcionales para distintos dispositivos.</li>
-								<li># Trabajo en equipo y colaboración: Experiencia trabajando en entornos colaborativos y metodologías ágiles.</li>
-							</ul>
-						</div>
+						<Typography>
+							- Rediseñar partes de la UI del Portal con ReactJS para mejorar la experiencia del usuario integrando bibliotecas como KendoUI y Bootstrap
+							- Actualizar e implementar nuevas funcionalidades del backend de ASP.NET Core MVC para cumplir con las necesidades de los clientes
+							- Implementar funcionalidades en Flutter utilizando Dart, conectando componentes móviles con sistemas backend en .NET a través de APIs RESTful.
+							- Utilizar LINQ y HeidiSQL para realizar consultas eficientes a la base de datos y mejorar el rendimiento del sistema, asegurando escalabilidad y optimización de datos.
+							- Trabajar en un entorno bajo metodologías Scrum, gestionando tareas en JIRA, participando en revisiones de código y aplicando mejores prácticas de desarrollo full-stack.
+							Este año en Adata no solo me enseñó sobre tecnología; me mostró lo gratificante que es trabajar creando software que realmente marcan una diferencia para las personas.						</Typography>
 					</CardBody>
 				</Card>
-				<Card className="col-span-2 row-span-1 bg-red-400 card p-4">
-					<CardBody>
-						<h2 className="text-lg font-bold mb-4">My Tech Stack</h2>
-						<TechCarousel/>
-					</CardBody>
-				</Card>
-				<Card className="col-span-1 row-span-1 bg-blue-400 card p-4">
-					<CardBody className="text-center">
-						<Typography variant="h3">
-							Hola
-						</Typography>
-					</CardBody>
-				</Card>
-				<Card className="col-span-1 row-span-3 bg-green-400 card p-4">
-					<CardBody className="p-0">
-						<Typography variant="h3">
-							Hola
-						</Typography>
-						<Typography variant="paragraph">
-							Soy un desarrollador autodidacta y colaborador comprometido que se adapta rápidamente a nuevos entornos y desafíos tecnológicos. Mi experiencia en Alemania desarrollando aplicaciones clave en Flutter y ReactJS me ha permitido entender la importancia de un código limpio y de la experiencia del usuario. Disfruto de trabajar en equipo, donde puedo aportar mis conocimientos y aprender de otros. Busco oportunidades para seguir creciendo, aportar y hacer una diferencia en proyectos que tengan un impacto positivo en los usuarios.
-						</Typography>
-					</CardBody>
-				</Card>
-				<Card className="card col-span-2 row-span-2 bg-white flex items-center p-4">
-					<CardBody className="p-0">
-						<Typography variant="h2">
-							Experiencia
-						</Typography>
-						<Typography variant="lead">
-							Adata Software GmbH, Alemania (Jul '23 – Jun '24):
-						</Typography>
-						<Typography variant="paragraph">
-							Desarrollador Full Stack contribuyendo en el diseño y optimización de interfaces con ReactJS y Redux, así como en el desarrollo de una app móvil con Flutter. Integré APIs RESTful para conectar backend en .NET con Flutter y ReactJS, mejorando tanto el rendimiento del sistema como la experiencia del usuario.
-							Principales Logros:
-						</Typography>
-						<div>
-							<ul>
-								<li># Rediseño del Portal Mitarbeiter para hacerlo responsive y dinámico.</li>
-								<li># Desarrollo de soluciones escalables y reutilizables en .NET y ReactJS.</li>
-								<li># Implementación de metodologías Agile/Scrum para gestionar y ptiorizar tareas.</li>
-							</ul>
-						</div>
-					</CardBody>
-				</Card>
-				<LocationMap/>
 			</div>
 		</div>
 	)

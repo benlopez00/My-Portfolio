@@ -1,30 +1,34 @@
+"use client";
+
 import React, { useEffect, useRef } from "react";
 
 const Carousel = () => {
 	const images = [
-		"/logos/bootstrap-svgrepo-com.svg",
-		"/logos/dot-net.svg",
-		"/logos/figma-svgrepo-com.svg",
-		"/logos/github-142-svgrepo-com.svg",
-		"/logos/jira-svgrepo-com.svg",
-		"/logos/nextjs-svgrepo-com.svg",
-		"/logos/nodejs-svgrepo-com.svg",
-		"/logos/progress-blog-default-logo-transparent.png",
 		"/logos/react-svgrepo-com.svg",
-		"/logos/sass-svgrepo-com.svg",
-		"/logos/slack-svgrepo-com.svg",
-		"/logos/sql-svgrepo-com.svg",
+		"/logos/dot-net.svg",
+		"/logos/flutter-svgrepo-com.svg",
+		"/logos/nextjs-svgrepo-com.svg",
+		"/logos/svelte-svgrepo-com.svg",
 		"/logos/tailwind-svgrepo-com.svg",
-		"/logos/svelte-svgrepo-com.svg"
+		"/logos/nodejs-svgrepo-com.svg",
+		"/logos/sql-svgrepo-com.svg",
+		"/logos/figma-svgrepo-com.svg",
+		"/logos/sass-svgrepo-com.svg",
+		"/logos/bootstrap-svgrepo-com.svg",
+		"/logos/progress-blog-default-logo-transparent.png",
+		"/logos/github-142-svgrepo-com.svg",
+		"/logos/slack-svgrepo-com.svg",
+		"/logos/jira-svgrepo-com.svg",
 	];
 
 	const carouselRef = useRef(null);
-	let speed = 1;
+	let speed = 0.5;
+	const gap = 20;
 	let position = 0;
 
 	const animate = () => {
 		position -= speed;
-		const scrollWidth = (carouselRef.current.scrollWidth + 20) / 2;
+		const scrollWidth = (carouselRef.current.scrollWidth + gap) / 2;
 		if (position <= -scrollWidth) {
 			position = 0;
 		}
@@ -37,7 +41,7 @@ const Carousel = () => {
 		const element = carouselRef.current;
 
 		const handleMouseEnter = () => (speed = 0.2);
-		const handleMouseLeave = () => (speed = 1);
+		const handleMouseLeave = () => (speed = 0.5);
 
 		element.addEventListener("mouseenter", handleMouseEnter);
 		element.addEventListener("mouseleave", handleMouseLeave);
@@ -58,7 +62,7 @@ const Carousel = () => {
 					display: "flex",
 					width: "max-content",
 					willChange: "transform",
-					gap: "20px",
+					gap: `${gap}px`,
 				}}
 			>
 				{images.concat(images).map((src, index) => (
