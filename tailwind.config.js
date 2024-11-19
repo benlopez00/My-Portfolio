@@ -1,7 +1,7 @@
 // tailwind.config.js
 const withMT = require("@material-tailwind/react/utils/withMT");
 module.exports = withMT({
-  carkMode: 'class',
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -11,18 +11,29 @@ module.exports = withMT({
     extend: {
       colors: {
         // Modo Claro
-        lightBackground: "#F9F9F9",
-        lightPrimary: "#4CAF50",
-        lightText: "#222222",
-        lightBorder: "#D6D6D6",
-        lightHighlight: "#FFC107",
+        light0: "rgb(255, 255, 255)",   // Más claro
+        light1: "rgb(244, 245, 246)",
+        light2: "rgb(238, 240, 241)",
+        light3: "rgb(217, 219, 222)",
+        light4: "rgb(216, 219, 222)",
+        light5: "rgb(138, 148, 158)",
+        light6: "rgb(107, 118, 128)",
+        light7: "rgb(31, 31, 31)",     // Más oscuro
+        lightTransparent: "rgba(0, 0, 0, 0.24)",
         
         // Modo Oscuro
-        darkBackground: "#202020",
+        dark0: "rgb(9, 9, 9)",       // Más oscuro
+        dark1: "rgb(20, 20, 20)",
+        dark2: "rgb(31, 31, 31)",
+        dark3: "rgb(36, 36, 36)",
+        dark4: "rgb(51, 51, 51)",
+        dark5: "rgb(102, 102, 102)",
+        dark6: "rgb(172, 172, 172)",
+        dark7: "rgb(204, 204, 204)", // Más claro
+        darkTransparent: "rgba(255, 255, 255, 0.24)",
+        
+        // Verde adicional
         darkPrimary: "#4CAF50",
-        darkText: "#E1E1E1",
-        darkBorder: "#303030",
-        darkHighlight: "#2196F3",
       },
       fontFamily: {
         primary: ["Helvetica Neue", "Inter", "sans-serif"],

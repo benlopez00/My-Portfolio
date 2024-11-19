@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 
 const BotonEstilo = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
-  // Cargar el tema desde el localStorage al iniciar
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") || "light";
-    setTheme(storedTheme);
-    document.documentElement.classList.add(storedTheme);
+    const storedTheme = localStorage.getItem("theme");
+    const preferredTheme = storedTheme || "dark"; 
+    setTheme(preferredTheme);
+    document.documentElement.classList.add(preferredTheme);
   }, []);
 
-  // Cambiar el tema y guardar en localStorage
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);

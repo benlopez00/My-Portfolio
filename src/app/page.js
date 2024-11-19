@@ -7,7 +7,7 @@ import BotonEstilo from "./components/BotonEstilo";
 
 export default function Component() {
 	return (
-		<div className="min-h-screen p-2 w-screen flex flex-col items-center gap-1.5 bg-lightBackground dark:bg-darkBackground ">
+		<div className="min-h-screen p-2 w-screen flex flex-col items-center gap-1.5 bg-light3 dark:bg-dark1 ">
 			<div className="w-full h-10">
 				<div className="flex flex-row justify-around">
 					<div>
@@ -26,10 +26,10 @@ export default function Component() {
 				</div>
 			</div>
 			<div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(4, 270px)', gridAutoRows: '270px' }}>
-				<Card className="col-span-1 row-span-1 card">
+				<Card className="col-span-1 row-span-1 card bg-light2 dark:bg-dark2">
 					<img src="/Big_Ben.jpg" alt="Big Ben" className="w-full h-full object-cover card" />
 				</Card>
-				<Card className="col-span-1 row-span-1 bg-blue-400 card p-4">
+				<Card className="col-span-1 row-span-1 card p-4 bg-light2 dark:bg-dark2">
 					<CardBody className="p-0">
 						<Typography variant="h1">
 							Hola, soy Ben
@@ -42,7 +42,7 @@ export default function Component() {
 						</Typography>
 					</CardBody>
 				</Card>
-				<Card className="col-span-2 row-span-1 bg-red-400 card p-4">
+				<Card className="col-span-2 row-span-1 card p-4 bg-light2 dark:bg-dark2">
 					<CardHeader floated={false}>
 						<Typography variant="h1">
 							Mi Stack
@@ -52,8 +52,15 @@ export default function Component() {
 						<TechCarousel/>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 row-span-1 bg-blue-400 card p-4 grid gap-5 justify-center content-center" style={{ gridTemplateColumns: 'repeat(2, 100px)', gridTemplateRows: 'repeat(2, 100px)' }}>
-					<Card className="flex items-center justify-center">
+				<Card className="col-span-2 row-span-1 card p-4 bg-light2 dark:bg-dark2">
+					<CardBody>
+						<Typography>
+							Soy desarrollador full-stack con experiencia en **.NET**, **ReactJS** y **Flutter**, apasionado por construir soluciones funcionales y efectivas. Mi camino me llevó desde programar Arduinos hasta trabajar en Alemania para mejorar herramientas que hacen más fácil la vida de las personas ¿Quieres saber más sobre mi?
+						</Typography>
+					</CardBody>
+				</Card>
+				<Card className="col-span-1 row-span-1 card p-4 bg-light2 dark:bg-dark2 grid gap-5 justify-center content-center" style={{ gridTemplateColumns: 'repeat(2, 100px)', gridTemplateRows: 'repeat(2, 100px)' }}>
+					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4">
 						<a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl">
 							<img
 								src="/logos/linkedin-svgrepo-com.svg"
@@ -62,7 +69,7 @@ export default function Component() {
 							/>
 						</a>
 					</Card>
-					<Card className="flex items-center justify-center">
+					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4">
 						<a href="mailto:example@example.com" className="w-full h-full flex justify-center items-center rounded-xl">
 							<img
 								src="/logos/mail-svgrepo-com.svg"
@@ -71,7 +78,7 @@ export default function Component() {
 							/>
 						</a>
 					</Card>
-					<Card className="flex items-center justify-center">
+					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4">
 						<a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl">
 							<img
 								src="/logos/instagram-svgrepo-com.svg"
@@ -80,7 +87,7 @@ export default function Component() {
 							/>
 						</a>
 					</Card>
-					<Card className="flex items-center justify-center">
+					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4">
 						<a href="https://example.com/resume" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl">
 							<img
 								src="/logos/document-svgrepo-com (1).svg"
@@ -90,7 +97,7 @@ export default function Component() {
 						</a>
 					</Card>
 				</Card>
-				<Card className="col-span-1 row-span-2 bg-green-400 card p-4">
+				<Card className="col-span-1 row-span-2 card p-4 bg-light2 dark:bg-dark2">
 					<CardBody className="p-0">
 						<Typography variant="h3">
 							Hola
@@ -101,11 +108,11 @@ export default function Component() {
 					</CardBody>
 				</Card>
 				<LocationMap/>
-				<Card className="col-span-1 row-span-1 bg-blue-400 card p-4">
+				<Card className="col-span-1 row-span-1 card p-4 bg-light2 dark:bg-dark2">
 					<CardBody className="text-center">
 					</CardBody>
 				</Card>
-				<Card className="card col-span-2 row-span-2 bg-white flex items-center p-3">
+				<Card className="card col-span-2 row-span-2 bg-light2 dark:bg-dark2 flex items-center p-3">
 					<CardBody className="p-0">
 						<Typography variant="h1">
 							Experiencia
@@ -118,7 +125,7 @@ export default function Component() {
 						</Typography>
 					</CardBody>
 				</Card>
-				<Card className="card col-span-2 row-span-2 bg-white flex items-center p-3">
+				<Card className="card col-span-2 row-span-2 bg-light2 dark:bg-dark2 flex items-center p-3">
 					<CardBody className="p-0">
 						<Typography>
 							- Rediseñar partes de la UI del Portal con ReactJS para mejorar la experiencia del usuario integrando bibliotecas como KendoUI y Bootstrap
@@ -127,6 +134,33 @@ export default function Component() {
 							- Utilizar LINQ y HeidiSQL para realizar consultas eficientes a la base de datos y mejorar el rendimiento del sistema, asegurando escalabilidad y optimización de datos.
 							- Trabajar en un entorno bajo metodologías Scrum, gestionando tareas en JIRA, participando en revisiones de código y aplicando mejores prácticas de desarrollo full-stack.
 							Este año en Adata no solo me enseñó sobre tecnología; me mostró lo gratificante que es trabajar creando software que realmente marcan una diferencia para las personas.						</Typography>
+					</CardBody>
+				</Card>
+				<Card className="col-span-2 row-span-2 bg-light2 dark:bg-dark2 card p-4">
+					<CardBody>
+						<Typography variant="h1">
+							Mi objetivo actual
+						</Typography>
+						<Typography>
+							Estoy enfocado en seguir aprendiendo en las áreas donde necesito más preparación, como el despliegue y la publicación de sitios completos. Mi meta a corto plazo es dominar el proceso de hosting y publicación de aplicaciones, mientras refuerzo mis habilidades en **.NET** y **ReactJS**. A largo plazo, aspiro a liderar equipos de desarrollo y guiar a otros desarrolladores juniors, porque creo que mi experiencia y enfoque pueden marcar una diferencia en su crecimiento profesional.
+						</Typography>
+					</CardBody>
+				</Card>
+				<Card className="card col-span-2 row-span-2 bg-light2 dark:bg-dark2 flex items-center p-3">
+					<CardBody className="p-0">
+						<Typography variant="h1">
+							Sobre mi
+						</Typography>
+						<Typography> 
+							¡Hola! Soy un desarrollador **organizado, disciplinado y metódico**, apasionado por crear soluciones tecnológicas que sean tanto funcionales como estéticamente agradables. Mi camino en la programación comenzó con Arduinos y poco a poco fui construyendo habilidades en herramientas como **ReactJS** y **.NET Core**, que me permiten desarrollar interfaces intuitivas respaldadas por un backend sólido. Los videojuegos, las redes sociales y la curiosidad natural por entender cómo funcionan las cosas me llevaron al mundo de la tecnología. Me inspiran los diseños funcionales y eficaces, y trato de aplicar esos principios en todo lo que desarrollo, desde la lógica backend hasta la experiencia del usuario.
+						</Typography>
+					</CardBody>
+				</Card>
+				<Card className="card col-span-2 row-span-2 bg-light2 dark:bg-dark2 flex items-center p-3">
+					<CardBody className="p-0">
+						<Typography> 
+						Cuando no estoy programando, me encontrarás leyendo libros sobre economía, ciencia o historia, o disfrutando de la música de **AC/DC**, algo de rap alemán o incluso country americano. Me atraen las sociedades organizadas y funcionales como Alemania (¡y también me encanta el frío!). Creo firmemente que la funcionalidad debe ser la base de cualquier diseño, y que la creatividad debe complementar esa funcionalidad, no competir con ella. Mi objetivo siempre es facilitar la vida a las personas, ya sea resolviendo necesidades que no tenían solución o mejorando las opciones existentes con una experiencia de usuario de calidad.
+						</Typography>
 					</CardBody>
 				</Card>
 			</div>

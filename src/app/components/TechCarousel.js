@@ -68,10 +68,10 @@ const Carousel = () => {
 				{images.concat(images).map((src, index) => (
 					<div
 						key={index}
+						className="bg-light0 dark:bg-dark4"
 						style={{
 							width: "100px",
 							height: "100px",
-							backgroundColor: "green",
 							borderRadius: "12px",
 							display: "flex",
 							alignItems: "center",
