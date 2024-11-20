@@ -56,39 +56,39 @@ export default function Component() {
 					</CardBody>
 				</Card>
 				<Card className="col-span-1 row-span-1 card p-4 bg-light2 dark:bg-dark2 grid gap-5 justify-center content-center" style={{ gridTemplateColumns: 'repeat(2, 100px)', gridTemplateRows: 'repeat(2, 100px)' }}>
-					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 transition-all ease-in-out duration-300 hover:bg-blue-600 hover:dark:bg-blue-600">
-						<a href="https://linkedin.com/in/ebenlopezavila00/" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl group">
+					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 transition-all ease-in-out duration-700 hover:bg-blue-600 hover:dark:bg-blue-600">
+						<a href="https://linkedin.com/in/ebenlopezavila00/" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl">
 							<img
 								src="/logos/linkedin-svgrepo-com.svg"
 								alt="LinkedIn"
-								className="w-12 h-12 filter group-hover:invert"
+								className="w-12 h-12"
 							/>
 						</a>
 					</Card>
-					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 transition-all ease-in-out duration-300 hover:bg-amber-500 hover:dark:bg-amber-500">
-						<a href="mailto:lopezavilaben00@gmail.com" className="w-full h-full flex justify-center items-center rounded-xl group">
+					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 transition-all ease-in-out duration-700 hover:bg-amber-400 hover:dark:bg-amber-400">
+						<a href="mailto:lopezavilaben00@gmail.com" className="w-full h-full flex justify-center items-center rounded-xl">
 							<img
 								src="/logos/mail-svgrepo-com.svg"
 								alt="Mail"
-								className="w-12 h-12 filter group-hover:invert"
+								className="w-12 h-12"
 							/>
 						</a>
 					</Card>
 					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 instagram-gradient">
-						<a href="https://instagram.com/ben_fotos00/" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl group">
+						<a href="https://instagram.com/ben_fotos00/" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl">
 							<img
 								src="/logos/instagram-svgrepo-com.svg"
 								alt="Instagram"
-								className="w-12 h-12 filter group-hover:invert"
+								className="w-12 h-12"
 							/>
 						</a>
 					</Card>
-					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 transition-all ease-in-out duration-300 hover:bg-green-400 hover:dark:bg-green-400">
-						<a href="https://example.com/resume" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl group">
+					<Card className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 transition-all ease-in-out duration-700 hover:bg-green-400 hover:dark:bg-green-400">
+						<a href="https://example.com/resume" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl">
 							<img
 								src="/logos/document-svgrepo-com (1).svg"
 								alt="Resume"
-								className="w-12 h-12 filter group-hover:invert"
+								className="w-12 h-12"
 							/>
 						</a>
 					</Card>
