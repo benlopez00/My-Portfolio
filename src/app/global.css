@@ -101,3 +101,29 @@ input, textarea, select {
     max-width: 1280px;
   }
 }
+
+
+.instagram-gradient {
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.instagram-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, #833ab4,#fd1d1d,#fcb045);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.instagram-gradient:hover::before {
+  opacity: 1;
+}
+
+.instagram-gradient > * {
+  position: relative;
+  z-index: 1;
+}

@@ -55,7 +55,10 @@ const Carousel = () => {
 	}, []);
 
 	return (
-		<div style={{ overflow: "hidden", width: "100%", height: "120px", position: "relative" }}>
+		<div style={{ overflow: "hidden", width: "100%", height: "120px", position: "relative",	
+		boxShadow: "0 0 40px 20px rgba(0, 0, 0, 0.6)",
+		maskImage: "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)",
+		WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)", }}>
 			<div
 				ref={carouselRef}
 				style={{
@@ -68,7 +71,7 @@ const Carousel = () => {
 				{images.concat(images).map((src, index) => (
 					<div
 						key={index}
-						className="bg-light0 dark:bg-dark5"
+						className="bg-light0 dark:bg-dark4"
 						style={{
 							width: "100px",
 							height: "100px",
