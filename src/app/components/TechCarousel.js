@@ -22,7 +22,7 @@ const Carousel = () => {
 	];
 
 	const carouselRef = useRef(null);
-	let speed = 0.5;
+	let speed = 0.4;
 	const gap = 20;
 	let position = 0;
 
@@ -41,7 +41,7 @@ const Carousel = () => {
 		const element = carouselRef.current;
 
 		const handleMouseEnter = () => (speed = 0.2);
-		const handleMouseLeave = () => (speed = 0.5);
+		const handleMouseLeave = () => (speed = 0.4);
 
 		element.addEventListener("mouseenter", handleMouseEnter);
 		element.addEventListener("mouseleave", handleMouseLeave);
@@ -68,7 +68,7 @@ const Carousel = () => {
 				{images.concat(images).map((src, index) => (
 					<div
 						key={index}
-						className="bg-light0 dark:bg-dark4"
+						className="bg-light0 dark:bg-dark5"
 						style={{
 							width: "100px",
 							height: "100px",

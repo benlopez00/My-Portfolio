@@ -36,8 +36,7 @@ module.exports = withMT({
         darkPrimary: "#4CAF50",
       },
       fontFamily: {
-        primary: ["Helvetica Neue", "Inter", "sans-serif"],
-        secondary: ["IBM Plex Mono", "Fira Code", "monospace"],
+        sans: ['var(--font-dm-sans)'],
       },
       fontSize: {
         h1: "42px",
