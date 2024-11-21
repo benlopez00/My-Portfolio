@@ -63,7 +63,7 @@ const Carousel = () => {
 			style={{
 				overflow: "hidden",
 				width: "100%",
-				height: "120px",
+				height: "100px",
 				position: "relative",
 				boxShadow: "0 0 40px 20px rgba(0, 0, 0, 0.6)",
 				maskImage: "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)",
@@ -86,7 +86,7 @@ const Carousel = () => {
 						style={{
 							width: "100px",
 							height: "100px",
-							borderRadius: "12px",
+							borderRadius: "20px",
 							display: "flex",
 							alignItems: "center",
 							justifyContent: "center",
@@ -96,8 +96,8 @@ const Carousel = () => {
 							src={src}
 							alt={`Logo ${index}`}
 							style={{
-								width: "70%",
-								height: "70%",
+								width: "60%",
+								height: "60%",
 								objectFit: "contain",
 							}}
 						/>

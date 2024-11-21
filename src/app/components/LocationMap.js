@@ -45,7 +45,7 @@ export default function LocationMap() {
                 <Marker longitude={-65.2038} latitude={-26.8303} pitchAlignment="map"></Marker>
             </Map>
             {weather && (
-                <div className="absolute bottom-2 right-[7px] bg-white/80 text-gray-800 px-1.5 py-1 rounded-full text-xs flex items-center shadow-md">
+                <div className="absolute bottom-2 right-[7px] bg-white dark:bg-dark2 text-light7 dark:text-dark7 px-1.5 py-1 rounded-full text-xs flex items-center shadow-md">
                     <div className='flex justify-center items-center w-9 !my-0 leading-none'>
                         <Clock noSsr={false} format={'hh:mm'} ticking={true} timezone="America/Rosario" />
                     </div>
