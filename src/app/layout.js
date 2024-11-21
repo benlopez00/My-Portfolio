@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
 			<body className='bg-light3 dark:bg-dark1'>
 				<div className="w-full h-20 bg-light3 dark:bg-dark1 flex flex-col items-center justify-center">
 					<div className="w-3/4 flex flex-row justify-between items-center">
-						<div>
+						<div className='w-44 flex justify-start'>
 							<BotonEstilo/>					
 						</div>
 						<div>
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
 								<Typography variant="h1" className="font-sans font-bold text-[rgb(31,31,31)] dark:text-[rgb(204,204,204)]">BEN LOPEZ</Typography>
 							</Link>
 						</div>
-						<div>
+						<div className='w-44 flex justify-end'>
 							<Button size="sm" variant="text"><Image src="/spain-svgrepo-com.svg" alt="Español" width={22} height={22}/></Button>
 							<Button size="sm" variant="text"><Image src="/united-kingdom-uk-svgrepo-com.svg" alt="English" width={22} height={22}/></Button>
 							<Button size="sm" variant="text"><Image src="/germany-svgrepo-com.svg" alt="Deutsch" width={22} height={22}/></Button>
