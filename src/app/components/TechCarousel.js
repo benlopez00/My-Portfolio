@@ -22,43 +22,54 @@ const Carousel = () => {
 	];
 
 	const carouselRef = useRef(null);
+	const animationRef = useRef(null);
 	let speed = 0.4;
 	const gap = 20;
 	let position = 0;
 
 	const animate = () => {
+		if (!carouselRef.current) return;
 		position -= speed;
 		const scrollWidth = (carouselRef.current.scrollWidth + gap) / 2;
 		if (position <= -scrollWidth) {
 			position = 0;
 		}
 		carouselRef.current.style.transform = `translateX(${position}px)`;
-		requestAnimationFrame(animate);
+		animationRef.current = requestAnimationFrame(animate);
 	};
-
 
 	useEffect(() => {
 		const element = carouselRef.current;
-
 		const handleMouseEnter = () => (speed = 0.2);
 		const handleMouseLeave = () => (speed = 0.4);
-
-		element.addEventListener("mouseenter", handleMouseEnter);
-		element.addEventListener("mouseleave", handleMouseLeave);
-
-		requestAnimationFrame(animate);
-
+		if (element) {
+			element.addEventListener("mouseenter", handleMouseEnter);
+			element.addEventListener("mouseleave", handleMouseLeave);
+		}
+		animationRef.current = requestAnimationFrame(animate);
 		return () => {
+		if (element) {
 			element.removeEventListener("mouseenter", handleMouseEnter);
 			element.removeEventListener("mouseleave", handleMouseLeave);
+		}
+		if (animationRef.current) {
+			cancelAnimationFrame(animationRef.current); 
+		}
 		};
 	}, []);
 
 	return (
-		<div style={{ overflow: "hidden", width: "100%", height: "120px", position: "relative",	
-		boxShadow: "0 0 40px 20px rgba(0, 0, 0, 0.6)",
-		maskImage: "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)",
-		WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)", }}>
+		<div
+			style={{
+				overflow: "hidden",
+				width: "100%",
+				height: "120px",
+				position: "relative",
+				boxShadow: "0 0 40px 20px rgba(0, 0, 0, 0.6)",
+				maskImage: "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)",
+				WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)",
+			}}
+		>
 			<div
 				ref={carouselRef}
 				style={{
