@@ -6,7 +6,24 @@ import Clock from "react-live-clock";
 
 export default function LocationMap() {
     const [weather, setWeather] = useState(null);
+    const [theme, setTheme] = useState("light"); 
     const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+    useEffect(() => {
+        const currentTheme = document.documentElement.classList.contains("dark")
+            ? "dark"
+            : "light";
+        setTheme(currentTheme);
+        const observer = new MutationObserver(() => {
+            const newTheme = document.documentElement.classList.contains("dark")
+                ? "dark"
+                : "light";
+            setTheme(newTheme);
+        });
+    
+        observer.observe(document.documentElement, { attributes: true });
+    
+        return () => observer.disconnect();
+    }, []);
     useEffect(() => {
         const fetchWeather = async () => {
             try {
@@ -29,33 +46,50 @@ export default function LocationMap() {
         return () => clearInterval(intervalId);
     }, [apiKey]);
 
+    const mapStyle =
+    theme === "dark"
+        ? "/styles/dark_positron.json"
+        : "/styles/light_positron.json";
     return (
-        <Card className="col-span-1 overflow-hidden card w-[270px] h-[270px] relative">
+        <Card className="col-span-1 overflow-clip card w-[270px] h-[270px] relative bg-white dark:bg-black ">
             <Map
                 initialViewState={{
                     longitude: -65.2038,
                     latitude: -26.8303,
-                    zoom: 8,
+                    zoom: 9,
                     interactive: false
                 }}
-                mapStyle="https://tiles.openfreemap.org/styles/bright"
-                style={{ width: '270px', height: '270px' }}
+                mapStyle={mapStyle}
                 attributionControl={false}
             >
-                <Marker longitude={-65.2038} latitude={-26.8303} pitchAlignment="map"></Marker>
+                <Marker
+                    longitude={-65.2038}
+                    latitude={-26.8303}
+                    pitchAlignment="map"
+                    offset={[10,0]}
+                >
+                    <img
+                        src="/location-circle-svgrepo-com.svg"
+                        alt="Custom Marker"
+                        className="w-8 h-8"
+                    />
+                </Marker>
             </Map>
             {weather && (
-                <div className="absolute bottom-2 right-[7px] bg-white dark:bg-dark2 text-light7 dark:text-dark7 px-1.5 py-1 rounded-full text-xs flex items-center shadow-md">
-                    <div className='flex justify-center items-center w-9 !my-0 leading-none'>
-                        <Clock noSsr={false} format={'hh:mm'} ticking={true} timezone="America/Rosario" />
+                <>
+                    <div className="h-12 w-14 absolute top-2 right-[7px] bg-white dark:bg-dark4 px-1.5 py-1 rounded-full flex items-center justify-center  shadow-md">
+                        <img src={weather.icon} alt={weather.condition} className="w-8 h-8" />
                     </div>
-                    <div className='!m-0'>
-                        <img src={weather.icon} alt={weather.condition} className="w-7 h-7" />
+
+                    <div className="h-10 w-32 absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white dark:bg-dark4 text-light7 dark:text-dark7 px-1.5 py-1 rounded-full text-[16px] flex items-center justify-evenly shadow-md">
+                        <div className="flex justify-center items-center w-14 !my-0 leading-none">
+                            <Clock noSsr={false} format={'HH:mm'} ticking={true} timezone="America/Rosario" />
+                        </div>
+                        <div className="flex justify-center items-center w-14 !my-0 !mx-0 leading-none">
+                            <span>{weather.temp}°C</span>
+                        </div>
                     </div>
-                    <div className='flex justify-center items-center w-9 !my-0 !mx-0 leading-none'>
-                        <span>{weather.temp}°C</span>
-                    </div>
-                </div>
+                </>
             )}
         </Card>
     );

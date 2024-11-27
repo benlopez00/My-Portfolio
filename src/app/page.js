@@ -65,6 +65,9 @@ export default function Component() {
 							<Typography variant="small" className="font-sans font-light text-light7 dark:text-dark7">
 								🚦 Desde programar Arduinos hasta trabajar en Alemania
 							</Typography>
+							<Typography variant="small" className="font-sans font-light text-light7 dark:text-dark7">
+								📈 Siempre buscando mejorar y aprender algo nuevo
+							</Typography>
 						</div>
 						{/* <Typography className="font-sans text-light7 dark:text-dark7">
 							Quiero construir soluciones funcionales, efectivas y bonitas.
