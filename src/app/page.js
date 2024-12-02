@@ -52,13 +52,13 @@ export default function Component() {
 								<Button variant="text" size="sm" className="bg-light2 dark:bg-dark2 p-5 text-white hover:bg-darkPrimary dark:hover:bg-darkPrimary  group">
 									<img
 										src="/logos/open-in-browser-svgrepo-com.svg"
-										alt="LinkedIn"
+										alt="Open Tab"
 										className="w-6 h-6 filter group-hover:invert dark:invert"
 									/>
 								</Button>
 							</Link>
 						</div>
-						<div>
+						<div className="flex flex-col gap-2">
 							<Typography variant="small" className="font-sans font-light text-light7 dark:text-dark7">
 								💼 Cuento con experiencia en .NET, ReactJS y Flutter
 							</Typography>
@@ -69,9 +69,6 @@ export default function Component() {
 								📈 Siempre buscando mejorar y aprender algo nuevo
 							</Typography>
 						</div>
-						{/* <Typography className="font-sans text-light7 dark:text-dark7">
-							Quiero construir soluciones funcionales, efectivas y bonitas.
-							</Typography> */}
 					</CardBody>
 				</Card>
 				<LocationMap/>
@@ -113,8 +110,33 @@ export default function Component() {
 						</a>
 					</Card>
 				</Card>
-				<Card className="col-span-1 row-span-1 card p-4 bg-light2 dark:bg-dark2">
-					<CardBody className="text-center text-light7 dark:text-dark7">
+				<Card className="col-span-2 row-span-1 card p-8 bg-light2 dark:bg-dark2">
+					<CardBody className="p-0 h-full flex flex-col items-start gap-10">
+						<div className="w-full flex space justify-between">
+							<Typography variant="h2" className="font-sans font-medium text-light7 dark:text-dark7">
+								Mi experiencia
+							</Typography>
+							<Link href="/experiencia">
+								<Button variant="text" size="sm" className="bg-light2 dark:bg-dark2 p-5 text-white hover:bg-darkPrimary dark:hover:bg-darkPrimary  group">
+									<img
+										src="/logos/open-in-browser-svgrepo-com.svg"
+										alt="Open Tab"
+										className="w-6 h-6 filter group-hover:invert dark:invert"
+									/>
+								</Button>
+							</Link>
+						</div>
+						<div className="flex flex-col gap-2">
+							<Typography variant="small" className="font-sans font-light text-light7 dark:text-dark7">
+								🥨 Un año trabajando en herramientas de RRHH para empresas.
+							</Typography>
+							<Typography variant="small" className="font-sans font-light text-light7 dark:text-dark7">
+								💎 Mejoré la UX rediseñando interfaces clave.
+							</Typography>
+							<Typography variant="small" className="font-sans font-light text-light7 dark:text-dark7">
+								💻 Implementé y actualicé funcionalidades en frontend, backend y móviles.
+							</Typography>
+						</div>
 					</CardBody>
 				</Card>
 			</div>
