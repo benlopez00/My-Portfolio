@@ -33,10 +33,15 @@ module.exports = withMT({
         darkTransparent: "rgba(255, 255, 255, 0.24)",
         
         // Verde adicional
-        darkPrimary: "#4DC46C",
+        darkPrimary: "rgb(77,196,108)",
       },
       fontFamily: {
         sans: ['var(--font-dm-sans)'],
+        'nyght-serif': ['"Nyght Serif"', 'serif'], // 300 -italic / 500 -italic / normal -italic / bold -italic
+        'spline-sans': ['"Spline Sans"', 'sans-serif'], // normal
+        'fungis': ['"FUNGIS"', 'sans-serif'], // bold normal
+        'philosopher': ['"Philosopher"', 'serif'], // normal -italic / bold -italic
+        'shrikhand': ['"Shrikhand"', 'cursive'], //normal italic
       },
       fontSize: {
         h1: "42px",
@@ -47,6 +52,25 @@ module.exports = withMT({
       },
       borderRadius: {
         card: "32px",
+      },
+      keyframes: {
+        triangularMove: {
+          '0%': { transform: 'translate(0px, -25px)' },
+          '33%': { transform: 'translate(25px, 25px)' }, 
+          '66%': { transform: 'translate(-25px, 25px)' },
+          '100%': { transform: 'translate(0px, -25px)' },
+        },
+        squareMove: {
+          '0%': { transform: 'translate(-25px, -25px)' },
+          '25%': { transform: 'translate(25px, -25px)' }, 
+          '50%': { transform: 'translate(25px, 25px)' }, 
+          '75%': { transform: 'translate(-25px, 25px)' },
+          '100%': { transform: 'translate(-25px, -25px)' },
+        },
+      },
+      animation: {
+        triangularMove: 'triangularMove 12s ease-in-out infinite',
+        squareMove: 'squareMove 19s ease-in-out infinite',
       },
     },
   },
