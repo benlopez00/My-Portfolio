@@ -101,7 +101,7 @@ const Carousel = () => {
 								}}
 							/>
 						</div>
-						<div className="bg-light4 dark:bg-dark5 text-center flex flex-row justify-center items-end"
+						<div className="bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end"
 								style={{
 									width: "100px",
 									height: "100px",
