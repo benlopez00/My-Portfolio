@@ -38,10 +38,7 @@ module.exports = withMT({
       fontFamily: {
         sans: ['var(--font-dm-sans)'],
         'nyght-serif': ['"Nyght Serif"', 'serif'], // 300 -italic / 500 -italic / normal -italic / bold -italic
-        'spline-sans': ['"Spline Sans"', 'sans-serif'], // normal
-        'fungis': ['"FUNGIS"', 'sans-serif'], // bold normal
-        'philosopher': ['"Philosopher"', 'serif'], // normal -italic / bold -italic
-        'shrikhand': ['"Shrikhand"', 'cursive'], //normal italic
+        'arrayreg': ['"Array-Regular"', 'sans-serif'],
       },
       fontSize: {
         h1: "42px",
@@ -55,10 +52,10 @@ module.exports = withMT({
       },
       keyframes: {
         triangularMove: {
-          '0%': { transform: 'translate(0px, -25px)' },
-          '33%': { transform: 'translate(25px, 25px)' }, 
-          '66%': { transform: 'translate(-25px, 25px)' },
-          '100%': { transform: 'translate(0px, -25px)' },
+          '0%': { transform: 'translate(0px, -22px)' },
+          '33%': { transform: 'translate(22px, 22px)' }, 
+          '66%': { transform: 'translate(-22px, 22px)' },
+          '100%': { transform: 'translate(0px, -22px)' },
         },
         squareMove: {
           '0%': { transform: 'translate(-25px, -25px)' },
@@ -70,7 +67,7 @@ module.exports = withMT({
       },
       animation: {
         triangularMove: 'triangularMove 12s ease-in-out infinite',
-        squareMove: 'squareMove 19s ease-in-out infinite',
+        squareMove: 'squareMove 16s ease-in-out infinite',
       },
     },
   },
