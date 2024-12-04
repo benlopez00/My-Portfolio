@@ -39,12 +39,12 @@ export default function RootLayout({ children }) {
 						</div>
 					</div>
 				</nav>
-				<div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-[600px] overflow-hidden z-10">
-					<div className="absolute bg-green-500 dark:bg-green-400 opacity-90 dark:opacity-70 blur-[80px] rounded-full w-[400px] h-[350px] animate-gradientMove animate-squareMove" style={{ top: '-100px', left: '400px' }}></div>
-					<div className="absolute bg-blue-500 dark:bg-blue-400 opacity-90 dark:opacity-70 blur-[80px] rounded-full w-[400px] h-[350px] animate-gradientMove animate-triangularMove" style={{ top: '-100px', right: '400px' }}></div>
+				<div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-[600px] overflow-hidden z-0">
+					<div className="absolute bg-green-500 dark:bg-green-400 opacity-90 dark:opacity-70 blur-[80px] rounded-full w-[420px] h-[310px] animate-gradientMove animate-squareMove" style={{ top: '-100px', left: '400px' }}></div>
+					<div className="absolute bg-blue-500 dark:bg-blue-400 opacity-90 dark:opacity-70 blur-[80px] rounded-full w-[400px] h-[310px] animate-gradientMove animate-triangularMove" style={{ top: '-100px', right: '400px' }}></div>
 				</div>
 				<AnimatePresence mode="wait">
-					<div style={{ position: 'relative', overflow: 'hidden' }}> 
+					<div className='bg-transparent' style={{ position: 'relative', overflow: 'hidden' }}> 
 						<motion.div
 							key={pathname}
 							initial={{ opacity: 0, y: 50 }}
