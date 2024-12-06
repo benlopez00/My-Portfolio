@@ -4,25 +4,25 @@ import Link from 'next/link';
 
 export default function AdditionalInfoOverlay() {
 	return (
-		<div className="p-2 w-full flex flex-col items-center bg-light3 dark:bg-dark1 font-sans bg-transparent">
+		<div className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
 			<div className="grid gap-6 z-20" style={{ gridTemplateColumns: 'repeat(4, 270px)', gridAutoRows: '270px' }}>
 				<Card className="col-span-2 row-span-2 card p-8 bg-light2 dark:bg-dark2">
 					<CardBody className="p-0 h-full flex flex-col items-start gap-10">
 						<div>
-							<Typography variant="h3" className="font-sans font-medium text-light7 dark:text-dark7">
+							<Typography variant="h2" className="font-nyght-serif font-[500]  text-light7 dark:text-dark7">
 								Adata Software Gmbh
 							</Typography>
 							<Typography variant="h5" className="font-sans font-medium text-light5 dark:text-dark5">
 								Jul '23 – Jun '24
 							</Typography>
 						</div>
-						<Typography variant="medium" className="font-sans font-light text-light6 dark:text-dark6">
+						<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
 							Deseoso de visitar nuevamente Alemania, aplique a una visa working-holiday. Allí trabaje durante un año en Adata Software GmbH en Verden, Baja Sajonia.
 						</Typography>
-						<Typography variant="medium" className="font-sans font-light text-light6 dark:text-dark6">
+						<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
 							Me dediqué al desarrollo y soporte del Mitarbeiter Portal, un software de recursos humanos que ayuda a pequeñas y medianas empresas a gestionar su personal.
 						</Typography>
-						<Typography variant="medium" className="font-sans font-light text-light6 dark:text-dark6">
+						<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
 							Durante ese tiempo, me enfrenté a desafíos técnicos y creativos, pero cada tarea me dejó una enorme satisfacción.
 						</Typography>
 					</CardBody>
@@ -96,7 +96,7 @@ export default function AdditionalInfoOverlay() {
 							<div className="relative h-full w-full">
 								<div className="absolute inset-0 grid h-full w-full place-items-center">
 									<div className="text-left w-8/12">
-										<Typography variant="medium" className="font-sans font-light text-light6 dark:text-dark6">
+										<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
 											<em className="italic">Rediseñar</em>  partes de la <strong className="font-bold text-light7 dark:text-dark7">UI</strong> del Portal con <strong className="font-bold text-light7 dark:text-dark7">ReactJS</strong> para mejorar la experiencia del usuario integrando bibliotecas como KendoUI y Bootstrap 
 										</Typography>
 									</div>
@@ -105,7 +105,7 @@ export default function AdditionalInfoOverlay() {
 							<div className="relative h-full w-full">
 								<div className="absolute inset-0 grid h-full w-full place-items-center">
 									<div className="text-left w-8/12">
-										<Typography variant="medium" className="font-sans font-light text-light6 dark:text-dark6">
+										<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
 											Actualizar e implementar <em className="italic">nuevas funcionalidades</em> del backend de <strong className="font-bold text-light7 dark:text-dark7">ASP.NET Core MVC</strong> para cumplir con las necesidades de los clientes 
 										</Typography>
 									</div>
@@ -114,7 +114,7 @@ export default function AdditionalInfoOverlay() {
 							<div className="relative h-full w-full">
 								<div className="absolute inset-0 grid h-full w-full place-items-center">
 									<div className="text-left w-8/12">
-										<Typography variant="medium" className="font-sans font-light text-light6 dark:text-dark6">
+										<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
 											<em className="italic">Desarrollo móvil</em>   en <strong className="font-bold text-light7 dark:text-dark7">Flutter</strong> utilizando Dart, conectando componentes con sistemas backend en <strong className="font-bold text-light7 dark:text-dark7">.NET</strong> a través de <strong className="font-bold text-light7 dark:text-dark7">APIs RESTful</strong>.
 										</Typography>
 									</div>
@@ -123,7 +123,7 @@ export default function AdditionalInfoOverlay() {
 							<div className="relative h-full w-full">
 								<div className="absolute inset-0 grid h-full w-full place-items-center">
 									<div className="text-left w-8/12">
-										<Typography variant="medium" className="font-sans font-light text-light6 dark:text-dark6">
+										<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
 											Utilizar <strong className="font-bold text-light7 dark:text-dark7">LINQ</strong> y <strong className="font-bold text-light7 dark:text-dark7">HeidiSQL</strong> para realizar <em className="italic">consultas eficientes a la base de datos</em> y mejorar el rendimiento, asegurando escalabilidad y optimización de datos.
 										</Typography>
 									</div>
@@ -132,7 +132,7 @@ export default function AdditionalInfoOverlay() {
 							<div className="relative h-full w-full">
 								<div className="absolute inset-0 grid h-full w-full place-items-center">
 									<div className="text-left w-8/12">
-										<Typography variant="medium" className="font-sans font-light text-light6 dark:text-dark6">
+										<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
 											<em className="italic">Trabajar</em> con metodologías <strong className="font-bold text-light7 dark:text-dark7">Scrum</strong>, gestionando tareas en <strong className="font-bold text-light7 dark:text-dark7">JIRA</strong>, participando en code-reviews y aplicando mejores prácticas de desarrollo.
 										</Typography>
 									</div>

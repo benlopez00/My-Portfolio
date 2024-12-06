@@ -25,10 +25,10 @@ export default function Component() {
 							</Typography>
 						</div>
 						<div>
-							<Typography variant="small" className="font-sans text-[16px] text-light7 dark:text-dark7">
+							<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
 								Desarrollador Full Stack
 							</Typography>
-							<Typography variant="small" className="font-sans text-[16px] text-light7 dark:text-dark7">
+							<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
 								Diseñador UI
 							</Typography>
 						</div>
@@ -77,33 +77,47 @@ export default function Component() {
 						</a>
 					</Card>
 				</Card>	
-				<Card className="col-span-2 row-span-1 card p-8 bg-light2 dark:bg-dark2">
-					<CardBody className="p-0 h-full flex flex-col items-start gap-10">
-						<div className="w-full flex space justify-between">
-							<Typography variant="h2" className="font-nyght-serif font-[500]  text-light7 dark:text-dark7">
-								Mas sobre mi
-							</Typography>
-							<Link href="/additional-info">
-								<Button variant="text" size="sm" className="bg-light2 dark:bg-dark2 p-5 text-white hover:bg-darkPrimary dark:hover:bg-darkPrimary  group">
-									<img
-										src="/iconos/OpenTab.svg"
-										alt="Open Tab"
-										className="w-6 h-6 filter group-hover:invert dark:invert"
-									/>
-								</Button>
-							</Link>
-						</div>
-						<Typography variant="paragraph" className="font-sans text-[16px] text-light7 dark:text-dark7">
-							🚦 Desde programar Arduinos hasta trabajar en Alemania
-						</Typography>
-					</CardBody>
+				<Card className="col-span-2 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
+					<Link href="/additional-info" className="w-full h-full card p-8 group">
+						<CardBody className="p-0 h-full flex flex-col items-start justify-between">
+							<div className="w-full flex justify-between items-center">
+								<Typography variant="h2" className="font-nyght-serif font-[500]  text-light7 dark:text-dark7">
+									Más sobre mí
+								</Typography>
+								<div className="rounded-full p-3">
+									<ReactSVG src="/iconos/OpenTab.svg" className="w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-1"/>
+								</div>
+							</div>
+							<div className="w-full flex flex-col items-start justify-between gap-2 mb-5">
+								<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
+									🚦 Desde programar Arduinos hasta trabajar en Alemania.
+								</Typography>
+								<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
+									🔍 Me encanta encontrar la mejor solución para cada desafío.
+								</Typography>
+								<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
+									📈 Siempre buscando mejorar y aprender algo nuevo.
+								</Typography>
+							</div>
+						</CardBody>
+						<div className="absolute inset-0 card transition-shadow duration-300 group-hover:shadow-[inset_0px_29px_18px_-20px_rgba(76,175,80,0.5)] pointer-events-none"></div>
+					</Link>
 				</Card>
 				<Card className="col-span-2 row-span-1 card p-8 bg-light2 dark:bg-dark2">
 					<CardBody className="p-0 h-full flex flex-col justify-between">
-						<div className="w-full flex space justify-between">
-							<Typography variant="h2" className="font-nyght-serif font-[500] text-light7 dark:text-dark7">
+					<div className="w-full flex justify-between items-center">
+							<Typography variant="h2" className="font-nyght-serif font-[500]  text-light7 dark:text-dark7">
 								Mi experiencia
 							</Typography>
+							<div className="w-32 h-8 rounded-2xl p-1 bg-light4 dark:bg-dark4 flex flex-row justify-around items-center">
+								<Typography className="font-sans text-[14px] font-normal text-green-500">
+									Disponible
+								</Typography>
+								<span className="relative flex h-3 w-3">
+									<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+									<span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+								</span>
+							</div>
 						</div>
 						<Link href="/experiencia" passHref>
 							<div className="w-full flex flex-row items-center justify-between card bg-light3 dark:bg-dark4 group relative cursor-pointer rounded-lg">
@@ -114,14 +128,14 @@ export default function Component() {
 									<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
 										Desarrollador ASP.NET Core
 									</Typography>
-									<Typography className="font-sans text-[14px] text-light6 dark:text-dark6">
-										July 2023 - June 2024
+									<Typography className="font-sans text-[16px] text-light6 dark:text-dark6">
+										Julio 2023 - Junio 2024
 									</Typography>
 								</div>
 								<div className="h-full flex flex-col justify-around p-8">
-									<ReactSVG src="/iconos/OpenTab.svg" className="w-6 h-6 fill-light6 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-1"/>
+									<ReactSVG src="/iconos/OpenTab.svg" className="w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-1"/>
 								</div>
-								<div className="absolute inset-0 card transition-shadow duration-300 group-hover:shadow-[inset_0_0_18px_5px_rgba(76,175,80,0.5)] group-active:shadow-[inset_0_0_30px_15px_rgba(76,175,80,0.9)] pointer-events-none"></div>
+								<div className="absolute inset-0 card transition-shadow duration-300 group-hover:shadow-[inset_0px_29px_18px_-20px_rgba(76,175,80,0.5)] pointer-events-none"></div>
 							</div>
 						</Link>
 					</CardBody>
