@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className={dmSans.variable}>
 			<body className='bg-light3 dark:bg-dark1'>
-				<nav className="w-full h-20 bg-light3 dark:bg-dark1 flex flex-col items-center justify-center">
+				<nav className="w-full h-20 flex flex-col items-center justify-center">
 					<div className="w-3/4 flex flex-row justify-between items-center z-20">
 						<div className='w-44 flex justify-start'>
 							<BotonEstilo/>					

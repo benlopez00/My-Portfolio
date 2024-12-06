@@ -1,9 +1,9 @@
 'use client';
-import { Card, CardHeader, CardBody, CardFooter, Typography, Button, } from "@material-tailwind/react";
-import Image from "next/image";
+import { Card, CardBody, Typography, Button, } from "@material-tailwind/react";
 import TechCarousel from "./components/TechCarousel";
 import LocationMap from './components/LocationMap.js';
 import Link from 'next/link';
+import { ReactSVG } from 'react-svg';
 
 export default function Component() {
 	return (
@@ -58,38 +58,22 @@ export default function Component() {
 				<Card className="col-span-1 row-span-1 card p-4 bg-light2 dark:bg-dark2 grid gap-5 justify-center content-center" style={{ gridTemplateColumns: 'repeat(2, 100px)', gridTemplateRows: 'repeat(2, 100px)' }}>
 					<Card shadow={false} className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 transition-all ease-in-out duration-300 hover:bg-green-400 hover:dark:bg-green-400">
 						<a href="https://example.com/resume" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl group">
-							<img
-								src="/logos/document-svgrepo-com (1).svg"
-								alt="Resume"
-								className="w-12 h-12 filter group-hover:invert dark:invert"
-							/>
+							<ReactSVG src="/iconos/DocLogo.svg" className="w-12 h-12 fill-light6 dark:fill-dark7 transition-fill duration-300 group-hover:fill-white"/>
 						</a>
 					</Card>
 					<Card shadow={false} className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 transition-all ease-in-out duration-300 hover:bg-blue-600 hover:dark:bg-blue-600">
 						<a href="https://linkedin.com/in/ebenlopezavila00/" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl group">
-							<img
-								src="/logos/linkedin-svgrepo-com.svg"
-								alt="LinkedIn"
-								className="w-12 h-12 filter group-hover:invert dark:invert"
-							/>
+							<ReactSVG src="/iconos/LinkedinLogo.svg" className="w-12 h-12 fill-light6 dark:fill-dark7 transition-fill duration-300 group-hover:fill-white"/>
 						</a>
 					</Card>
 					<Card shadow={false} className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 transition-all ease-in-out duration-300 hover:bg-amber-500 hover:dark:bg-amber-500">
 						<a href="mailto:lopezavilaben00@gmail.com" className="w-full h-full flex justify-center items-center rounded-xl group">
-							<img
-								src="/logos/mail-svgrepo-com.svg"
-								alt="Mail"
-								className="w-12 h-12 filter group-hover:invert dark:invert"
-							/>
+							<ReactSVG src="/iconos/MailLogo.svg" className="w-12 h-12 fill-light6 dark:fill-dark7 transition-fill duration-300 group-hover:fill-white"/>
 						</a>
 					</Card>
 					<Card shadow={false} className="rounded-3xl flex items-center justify-center bg-light0 dark:bg-dark4 instagram-gradient">
 						<a href="https://instagram.com/ben_fotos00/" target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center rounded-xl group">
-							<img
-								src="/logos/instagram-svgrepo-com.svg"
-								alt="Instagram"
-								className="w-12 h-12 filter group-hover:invert dark:invert"
-							/>
+							<ReactSVG src="/iconos/InstaLogo.svg" className="w-12 h-12 fill-light6 dark:fill-dark7 transition-fill duration-300 group-hover:fill-white"/>
 						</a>
 					</Card>
 				</Card>	
@@ -102,7 +86,7 @@ export default function Component() {
 							<Link href="/additional-info">
 								<Button variant="text" size="sm" className="bg-light2 dark:bg-dark2 p-5 text-white hover:bg-darkPrimary dark:hover:bg-darkPrimary  group">
 									<img
-										src="/logos/open-in-browser-svgrepo-com.svg"
+										src="/iconos/OpenTab.svg"
 										alt="Open Tab"
 										className="w-6 h-6 filter group-hover:invert dark:invert"
 									/>
@@ -123,7 +107,7 @@ export default function Component() {
 						</div>
 						<Link href="/experiencia" passHref>
 							<div className="w-full flex flex-row items-center justify-between card bg-light3 dark:bg-dark4 group relative cursor-pointer rounded-lg">
-								<div className="h-full flex flex-col justify-around card p-8">
+								<div className="h-full flex flex-col justify-around p-8">
 									<Typography className="font-sans text-[20px] font-semibold text-light7 dark:text-dark7">
 										Adata Software GmbH
 									</Typography>
@@ -134,7 +118,9 @@ export default function Component() {
 										July 2023 - June 2024
 									</Typography>
 								</div>
-								<img src="/logos/open-in-browser-svgrepo-com.svg" alt="Open Tab" className="w-6 h-6 mr-8 filter dark:invert transition-transform duration-300 group-hover:translate-y-[-5px] group-hover:invert[rgb(76,175,80)]"/>
+								<div className="h-full flex flex-col justify-around p-8">
+									<ReactSVG src="/iconos/OpenTab.svg" className="w-6 h-6 fill-light6 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-1"/>
+								</div>
 								<div className="absolute inset-0 card transition-shadow duration-300 group-hover:shadow-[inset_0_0_18px_5px_rgba(76,175,80,0.5)] group-active:shadow-[inset_0_0_30px_15px_rgba(76,175,80,0.9)] pointer-events-none"></div>
 							</div>
 						</Link>
