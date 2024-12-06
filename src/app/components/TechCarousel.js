@@ -1,24 +1,25 @@
 "use client";
 import { Typography } from "@material-tailwind/react";
 import React, { useEffect, useRef } from "react";
+import { ReactSVG } from 'react-svg';
 
 const Carousel = () => {
 	const images = [
-		{ name: "React", src: "/logos/react-svgrepo-com.svg" },
+		{ name: "React", src: "/logos/react.svg" },
 		{ name: ".NET", src: "/logos/dot-net.svg" },
-		{ name: "Flutter", src: "/logos/flutter-svgrepo-com.svg" },
-		{ name: "Next.js", src: "/logos/nextjs-svgrepo-com.svg" },
-		{ name: "Svelte", src: "/logos/svelte-svgrepo-com.svg" },
-		{ name: "Tailwind", src: "/logos/tailwind-svgrepo-com.svg" },
-		{ name: "Node.js", src: "/logos/nodejs-svgrepo-com.svg" },
-		{ name: "SQL", src: "/logos/sql-svgrepo-com.svg" },
-		{ name: "Figma", src: "/logos/figma-svgrepo-com.svg" },
-		{ name: "Sass", src: "/logos/sass-svgrepo-com.svg" },
-		{ name: "Bootstrap", src: "/logos/bootstrap-svgrepo-com.svg" },
-		{ name: "Telerik", src: "/logos/progress-blog-default-logo-transparent.png" },
-		{ name: "GitHub", src: "/logos/github-142-svgrepo-com.svg" },
-		{ name: "Slack", src: "/logos/slack-svgrepo-com.svg" },
-		{ name: "Jira", src: "/logos/jira-svgrepo-com.svg" },
+		{ name: "Flutter", src: "/logos/flutter.svg" },
+		{ name: "Next.js", src: "/logos/nextjs.svg" },
+		// { name: "Svelte", src: "/logos/svelte.svg" },
+		{ name: "Tailwind", src: "/logos/tailwind.svg" },
+		{ name: "Node.js", src: "/logos/nodejs.svg" },
+		{ name: "SQL", src: "/logos/sql.svg" },
+		{ name: "Figma", src: "/logos/figma.svg" },
+		{ name: "Sass", src: "/logos/sass.svg" },
+		{ name: "Bootstrap", src: "/logos/bootstrap.svg" },
+		{ name: "Telerik", src: "/logos/progress.svg" },
+		{ name: "GitHub", src: "/logos/github.svg" },
+		{ name: "Slack", src: "/logos/slack.svg" },
+		{ name: "Jira", src: "/logos/jira.svg" },
 	];
 
 	const carouselRef = useRef(null);
@@ -88,18 +89,8 @@ const Carousel = () => {
 							height: "125px",
 						}}
 					>
-						<div
-							className="w-[100px] h-[100px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-2xl"
-						>
-							<img
-								src={tech.src}
-								alt={tech.name}
-								style={{
-									width: "60%",
-									height: "60%",
-									objectFit: "contain",
-								}}
-							/>
+						<div className="w-[100px] h-[100px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-2xl">
+							<ReactSVG src={tech.src} className="w-3/5 h-3/5 fill-black dark:fill-white"/>
 						</div>
 						<div className="bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end"
 								style={{
