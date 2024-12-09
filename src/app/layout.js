@@ -56,6 +56,7 @@ export default function RootLayout({ children }) {
 						</motion.div>
 					</div>
 				</AnimatePresence>
+				<footer className='w-full h-20'></footer>
 			</body>
 		</html>
 	)
