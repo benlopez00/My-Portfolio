@@ -92,11 +92,10 @@ const Carousel = () => {
 						<div className="w-[100px] h-[100px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-2xl">
 							<ReactSVG src={tech.src} className="w-3/5 h-3/5 fill-black dark:fill-white"/>
 						</div>
-						<div className="bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end"
+						<div className="bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end rounded-xl"
 								style={{
 									width: "100px",
 									height: "100px",
-									borderRadius: "10px",
 									position: "absolute",
 									top: "22px",
 									zIndex: 1,
