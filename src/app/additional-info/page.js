@@ -4,7 +4,6 @@ import {
 	CardBody,
 	Typography,
 	Button,
-	img,
 } from '@material-tailwind/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -58,27 +57,26 @@ export default function AdditionalInfoOverlay() {
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<Image
-						src="/berlinTvTower.jpg"
-						alt="Big Ben"
+						src="/berlinTvTower.webp"
+						alt="Berlin Tv Tower"
 						fill
 						objectFit="cover"
-						loading="lazy"
 					/>
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<Image
-						src="/trainTracks.jpg"
+						src="/trainTracks.webp"
 						alt="Big Ben"
 						fill
 						objectFit="cover"
-						loading="lazy"
 					/>
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
-					<img
-						src="/bremenAerial.jpg"
-						alt="Big Ben"
-						className="w-full h-full"
+					<Image
+						src="/bremenAerial.webp"
+						alt="Aerial Photo of Bremen"
+						fill
+						objectFit="cover"
 						loading="lazy"
 					/>
 				</Card>
@@ -96,11 +94,11 @@ export default function AdditionalInfoOverlay() {
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<Image
-						src="/bremenNight.jpg"
-						width={270}
-						height={564}
-						alt="Big Ben"
-						className="w-full h-full object-cover"
+						src="/bremenNight.webp"
+						alt="Main Square of Bremen at night"
+						fill
+						objectFit="cover"
+						loading="lazy"
 					/>
 				</Card>
 				<Card className="col-span-2 row-span-1 card py-8 px-12 bg-light2 dark:bg-dark2">
@@ -118,8 +116,8 @@ export default function AdditionalInfoOverlay() {
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<Image
-						src="/werderStadium.jpg"
-						alt="Big Ben"
+						src="/werderStadium.webp"
+						alt="Football Match in Wesser Stadium"
 						fill
 						objectFit="cover"
 						loading="lazy"
@@ -127,8 +125,8 @@ export default function AdditionalInfoOverlay() {
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<Image
-						src="/hamburgRathaus.jpg"
-						alt="Big Ben"
+						src="/hamburgRathaus.webp"
+						alt="Hamburg City Hall"
 						fill
 						objectFit="cover"
 						loading="lazy"
@@ -161,8 +159,8 @@ export default function AdditionalInfoOverlay() {
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<Image
-						src="/werderWesser.jpg"
-						alt="Big Ben"
+						src="/werderWesser.webp"
+						alt="Wesser Stadium from Outside"
 						fill
 						objectFit="cover"
 						loading="lazy"
@@ -199,8 +197,8 @@ export default function AdditionalInfoOverlay() {
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<Image
-						src="/lubeckChurch.jpg"
-						alt="Big Ben"
+						src="/lubeckChurch.webp"
+						alt="Church in Luebeck"
 						fill
 						objectFit="cover"
 						loading="lazy"

@@ -259,19 +259,19 @@ export default function AdditionalInfoOverlay() {
 				</Card>
 				<Card className="col-span-1 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<img
-						src="/adataOffice.jpg"
+						src="/adataOffice.webp"
 						width={270}
 						height={564}
-						alt="Big Ben"
+						alt="Adata Office in Verden"
 						loading="lazy"
 					/>
 				</Card>
 				<Card className="col-span-1 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<img
-						src="/adataInfo.jpg"
+						src="/adataInfo.webp"
 						width={270}
 						height={564}
-						alt="Big Ben"
+						alt="Adata Mitarbeiter Portal Flyer"
 						loading="lazy"
 					/>
 				</Card>
