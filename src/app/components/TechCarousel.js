@@ -66,7 +66,6 @@ const Carousel = () => {
 				width: '100%',
 				height: '125px',
 				position: 'relative',
-				boxShadow: '0 0 40px 20px rgba(0, 0, 0, 0.6)',
 				maskImage:
 					'radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)',
 				WebkitMaskImage:

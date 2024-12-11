@@ -7,6 +7,7 @@ import {
 	Carousel,
 	IconButton,
 } from '@material-tailwind/react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function AdditionalInfoOverlay() {
@@ -258,7 +259,7 @@ export default function AdditionalInfoOverlay() {
 					</CardBody>
 				</Card>
 				<Card className="col-span-1 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
-					<img
+					<Image
 						src="/adataOffice.webp"
 						width={270}
 						height={564}
@@ -267,7 +268,7 @@ export default function AdditionalInfoOverlay() {
 					/>
 				</Card>
 				<Card className="col-span-1 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
-					<img
+					<Image
 						src="/adataInfo.webp"
 						width={270}
 						height={564}
