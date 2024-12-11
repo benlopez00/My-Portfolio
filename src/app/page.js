@@ -6,12 +6,8 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { ReactSVG } from 'react-svg';
 
-const TechCarousel = dynamic(() => import('./components/TechCarousel'), {
-	ssr: false,
-});
-const LocationMap = dynamic(() => import('./components/LocationMap'), {
-	ssr: false,
-});
+const LocationMap = dynamic(() => import('./components/LocationMap'), { ssr: false })
+const TechCarousel = dynamic(() => import('./components/TechCarousel'), { ssr: false })
 
 const SocialLink = memo(({ href, icon, gradient }) => (
 	<Card
@@ -83,7 +79,14 @@ export default function Component() {
 				}}
 			>
 				<Card className="col-span-1 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
-					<Image src="/Big_Ben.webp" alt="Ben Lopez Profile Photo" fill objectFit="cover"/>
+					<Image 
+						src="/Big_Ben.webp" 
+						alt="Ben Lopez Profile Photo" 
+						width={270} 
+						height={270}
+						loading="eager"
+						priority
+					/>
 				</Card>
 				<Card className="col-span-1 row-span-1 card p-8 bg-light2 dark:bg-dark2">
 					<CardBody className="p-0 h-full flex flex-col items-start justify-between">
@@ -129,7 +132,9 @@ export default function Component() {
 						</div>
 					</CardBody>
 				</Card>
-				<LocationMap />
+				<Card className="col-span-1 row-span-1 overflow-clip card bg-transparent">
+					<LocationMap />
+				</Card>
 				<Card
 					className="col-span-1 row-span-1 card p-4 bg-light2 dark:bg-dark2 grid gap-5 justify-center content-center"
 					style={{
