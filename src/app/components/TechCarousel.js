@@ -1,25 +1,25 @@
-"use client";
-import { Typography } from "@material-tailwind/react";
-import React, { useEffect, useRef } from "react";
+'use client';
+import { Typography } from '@material-tailwind/react';
+import React, { useEffect, useRef } from 'react';
 import { ReactSVG } from 'react-svg';
 
 const Carousel = () => {
 	const images = [
-		{ name: "React", src: "/logos/react.svg" },
-		{ name: ".NET", src: "/logos/dot-net.svg" },
-		{ name: "Flutter", src: "/logos/flutter.svg" },
-		{ name: "Next.js", src: "/logos/nextjs.svg" },
+		{ name: 'React', src: '/logos/react.svg' },
+		{ name: '.NET', src: '/logos/dot-net.svg' },
+		{ name: 'Flutter', src: '/logos/flutter.svg' },
+		{ name: 'Next.js', src: '/logos/nextjs.svg' },
 		// { name: "Svelte", src: "/logos/svelte.svg" },
-		{ name: "Tailwind", src: "/logos/tailwind.svg" },
-		{ name: "Node.js", src: "/logos/nodejs.svg" },
-		{ name: "SQL", src: "/logos/sql.svg" },
-		{ name: "Figma", src: "/logos/figma.svg" },
-		{ name: "Sass", src: "/logos/sass.svg" },
-		{ name: "Bootstrap", src: "/logos/bootstrap.svg" },
-		{ name: "Telerik", src: "/logos/progress.svg" },
-		{ name: "GitHub", src: "/logos/github.svg" },
-		{ name: "Slack", src: "/logos/slack.svg" },
-		{ name: "Jira", src: "/logos/jira.svg" },
+		{ name: 'Tailwind', src: '/logos/tailwind.svg' },
+		{ name: 'Node.js', src: '/logos/nodejs.svg' },
+		{ name: 'SQL', src: '/logos/sql.svg' },
+		{ name: 'Figma', src: '/logos/figma.svg' },
+		{ name: 'Sass', src: '/logos/sass.svg' },
+		{ name: 'Bootstrap', src: '/logos/bootstrap.svg' },
+		{ name: 'Telerik', src: '/logos/progress.svg' },
+		{ name: 'GitHub', src: '/logos/github.svg' },
+		{ name: 'Slack', src: '/logos/slack.svg' },
+		{ name: 'Jira', src: '/logos/jira.svg' },
 	];
 
 	const carouselRef = useRef(null);
@@ -44,39 +44,41 @@ const Carousel = () => {
 		const handleMouseEnter = () => (speed = 0.2);
 		const handleMouseLeave = () => (speed = 0.4);
 		if (element) {
-			element.addEventListener("mouseenter", handleMouseEnter);
-			element.addEventListener("mouseleave", handleMouseLeave);
+			element.addEventListener('mouseenter', handleMouseEnter);
+			element.addEventListener('mouseleave', handleMouseLeave);
 		}
 		animationRef.current = requestAnimationFrame(animate);
 		return () => {
-		if (element) {
-			element.removeEventListener("mouseenter", handleMouseEnter);
-			element.removeEventListener("mouseleave", handleMouseLeave);
-		}
-		if (animationRef.current) {
-			cancelAnimationFrame(animationRef.current); 
-		}
+			if (element) {
+				element.removeEventListener('mouseenter', handleMouseEnter);
+				element.removeEventListener('mouseleave', handleMouseLeave);
+			}
+			if (animationRef.current) {
+				cancelAnimationFrame(animationRef.current);
+			}
 		};
 	}, []);
 
 	return (
 		<div
 			style={{
-				overflow: "hidden",
-				width: "100%",
-				height: "125px",
-				position: "relative",
-				boxShadow: "0 0 40px 20px rgba(0, 0, 0, 0.6)",
-				maskImage: "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)",
-				WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)",
+				overflow: 'hidden',
+				width: '100%',
+				height: '125px',
+				position: 'relative',
+				boxShadow: '0 0 40px 20px rgba(0, 0, 0, 0.6)',
+				maskImage:
+					'radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)',
+				WebkitMaskImage:
+					'radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)',
 			}}
 		>
 			<div
 				ref={carouselRef}
 				style={{
-					display: "flex",
-					width: "max-content",
-					willChange: "transform",
+					display: 'flex',
+					width: 'max-content',
+					willChange: 'transform',
 					gap: `${gap}px`,
 				}}
 			>
@@ -85,22 +87,30 @@ const Carousel = () => {
 						key={index}
 						className="relative flex items-start justify-center"
 						style={{
-							width: "100px",
-							height: "125px",
+							width: '100px',
+							height: '125px',
 						}}
 					>
 						<div className="w-[100px] h-[100px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-2xl">
-							<ReactSVG src={tech.src} className="w-3/5 h-3/5 fill-black dark:fill-white"/>
+							<ReactSVG
+								src={tech.src}
+								className="w-3/5 h-3/5 fill-black dark:fill-white"
+							/>
 						</div>
-						<div className="bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end rounded-xl"
-								style={{
-									width: "100px",
-									height: "100px",
-									position: "absolute",
-									top: "22px",
-									zIndex: 1,
-								}}>
-							<Typography variant="small" className="font-sans font-light text-light dark:text-dark7">
+						<div
+							className="bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end rounded-xl"
+							style={{
+								width: '100px',
+								height: '100px',
+								position: 'absolute',
+								top: '22px',
+								zIndex: 1,
+							}}
+						>
+							<Typography
+								variant="small"
+								className="font-sans font-light text-light dark:text-dark7"
+							>
 								{tech.name}
 							</Typography>
 						</div>
