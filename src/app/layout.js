@@ -1,6 +1,6 @@
 'use client';
 import { memo, useCallback, useEffect } from 'react';
-import { dmSans } from './fonts/dmSans';
+import { dmSans } from '../../public/fonts/dmSans';
 import { TProvider } from './themeProvider';
 import './global.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
