@@ -1,34 +1,30 @@
 'use client';
-import { useState, useEffect } from 'react';
+
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 import { Switch } from '@material-tailwind/react';
 
 const BotonEstilo = () => {
-	const [theme, setTheme] = useState('dark');
+	const { setTheme, resolvedTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
 
-	useEffect(() => {
-		const storedTheme = localStorage.getItem('theme');
-		const preferredTheme = storedTheme || 'dark';
-		setTheme(preferredTheme);
-		document.documentElement.classList.add(preferredTheme);
-	}, []);
+	useEffect(() => setMounted(true), []);
 
 	const toggleTheme = () => {
-		const newTheme = theme === 'light' ? 'dark' : 'light';
-		setTheme(newTheme);
-		document.documentElement.classList.remove('light', 'dark');
-		document.documentElement.classList.add(newTheme);
-		localStorage.setItem('theme', newTheme);
+		setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
 	};
+
+	if (!mounted) return null;
 
 	return (
 		<div className="flex items-center">
 			<label htmlFor="theme-switch" className="mr-2 text-sm">
-				{theme === 'light' ? '☀️' : '🌙'}
+				{resolvedTheme === 'light' ? '☀️' : '🌙'}
 			</label>
 			<Switch
 				id="theme-switch"
 				ripple={false}
-				checked={theme === 'dark'}
+				checked={resolvedTheme === 'dark'}
 				onChange={toggleTheme}
 				className="h-full w-full bg-dark1 checked:bg-light3"
 				containerProps={{
