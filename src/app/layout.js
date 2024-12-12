@@ -1,7 +1,7 @@
 'use client';
 import { memo, useCallback, useEffect } from 'react';
 import { dmSans } from './fonts/dmSans';
-import { Providers } from './provider';
+import { TProvider } from './themeProvider';
 import './global.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import dynamic from 'next/dynamic';
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
 	return (
 		<html lang="en" className={dmSans.variable} suppressHydrationWarning>
 			<body className="bg-light3 dark:bg-dark1">
-				<Providers>
+				<TProvider>
 					<nav className="w-full h-20 flex flex-col items-center justify-center">
 						<div className="w-3/4 flex flex-row justify-between items-center z-20">
 							<div className="w-44 flex justify-start">
@@ -92,7 +92,7 @@ const Layout = ({ children }) => {
 						</main>
 					</AnimatePresence>
 					<footer className="w-full h-20"></footer>
-				</Providers>
+				</TProvider>
 			</body>
 		</html>
 	);
