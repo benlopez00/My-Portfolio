@@ -54,30 +54,30 @@ export default function LocationMap() {
 			? '/styles/dark_positron.json'
 			: '/styles/light_positron.json';
 	return (
-		<Card className="col-span-1 overflow-clip card w-[270px] h-[270px] relative bg-white dark:bg-black ">
-			<Map
-				initialViewState={{
-					longitude: -65.2038,
-					latitude: -26.8303,
-					zoom: 9,
-					interactive: false,
-				}}
-				mapStyle={mapStyle}
-				attributionControl={false}
-			>
-				<Marker
-					longitude={-65.2038}
-					latitude={-26.8303}
-					pitchAlignment="map"
-					offset={[0, 7]}
-				>
-					<img
-						src="/location-circle-svgrepo-com.svg"
-						alt="Custom Marker"
-						className="w-8 h-8"
-					/>
-				</Marker>
-			</Map>
+		<Card className="card w-[270px] h-[270px] relative bg-transparent">
+                <Map
+                    initialViewState={{
+                        longitude: -65.2038,
+                        latitude: -26.8303,
+                        zoom: 9,
+                        interactive: false,
+                    }}
+                    mapStyle={mapStyle}
+                    attributionControl={false}
+                >
+                    <Marker
+                        longitude={-65.2038}
+                        latitude={-26.8303}
+                        pitchAlignment="map"
+                        offset={[0, 7]}
+                    >
+                        <img
+                            src="/location-circle-svgrepo-com.svg"
+                            alt="Custom Marker"
+                            className="w-8 h-8"
+                        />
+                    </Marker>
+                </Map>
 			{weather && (
 				<>
 					<div className="h-12 w-14 opacity-80 absolute top-2 right-[7px] bg-white dark:bg-dark4 px-1.5 py-1 rounded-full flex items-center justify-center  shadow-md">

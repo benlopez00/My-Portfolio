@@ -14,7 +14,7 @@ export default function AdditionalInfoOverlay() {
 	return (
 		<div className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
 			<div
-				className="grid gap-6 z-20"
+				className="grid gap-6 z-40"
 				style={{
 					gridTemplateColumns: 'repeat(4, 270px)',
 					gridAutoRows: '270px',

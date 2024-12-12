@@ -61,14 +61,18 @@ export default function AdditionalInfoOverlay() {
 						alt="Berlin Tv Tower"
 						fill
 						objectFit="cover"
+						loading="eager"
+						priority
 					/>
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<Image
 						src="/trainTracks.webp"
-						alt="Big Ben"
+						alt="Train Tracks near Bremen"
 						fill
 						objectFit="cover"
+						loading="eager"
+						priority
 					/>
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
