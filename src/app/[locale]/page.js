@@ -5,6 +5,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { ReactSVG } from 'react-svg';
+import {useTranslations} from 'next-intl';
 
 const LocationMap = dynamic(() => import('./components/LocationMap'), { ssr: false })
 const TechCarousel = dynamic(() => import('./components/TechCarousel'), { ssr: false })
@@ -43,6 +44,8 @@ const InfoCard = memo(({ title, children }) => (
 ));
 
 export default function Component() {
+	const t = useTranslations('');
+
 	const socialLinks = useMemo(
 		() => [
 			{
@@ -94,7 +97,7 @@ export default function Component() {
 							variant="h4"
 							className="font-sans font-normal text-light7 dark:text-dark7"
 						>
-							¡Hola🖖!
+							{t('welcome')}
 						</Typography>
 						<Typography
 							variant="h2"

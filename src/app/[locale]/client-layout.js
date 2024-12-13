@@ -1,6 +1,7 @@
 'use client';
-import { memo, useCallback, useEffect } from 'react';
-import { dmSans } from '../../public/fonts/dmSans';
+
+import { useCallback, useEffect } from 'react';
+import { dmSans } from '../../../public/fonts/dmSans';
 import { TProvider } from './themeProvider';
 import './global.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -15,13 +16,13 @@ const BotonEstilo = dynamic(() => import('./components/BotonEstilo'), {
 	ssr: false,
 });
 
-const LanguageButton = memo(({ src, alt }) => (
+const LanguageButton = ({ src, alt }) => (
 	<Button size="sm" variant="text">
 		<Image src={src} alt={alt} width={22} height={22} />
 	</Button>
-));
+);
 
-const Layout = ({ children }) => {
+export default function ClientLayout({ children }) {
 	const pathname = usePathname();
 
 	const memoizedChildren = useCallback(() => children, [children]);
@@ -87,7 +88,7 @@ const Layout = ({ children }) => {
 								transition={{ duration: 0.5 }}
 								style={{ width: '100%', height: '100%' }}
 							>
-								<main>{memoizedChildren()}</main>
+								{memoizedChildren()}
 							</motion.div>
 						</main>
 					</AnimatePresence>
@@ -96,6 +97,4 @@ const Layout = ({ children }) => {
 			</body>
 		</html>
 	);
-};
-
-export default memo(Layout);
+}
