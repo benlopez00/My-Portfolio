@@ -5,10 +5,14 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { ReactSVG } from 'react-svg';
-import {useTranslations} from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
-const LocationMap = dynamic(() => import('./components/LocationMap'), { ssr: false })
-const TechCarousel = dynamic(() => import('./components/TechCarousel'), { ssr: false })
+const LocationMap = dynamic(() => import('./components/LocationMap'), {
+	ssr: false,
+});
+const TechCarousel = dynamic(() => import('./components/TechCarousel'), {
+	ssr: false,
+});
 
 const SocialLink = memo(({ href, icon, gradient }) => (
 	<Card
@@ -45,6 +49,7 @@ const InfoCard = memo(({ title, children }) => (
 
 export default function Component() {
 	const t = useTranslations('');
+	const locale = useLocale();
 
 	const socialLinks = useMemo(
 		() => [
@@ -73,7 +78,7 @@ export default function Component() {
 	);
 
 	return (
-		<div className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
+		<main className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
 			<div
 				className="grid gap-6 z-20"
 				style={{
@@ -82,10 +87,10 @@ export default function Component() {
 				}}
 			>
 				<Card className="col-span-1 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
-					<Image 
-						src="/Big_Ben.webp" 
-						alt="Ben Lopez Profile Photo" 
-						width={270} 
+					<Image
+						src="/Big_Ben.webp"
+						alt="Ben Lopez Profile Photo"
+						width={270}
 						height={270}
 						loading="eager"
 						priority
@@ -103,34 +108,29 @@ export default function Component() {
 							variant="h2"
 							className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
 						>
-							Soy Ben
+							{t('I am')}
 						</Typography>
 						<div>
 							<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-								Desarrollador Full Stack
+								{t('about-one')}
 							</Typography>
 							<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-								Diseñador UI
+								{t('about-two')}
 							</Typography>
 						</div>
 					</CardBody>
 				</Card>
-				<InfoCard title="Mi Stack">
+				<InfoCard title={t('my-stack')}>
 					<TechCarousel />
 				</InfoCard>
 				<Card className="col-span-2 row-span-1 card py-8 px-12 bg-light2 dark:bg-dark2">
 					<CardBody className="p-0 h-full flex flex-col items-center">
 						<div className="w-full h-full flex flex-col text-justify justify-around">
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Soy desarrollador web especializado en .NET,
-								React y Flutter. Apasionado por crear soluciones
-								innovadoras que combinan funcionalidad y diseño.
+								{t('intro-one')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Con experiencia en proyectos frontend y backend,
-								disfruto trabajando en equipo y superando retos
-								tecnológicos para entregar productos de alta
-								calidad.
+								{t('intro-two')}
 							</Typography>
 						</div>
 					</CardBody>
@@ -151,7 +151,7 @@ export default function Component() {
 				</Card>
 				<Card className="col-span-2 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<Link
-						href="/additional-info"
+						href={`/${locale}/additional-info`}
 						className="w-full h-full card p-8 group"
 					>
 						<CardBody className="p-0 h-full flex flex-col items-start justify-between">
@@ -160,7 +160,7 @@ export default function Component() {
 									variant="h2"
 									className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
 								>
-									Más sobre mí
+									{t('more-about-me')}
 								</Typography>
 								<div className="rounded-full p-3">
 									<ReactSVG
@@ -171,16 +171,13 @@ export default function Component() {
 							</div>
 							<div className="w-full flex flex-col items-start justify-between gap-2 mb-5">
 								<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-									🚦 Desde programar Arduinos hasta trabajar
-									en Alemania.
+									{t('more-about-me-one')}
 								</Typography>
 								<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-									🔍 Me encanta encontrar la mejor solución
-									para cada desafío.
+									{t('more-about-me-two')}
 								</Typography>
 								<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-									📈 Siempre buscando mejorar y aprender algo
-									nuevo.
+									{t('more-about-me-three')}
 								</Typography>
 							</div>
 						</CardBody>
@@ -194,11 +191,11 @@ export default function Component() {
 								variant="h2"
 								className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
 							>
-								Mi experiencia
+								{t('my-exp')}
 							</Typography>
 							<div className="w-32 h-10 rounded-3xl relative bottom-[3px] p-1 bg-light4 dark:bg-dark4 flex flex-row justify-around items-center">
 								<Typography className="font-sans text-[14px] font-normal text-green-500">
-									Disponible
+									{t('available')}
 								</Typography>
 								<span className="relative flex h-3 w-3">
 									<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -206,17 +203,17 @@ export default function Component() {
 								</span>
 							</div>
 						</div>
-						<Link href="/experiencia" passHref>
+						<Link href={`/${locale}/experiencia`} passHref>
 							<div className="w-full flex flex-row items-center justify-between rounded-3xl bg-light3 dark:bg-dark4 group sticky cursor-pointer">
 								<div className="h-full flex flex-col justify-around p-8">
 									<Typography className="font-sans text-[20px] font-semibold text-light7 dark:text-dark7">
-										Adata Software GmbH
+										{t('adata-name')}
 									</Typography>
 									<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-										Desarrollador ASP.NET Core
+										{t('net-dev')}
 									</Typography>
 									<Typography className="font-sans text-[16px] text-light6 dark:text-dark6">
-										Julio 2023 - Junio 2024
+										{t('adata-time-span')}
 									</Typography>
 								</div>
 								<div className="h-full flex flex-col justify-around p-8">
@@ -231,6 +228,6 @@ export default function Component() {
 					</CardBody>
 				</Card>
 			</div>
-		</div>
+		</main>
 	);
 }

@@ -15,11 +15,23 @@ const BotonEstilo = dynamic(() => import('./components/BotonEstilo'), {
 	ssr: false,
 });
 
-const LanguageButton = ({ src, alt }) => (
-	<Button size="sm" variant="text">
-		<Image src={src} alt={alt} width={22} height={22} />
-	</Button>
-);
+const LanguageButton = ({ src, alt, locale }) => {
+	const pathname = usePathname();
+
+	const changeLanguage = () => {
+		const newPathname = pathname.replace(
+			/^\/(en|es|de)/,
+			locale === 'default' ? '' : `/${locale}`
+		);
+		window.location.href = newPathname;
+	};
+
+	return (
+		<Button size="sm" variant="text" onClick={changeLanguage}>
+			<Image src={src} alt={alt} width={22} height={22} />
+		</Button>
+	);
+};
 
 export default function ClientLayout({ children }) {
 	const pathname = usePathname();
@@ -51,14 +63,17 @@ export default function ClientLayout({ children }) {
 						<LanguageButton
 							src="/flag-argentina.svg"
 							alt="Español"
+							locale="es"
 						/>
 						<LanguageButton
 							src="/flag-us.svg"
 							alt="English"
+							locale="en"
 						/>
 						<LanguageButton
 							src="/flag-germany.svg"
 							alt="Deutsch"
+							locale="de"
 						/>
 					</div>
 				</div>
@@ -74,7 +89,7 @@ export default function ClientLayout({ children }) {
 				></div>
 			</div>
 			<AnimatePresence mode="wait">
-				<main
+				<section
 					className="bg-transparent"
 					style={{ position: 'relative', overflow: 'hidden' }}
 				>
@@ -87,7 +102,7 @@ export default function ClientLayout({ children }) {
 					>
 						{memoizedChildren()}
 					</motion.div>
-				</main>
+				</section>
 			</AnimatePresence>
 			<footer className="w-full h-20"></footer>
 		</TProvider>

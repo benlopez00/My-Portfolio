@@ -7,10 +7,12 @@ import {
 } from '@material-tailwind/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function AdditionalInfoOverlay() {
+	const locale = useLocale();
 	return (
-		<div className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
+		<main className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
 			<div
 				className="grid gap-6 z-40"
 				style={{
@@ -208,8 +210,7 @@ export default function AdditionalInfoOverlay() {
 						loading="lazy"
 					/>
 				</Card>
-				<Link
-					href="/"
+				<Link href={`/${locale}/`}
 					className="fixed bottom-4 left-1/2 transform -translate-x-1/2"
 				>
 					<Button
@@ -220,6 +221,6 @@ export default function AdditionalInfoOverlay() {
 					</Button>
 				</Link>
 			</div>
-		</div>
+		</main>
 	);
 }

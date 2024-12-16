@@ -15,6 +15,7 @@
     "framer-motion": "^11.11.17",
     "next": "^15.0.4",
     "next-auth": "^5.0.0-beta.25",
+    "next-i18next": "^15.4.0",
     "next-intl": "^3.26.1",
     "next-themes": "^0.4.4",
     "nth-check": "^2.1.1",
