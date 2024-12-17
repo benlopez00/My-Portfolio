@@ -7,10 +7,13 @@ import {
 } from '@material-tailwind/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ReactSVG } from 'react-svg';
 import { useTranslations, useLocale } from 'next-intl';
 
 export default function AdditionalInfoOverlay() {
+	const t = useTranslations('AboutMe');
 	const locale = useLocale();
+
 	return (
 		<main className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
 			<div
@@ -24,35 +27,25 @@ export default function AdditionalInfoOverlay() {
 					<CardBody className="p-0 h-full flex flex-col items-start gap-5">
 						<Typography
 							variant="h2"
-							className="font-nyght-serif font-[500]  text-light7 dark:text-dark7"
+							className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
 						>
-							Sobre mí
+							{t('about_me')}
 						</Typography>
 						<div className="w-full h-full flex flex-col text-justify justify-around">
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Nací en Munich, Alemania, y fui criado en
-								Argentina.
+								{t('born_in_munich')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Desde pequeño me apasiona la tecnología y los
-								libros de historia (y los autos).
+								{t('passion_technology_books')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Siempre me preguntaba como funcionaba el
-								televisor que teníamos en el living o la radio
-								del auto, el como las cosas iban evolucionando y
-								mejorando.
+								{t('curiosity_how_things_work')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Mi adolescencia fue marcada por el internet y
-								los videojuegos. Y en el club Interact de mi
-								ciudad encontré mi lugar diseñando posts para el
-								comité de relaciones publicas.
+								{t('teenage_internet_games')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Fue a través de Interact que participe de un
-								intercambio estudiantil en Alemania, allí estuve
-								1 año en Bremen.
+								{t('student_exchange_bremen')}
 							</Typography>
 						</div>
 					</CardBody>
@@ -90,10 +83,7 @@ export default function AdditionalInfoOverlay() {
 					<CardBody className="p-0 h-full">
 						<div className="w-full h-full flex flex-col text-justify justify-around">
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Ya de vuelta en Tucumán y en la universidad, la
-								pandemia me encontró sin mucho animo estudiando
-								economía. Fue entonces que comencé a adentrarme
-								en la programación y el diseño de interfaces
+								{t('pandemic_change_programming')}
 							</Typography>
 						</div>
 					</CardBody>
@@ -111,11 +101,7 @@ export default function AdditionalInfoOverlay() {
 					<CardBody className="p-0 h-full">
 						<div className="w-full h-full flex flex-col text-justify justify-around">
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								A través de cursos y mucho aprendizaje por mi
-								cuenta, fui explorando React, .NET y diseño UI,
-								áreas que rápidamente se convirtieron en mi
-								pasión y en el enfoque de mi desarrollo
-								profesional.
+								{t('exploring_react_dotnet_ui')}
 							</Typography>
 						</div>
 					</CardBody>
@@ -142,23 +128,13 @@ export default function AdditionalInfoOverlay() {
 					<CardBody className="p-0 h-full">
 						<div className="w-full h-full flex flex-col text-justify justify-center gap-16">
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Deseoso de visitar nuevamente Alemania, aplique
-								a una visa working-holiday. Una vez ahí, trabajé
-								durante un año en Adata Software GmbH en Verden,
-								Baja Sajonia.
+								{t('working_holiday_visa')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Me dediqué al desarrollo y soporte del
-								Mitarbeiter Portal, un software de recursos
-								humanos que ayuda a pequeñas y medianas empresas
-								a gestionar su personal.
+								{t('developing_hr_software')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Durante ese tiempo, me enfrenté a desafíos
-								técnicos (
-								<em className="italic">lingüísticos</em>) y
-								creativos, pero cada tarea me dejó una enorme
-								satisfacción.
+								{t('facing_challenges')}
 							</Typography>
 						</div>
 					</CardBody>
@@ -176,27 +152,19 @@ export default function AdditionalInfoOverlay() {
 					<CardBody className="p-0 h-full flex flex-col items-start gap-5">
 						<Typography
 							variant="h2"
-							className="font-nyght-serif font-[500]  text-light7 dark:text-dark7"
+							className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
 						>
-							Mi objetivo actual
+							{t('current_goal')}
 						</Typography>
 						<div className="w-full h-full flex flex-col text-justify justify-center gap-16">
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Estoy enfocado en seguir aprendiendo en las
-								áreas donde necesito más preparación y
-								certificar mis conocimientos.
+								{t('current_learning_focus')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Mi meta a corto plazo es dominar el proceso de
-								hosting y publicación de aplicaciones, mientras
-								refuerzo mis habilidades en .NET y ReactJS.
+								{t('short_term_goal')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								A largo plazo, aspiro a liderar equipos de
-								desarrollo y guiar a otros desarrolladores
-								juniors, porque creo que mi experiencia y
-								enfoque pueden marcar una diferencia en su
-								crecimiento profesional.
+								{t('long_term_goal')}
 							</Typography>
 						</div>
 					</CardBody>
@@ -210,14 +178,16 @@ export default function AdditionalInfoOverlay() {
 						loading="lazy"
 					/>
 				</Card>
-				<Link href={`/${locale}/`}
-					className="fixed bottom-4 left-1/2 transform -translate-x-1/2"
-				>
-					<Button
-						size="lg"
-						className="bg-green-600 text-white hover:bg-green-500"
-					>
-						Volver
+			</div>
+			<div className='w-full my-6 flex justify-center items-center'>
+				<Link href={`/${locale}`} className="transform group">
+					<Button size="lg" className="flex items-center gap-6 px-6 rounded-xl bg-light2 dark:bg-dark2 text-light7 dark:text-dark7">
+						{t('return_button')}
+						<ReactSVG
+							src="/iconos/OpenTab.svg"
+							className="w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-[2px]"
+						/>
+						<div className="absolute inset-0 rounded-xl transition-shadow duration-300 group-hover:shadow-[inset_0px_29px_18px_-20px_rgba(76,175,80,0.5)] pointer-events-none"></div>
 					</Button>
 				</Link>
 			</div>

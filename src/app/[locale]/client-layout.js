@@ -27,7 +27,7 @@ const LanguageButton = ({ src, alt, locale }) => {
 	};
 
 	return (
-		<Button size="sm" variant="text" onClick={changeLanguage}>
+		<Button size="sm" variant="text" onClick={changeLanguage} className='hover:bg-light2 dark:hover:bg-dark4'>
 			<Image src={src} alt={alt} width={22} height={22} />
 		</Button>
 	);

@@ -48,7 +48,7 @@ const InfoCard = memo(({ title, children }) => (
 ));
 
 export default function Component() {
-	const t = useTranslations('');
+	const t = useTranslations('Home');
 	const locale = useLocale();
 
 	const socialLinks = useMemo(
@@ -108,29 +108,29 @@ export default function Component() {
 							variant="h2"
 							className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
 						>
-							{t('I am')}
+							{t('i_am')}
 						</Typography>
 						<div>
 							<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-								{t('about-one')}
+								{t('about_one')}
 							</Typography>
 							<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-								{t('about-two')}
+								{t('about_two')}
 							</Typography>
 						</div>
 					</CardBody>
 				</Card>
-				<InfoCard title={t('my-stack')}>
+				<InfoCard title={t('my_stack')}>
 					<TechCarousel />
 				</InfoCard>
 				<Card className="col-span-2 row-span-1 card py-8 px-12 bg-light2 dark:bg-dark2">
 					<CardBody className="p-0 h-full flex flex-col items-center">
 						<div className="w-full h-full flex flex-col text-justify justify-around">
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								{t('intro-one')}
+								{t('intro_one')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								{t('intro-two')}
+								{t('intro_two')}
 							</Typography>
 						</div>
 					</CardBody>
@@ -160,7 +160,7 @@ export default function Component() {
 									variant="h2"
 									className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
 								>
-									{t('more-about-me')}
+									{t('more_about_me')}
 								</Typography>
 								<div className="rounded-full p-3">
 									<ReactSVG
@@ -171,13 +171,13 @@ export default function Component() {
 							</div>
 							<div className="w-full flex flex-col items-start justify-between gap-2 mb-5">
 								<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-									{t('more-about-me-one')}
+									{t('more_about_me_one')}
 								</Typography>
 								<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-									{t('more-about-me-two')}
+									{t('more_about_me_two')}
 								</Typography>
 								<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-									{t('more-about-me-three')}
+									{t('more_about_me_three')}
 								</Typography>
 							</div>
 						</CardBody>
@@ -191,7 +191,7 @@ export default function Component() {
 								variant="h2"
 								className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
 							>
-								{t('my-exp')}
+								{t('my_exp')}
 							</Typography>
 							<div className="w-32 h-10 rounded-3xl relative bottom-[3px] p-1 bg-light4 dark:bg-dark4 flex flex-row justify-around items-center">
 								<Typography className="font-sans text-[14px] font-normal text-green-500">
@@ -207,13 +207,13 @@ export default function Component() {
 							<div className="w-full flex flex-row items-center justify-between rounded-3xl bg-light3 dark:bg-dark4 group sticky cursor-pointer">
 								<div className="h-full flex flex-col justify-around p-8">
 									<Typography className="font-sans text-[20px] font-semibold text-light7 dark:text-dark7">
-										{t('adata-name')}
+										{t('adata_name')}
 									</Typography>
 									<Typography className="font-sans text-[16px] text-light7 dark:text-dark7">
-										{t('net-dev')}
+										{t('net_dev')}
 									</Typography>
 									<Typography className="font-sans text-[16px] text-light6 dark:text-dark6">
-										{t('adata-time-span')}
+										{t('adata_time_span')}
 									</Typography>
 								</div>
 								<div className="h-full flex flex-col justify-around p-8">

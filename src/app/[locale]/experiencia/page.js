@@ -9,10 +9,13 @@ import {
 } from '@material-tailwind/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ReactSVG } from 'react-svg';
 import { useTranslations, useLocale } from 'next-intl';
 
 export default function AdditionalInfoOverlay() {
+	const t = useTranslations('Exp');
 	const locale = useLocale();
+
 	return (
 		<main className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
 			<div
@@ -27,38 +30,26 @@ export default function AdditionalInfoOverlay() {
 						<div>
 							<Typography
 								variant="h2"
-								className="font-nyght-serif font-[500]  text-light7 dark:text-dark7"
+								className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
 							>
-								Adata Software Gmbh
+								{t('adata_title')}
 							</Typography>
 							<Typography
 								variant="h5"
 								className="font-sans font-medium text-light5 dark:text-dark5"
 							>
-								JUL '23 – JUN '24
+								{t('adata_time_span')}
 							</Typography>
 						</div>
 						<div className="w-full h-full flex flex-col text-justify justify-center gap-10">
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Trabajé un año para Adata de forma presencial en
-								Verden (Baja Sajonia). Allí trabajé junto a 2
-								desarrolladores en el desarrollo y soporte del
-								Mitarbeiter Portal.
+								{t('adata_description')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								¿Qué es el Mitarbeiter Portal? Es una
-								herramienta integral de recursos humanos que
-								ayuda a pequeñas y medianas empresas a gestionar
-								su personal de manera eficiente. Desde
-								administrar horarios hasta facilitar la
-								comunicación interna, este portal es el corazón
-								organizativo para muchos negocios.
+								{t('what_is_mitarbeiter_portal')}
 							</Typography>
 							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-								Este año en Adata no solo me enseñó sobre
-								tecnología; me permitió comprender el impacto
-								tangible que un software bien diseñado puede
-								tener en la vida laboral de sus usuarios.
+								{t('adata_year_learnings')}
 							</Typography>
 						</div>
 					</CardBody>
@@ -115,148 +106,30 @@ export default function AdditionalInfoOverlay() {
 									</svg>
 								</IconButton>
 							)}
-							navigation={({
-								setActiveIndex,
-								activeIndex,
-								length,
-							}) => (
-								<div className="absolute bottom-1 left-0 right-0 flex justify-center gap-2">
-									{Array.from({ length }).map((_, i) => (
-										<span
-											key={i}
-											onClick={() => setActiveIndex(i)}
-											className={`cursor-pointer block h-2 w-2 rounded-full transition-all duration-500 ${
-												i === activeIndex
-													? 'bg-light7 dark:bg-dark7 scale-125'
-													: 'bg-light4 dark:bg-dark4'
-											}`}
-										/>
-									))}
-								</div>
-							)}
 						>
 							<div className="relative h-full w-full">
 								<div className="absolute inset-0 grid h-full w-full place-items-center">
 									<div className="text-left w-8/12">
 										<Typography
 											variant="h2"
-											className="font-nyght-serif font-[500]  text-light7 dark:text-dark7"
+											className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
 										>
-											Algunas de las contribuciones que
-											hice
+											{t('contributions_title')}
 										</Typography>
 									</div>
 								</div>
 							</div>
-							<div className="relative h-full w-full">
-								<div className="absolute inset-0 grid h-full w-full place-items-center">
-									<div className="text-left w-8/12">
-										<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-											<em className="italic">
-												Rediseñar
-											</em>{' '}
-											partes de la{' '}
-											<strong className="font-bold text-light7 dark:text-dark7">
-												UI
-											</strong>{' '}
-											del Portal con{' '}
-											<strong className="font-bold text-light7 dark:text-dark7">
-												ReactJS
-											</strong>{' '}
-											para mejorar la experiencia del
-											usuario integrando bibliotecas como
-											KendoUI y Bootstrap
-										</Typography>
+							{['redesign_ui', 'backend_features', 'mobile_development_flutter', 'database_optimizations', 'scrum_practices'].map((key) => (
+								<div key={key} className="relative h-full w-full">
+									<div className="absolute inset-0 grid h-full w-full place-items-center">
+										<div className="text-left w-8/12">
+											<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
+												{t(key)}
+											</Typography>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div className="relative h-full w-full">
-								<div className="absolute inset-0 grid h-full w-full place-items-center">
-									<div className="text-left w-8/12">
-										<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-											Actualizar e implementar{' '}
-											<em className="italic">
-												nuevas funcionalidades
-											</em>{' '}
-											del backend de{' '}
-											<strong className="font-bold text-light7 dark:text-dark7">
-												ASP.NET Core MVC
-											</strong>{' '}
-											para cumplir con las necesidades de
-											los clientes
-										</Typography>
-									</div>
-								</div>
-							</div>
-							<div className="relative h-full w-full">
-								<div className="absolute inset-0 grid h-full w-full place-items-center">
-									<div className="text-left w-8/12">
-										<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-											<em className="italic">
-												Desarrollo móvil
-											</em>{' '}
-											en{' '}
-											<strong className="font-bold text-light7 dark:text-dark7">
-												Flutter
-											</strong>{' '}
-											utilizando Dart, conectando
-											componentes con sistemas backend en{' '}
-											<strong className="font-bold text-light7 dark:text-dark7">
-												.NET
-											</strong>{' '}
-											a través de{' '}
-											<strong className="font-bold text-light7 dark:text-dark7">
-												APIs RESTful
-											</strong>
-											.
-										</Typography>
-									</div>
-								</div>
-							</div>
-							<div className="relative h-full w-full">
-								<div className="absolute inset-0 grid h-full w-full place-items-center">
-									<div className="text-left w-8/12">
-										<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-											Utilizar{' '}
-											<strong className="font-bold text-light7 dark:text-dark7">
-												LINQ
-											</strong>{' '}
-											y{' '}
-											<strong className="font-bold text-light7 dark:text-dark7">
-												HeidiSQL
-											</strong>{' '}
-											para realizar{' '}
-											<em className="italic">
-												consultas eficientes a la base
-												de datos
-											</em>{' '}
-											y mejorar el rendimiento, asegurando
-											escalabilidad y optimización de
-											datos.
-										</Typography>
-									</div>
-								</div>
-							</div>
-							<div className="relative h-full w-full">
-								<div className="absolute inset-0 grid h-full w-full place-items-center">
-									<div className="text-left w-8/12">
-										<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
-											<em className="italic">Trabajar</em>{' '}
-											con metodologías{' '}
-											<strong className="font-bold text-light7 dark:text-dark7">
-												Scrum
-											</strong>
-											, gestionando tareas en{' '}
-											<strong className="font-bold text-light7 dark:text-dark7">
-												JIRA
-											</strong>
-											, participando en code-reviews y
-											aplicando mejores prácticas de
-											desarrollo.
-										</Typography>
-									</div>
-								</div>
-							</div>
+							))}
 						</Carousel>
 					</CardBody>
 				</Card>
@@ -278,14 +151,16 @@ export default function AdditionalInfoOverlay() {
 						loading="lazy"
 					/>
 				</Card>
-				<Link href={`/${locale}/`}
-					className="fixed bottom-4 left-1/2 transform -translate-x-1/2"
-				>
-					<Button
-						size="lg"
-						className="bg-darkPrimary text-white hover:bg-green-500"
-					>
-						Volver
+			</div>
+			<div className='w-full my-6 flex justify-center items-center'>
+				<Link href={`/${locale}`} className="transform group">
+					<Button size="lg" className="flex items-center gap-6 px-6 rounded-xl bg-light2 dark:bg-dark2 text-light7 dark:text-dark7">
+						{t('return_button')}
+						<ReactSVG
+							src="/iconos/OpenTab.svg"
+							className="w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-[2px]"
+						/>
+						<div className="absolute inset-0 rounded-xl transition-shadow duration-300 group-hover:shadow-[inset_0px_29px_18px_-20px_rgba(76,175,80,0.5)] pointer-events-none"></div>
 					</Button>
 				</Link>
 			</div>
