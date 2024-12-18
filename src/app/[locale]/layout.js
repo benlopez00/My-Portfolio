@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import ClientLayout from './client-layout';
 import { dmSans } from '../../../public/fonts/dmSans';
-import { getAsyncLocale } from '@/i18n/getAsyncLocale';
+import { getAsyncLocale } from '../../i18n/getAsyncLocale';
 
 export default async function RootLayout(props) {
     const params = await props.params;

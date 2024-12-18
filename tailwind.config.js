@@ -50,6 +50,13 @@ module.exports = withMT({
       borderRadius: {
         card: "32px",
       },
+      screens: {
+        'custom-xsm': '550px',
+        'custom-sm': '790px',
+        'custom-md': '990px',
+        'custom-lg': '1150px',
+        'custom-xlg': '1300px',
+      },
       keyframes: {
         triangularMove: {
           '0%': { transform: 'translate(0px, -22px)' },

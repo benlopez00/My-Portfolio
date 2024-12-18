@@ -31,6 +31,10 @@ a {
   border-radius: 32px !important;
 }
 
+div[role="menu"] {
+  min-width: 0px !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }

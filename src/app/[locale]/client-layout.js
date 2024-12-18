@@ -5,8 +5,9 @@ import { TProvider } from './themeProvider';
 import './global.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import dynamic from 'next/dynamic';
-import { Typography, Button } from '@material-tailwind/react';
+import { Typography, Button, Menu, MenuHandler, MenuList, MenuItem } from '@material-tailwind/react';
 import Image from 'next/image';
+import { ReactSVG } from 'react-svg';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
@@ -27,9 +28,9 @@ const LanguageButton = ({ src, alt, locale }) => {
 	};
 
 	return (
-		<Button size="sm" variant="text" onClick={changeLanguage} className='hover:bg-light2 dark:hover:bg-dark4'>
-			<Image src={src} alt={alt} width={22} height={22} />
-		</Button>
+		<span onClick={changeLanguage} className='p-0 w-16 h-14 flex justify-center items-center hover:bg-light2 dark:hover:bg-dark4'>
+			<Image src={src} alt={alt} width={25} height={25} />
+		</span>
 	);
 };
 
@@ -45,21 +46,21 @@ export default function ClientLayout({ children }) {
 	return (
 		<TProvider>
 			<nav className="w-full h-20 flex flex-col items-center justify-center">
-				<div className="w-3/4 flex flex-row justify-between items-center z-20">
-					<div className="w-44 flex justify-start">
+				<div className="w-11/12 h-full flex flex-row justify-between items-center z-20">
+					<div className="w-[72px] flex justify-center">
 						<BotonEstilo />
 					</div>
-					<div>
+					<div className="w-52 flex justify-center">
 						<Link href="/">
 							<Typography
 								variant="h1"
-								className="font-nyght-serif font-bold italic text-light7 dark:text-dark7"
+								className="font-nyght-serif font-bold italic mt-2 text-light7 dark:text-dark7 text-2xl custom-md:text-4xl custom-lg:text-5xl"
 							>
 								BEN LOPEZ
 							</Typography>
 						</Link>
 					</div>
-					<div className="w-44 flex justify-end">
+					<div className="w-40 hidden md:flex justify-start">
 						<LanguageButton
 							src="/flag-argentina.svg"
 							alt="Español"
@@ -75,6 +76,29 @@ export default function ClientLayout({ children }) {
 							alt="Deutsch"
 							locale="de"
 						/>
+					</div>
+					<div className="w-[72px] flex justify-center md:hidden">
+						<Menu>
+							<MenuHandler className="p-0 w-12 h-10 flex justify-center items-center bg-light2 dark:bg-dark2">
+								<Button className='w-12 h-10'>
+									<ReactSVG
+										src="language.svg"
+										className="p-0 w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-white"
+									/>
+								</Button>
+							</MenuHandler>
+							<MenuList className='w-min p-2 flex flex-col justify-center items-center rounded-2xl border-0 bg-light4 dark:bg-dark3'>
+								<MenuItem className='p-0 w-16 h-14'>
+									<LanguageButton src="/flag-argentina.svg" alt="Español" locale="es" />
+								</MenuItem>
+								<MenuItem className='p-0 w-16 h-14'>
+									<LanguageButton src="/flag-us.svg" alt="English" locale="en" />
+								</MenuItem>
+								<MenuItem className='p-0 w-16 h-14'>
+									<LanguageButton src="/flag-germany.svg" alt="Deutsch" locale="de" />
+								</MenuItem>
+							</MenuList>
+						</Menu>
 					</div>
 				</div>
 			</nav>

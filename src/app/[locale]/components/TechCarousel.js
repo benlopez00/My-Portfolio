@@ -25,7 +25,7 @@ const Carousel = () => {
 	const carouselRef = useRef(null);
 	const animationRef = useRef(null);
 	let speed = 0.4;
-	const gap = 20;
+	const gap = 12;
 	let position = 0;
 
 	const animate = () => {
@@ -64,7 +64,7 @@ const Carousel = () => {
 			style={{
 				overflow: 'hidden',
 				width: '100%',
-				height: '125px',
+				height: '70px',
 				position: 'relative',
 				maskImage:
 					'radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)',
@@ -78,7 +78,7 @@ const Carousel = () => {
 					display: 'flex',
 					width: 'max-content',
 					willChange: 'transform',
-					gap: `${gap}px`,
+					gap: `${gap}px`, 
 				}}
 			>
 				{images.concat(images).map((tech, index) => (
@@ -86,30 +86,27 @@ const Carousel = () => {
 						key={index}
 						className="relative flex items-start justify-center"
 						style={{
-							width: '100px',
-							height: '125px',
+							width: '55px',
+							height: '70px',
 						}}
 					>
-						<div className="w-[100px] h-[100px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-2xl">
+						<div className="w-[55px] h-[55px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-xl">
 							<ReactSVG
 								src={tech.src}
 								className="w-3/5 h-3/5 fill-black dark:fill-white"
 							/>
 						</div>
 						<div
-							className="bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end rounded-xl"
+							className="bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end rounded-lg"
 							style={{
-								width: '100px',
-								height: '100px',
+								width: '55px', // Reducido a la mitad
+								height: '55px', // Reducido a la mitad
 								position: 'absolute',
-								top: '22px',
+								top: '15px', // Ajustado para mantener proporción
 								zIndex: 1,
 							}}
 						>
-							<Typography
-								variant="small"
-								className="font-sans font-light text-light dark:text-dark7"
-							>
+							<Typography className="font-sans font-light text-[10px] dark:text-dark7">
 								{tech.name}
 							</Typography>
 						</div>
