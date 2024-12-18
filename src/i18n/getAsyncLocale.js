@@ -1,4 +1,4 @@
-import { routing } from '@/i18n/routing';
+import { routing } from './routing';
 import { notFound } from 'next/navigation';
 
 export async function getAsyncLocale(params) {
