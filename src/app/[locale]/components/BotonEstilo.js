@@ -6,16 +6,11 @@ import { useEffect, useState } from 'react';
 const BotonEstilo = () => {
 	const { setTheme, resolvedTheme } = useTheme();
 	const [isActive, setIsActive] = useState(false);
-	const [mounted, setMounted] = useState(false);
-
-	useEffect(() => setMounted(true), []);
 
 	const toggleTheme = () => {
 		setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
 		setIsActive(!isActive);
 	};
-
-	if (!mounted) return null;
 
 	return (
 		<div className="flex items-center">

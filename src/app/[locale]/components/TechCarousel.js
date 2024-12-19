@@ -25,7 +25,7 @@ const Carousel = () => {
 	const carouselRef = useRef(null);
 	const animationRef = useRef(null);
 	let speed = 0.4;
-	const gap = 12;
+	const gap = 15;
 	let position = 0;
 
 	const animate = () => {
@@ -60,12 +60,10 @@ const Carousel = () => {
 	}, []);
 
 	return (
-		<div
+		<div className='overflow-hidden w-full h-[70px] relative
+			mobile-lg:h-[95px]
+			laptop-lg:h-[125px]'
 			style={{
-				overflow: 'hidden',
-				width: '100%',
-				height: '70px',
-				position: 'relative',
 				maskImage:
 					'radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)',
 				WebkitMaskImage:
@@ -74,9 +72,8 @@ const Carousel = () => {
 		>
 			<div
 				ref={carouselRef}
+				className='flex w-max'
 				style={{
-					display: 'flex',
-					width: 'max-content',
 					willChange: 'transform',
 					gap: `${gap}px`, 
 				}}
@@ -84,29 +81,27 @@ const Carousel = () => {
 				{images.concat(images).map((tech, index) => (
 					<div
 						key={index}
-						className="relative flex items-start justify-center"
-						style={{
-							width: '55px',
-							height: '70px',
-						}}
+						className="relative flex items-start justify-center w-[55px] h-[70px]
+						mobile-lg:w-[77px] mobile-lg:h-[95px]
+						laptop-lg:w-[100px] laptop-lg:h-[125px]"
 					>
-						<div className="w-[55px] h-[55px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-xl">
+						<div className="w-[55px] h-[55px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-xl
+							mobile-lg:w-[75px] mobile-lg:h-[75px]
+							laptop-lg:w-[100px] laptop-lg:h-[100px]"
+						>
 							<ReactSVG
 								src={tech.src}
 								className="w-3/5 h-3/5 fill-black dark:fill-white"
 							/>
 						</div>
-						<div
-							className="bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end rounded-lg"
-							style={{
-								width: '55px', // Reducido a la mitad
-								height: '55px', // Reducido a la mitad
-								position: 'absolute',
-								top: '15px', // Ajustado para mantener proporción
-								zIndex: 1,
-							}}
+						<div className="w-[55px] h-[55px] absolute top-[15px] z-10 bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end rounded-lg
+							mobile-lg:w-[75px] mobile-lg:[40px] mobile-lg:top-[37px]
+							laptop-lg:w-[100px] laptop-lg:h-[50px] laptop-lg:top-[72px]"
 						>
-							<Typography className="font-sans font-light text-[10px] dark:text-dark7">
+							<Typography className="font-sans font-light text-[9px] mb-[1px] dark:text-dark7
+								mobile-lg:text-xs
+								laptop-lg:text-sm"
+							>
 								{tech.name}
 							</Typography>
 						</div>

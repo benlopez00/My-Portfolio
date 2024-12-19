@@ -51,11 +51,11 @@ module.exports = withMT({
         card: "32px",
       },
       screens: {
-        'custom-xsm': '550px',
-        'custom-sm': '790px',
-        'custom-md': '990px',
-        'custom-lg': '1150px',
-        'custom-xlg': '1300px',
+        'mobile-md': '375px',
+        'mobile-lg': '425px',
+        'tablet': '768px',
+        'laptop': '1024px',
+        'laptop-lg': '1400px',
       },
       keyframes: {
         triangularMove: {

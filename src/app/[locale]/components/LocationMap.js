@@ -41,43 +41,52 @@ export default function LocationMap() {
 			? '/styles/dark_positron.json'
 			: '/styles/light_positron.json';
 	return (
-		<Card className="card w-[140px] h-[140px] relative bg-transparent">
-					<Map
-						key={mapStyle}
-						initialViewState={{
-							longitude: -65.2038,
-							latitude: -26.8303,
-							zoom: 8,
-							interactive: false,
-						}}
-						mapStyle={mapStyle}
-						attributionControl={false}
-					>
-						<Marker
-							longitude={-65.2038}
-							latitude={-26.8303}
-							pitchAlignment="map"
-							offset={[0, 7]}
-						>
-							<img
-								src="/location-circle-svgrepo-com.svg"
-								alt="Custom Marker"
-								className="w-8 h-8"
-							/>
-						</Marker>
-					</Map>
+		<Card className="card relative bg-transparent w-full h-full">
+			<Map
+				key={mapStyle}
+				initialViewState={{
+					longitude: -65.2038,
+					latitude: -26.8303,
+					zoom: 9,
+					interactive: false,
+				}}
+				mapStyle={mapStyle}
+				attributionControl={false}
+			>
+				<Marker
+					longitude={-65.2038}
+					latitude={-26.8303}
+					pitchAlignment="map"
+					offset={[0, 7]}
+				>
+					<img
+						src="/location-circle-svgrepo-com.svg"
+						alt="Custom Marker"
+						className="w-8 h-8"
+					/>
+				</Marker>
+			</Map>
 			{weather && (
 				<>
-					<div className="h-8 w-10 opacity-80 absolute top-2 right-[7px] bg-white dark:bg-dark4 px-1.5 py-1 rounded-full flex items-center justify-center  shadow-md">
+					<div className="h-8 w-10 opacity-80 absolute top-2 right-[7px] bg-white dark:bg-dark4 px-1.5 py-1 rounded-full flex items-center justify-center shadow-md
+						mobile-lg:h-9 mobile-lg:w-11
+						laptop-lg:h-12 laptop-lg:w-14"
+					>
 						<img
 							src={weather.icon}
 							alt={weather.condition}
-							className="w-6 h-6"
+							className="w-6 h-6
+							mobile-lg:h-7 mobile-lg:w-7
+							laptop-lg:h-8 laptop-lg:w-8"
 						/>
 					</div>
 
-					<div className="h-8 w-22 opacity-80 absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white dark:bg-dark4 text-light7 dark:text-dark7 px-1.5 py-1 rounded-full text-[25px] flex items-center justify-evenly shadow-md">
-						<div className="flex justify-center items-center w-10 !my-0 leading-none font-arrayreg text-[14px]">
+					<div className="h-8 w-22 opacity-80 absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white dark:bg-dark4 text-light7 dark:text-dark7 px-1.5 py-1 rounded-full text-[14px] flex items-center justify-evenly shadow-md
+					mobile-lg:h-9 mobile-lg:w-32 mobile-lg:text-base
+					laptop-lg:h-10 laptop-lg:w-40 laptop-lg:text-[25px]">
+						<div className="flex justify-center items-center w-10 !my-0 leading-none font-arrayreg
+						mobile-lg:w-16
+						laptop-lg:w-14">
 							<Clock
 								noSsr={false}
 								format={'HH:mm'}
@@ -85,7 +94,9 @@ export default function LocationMap() {
 								timezone="America/Rosario"
 							/>
 						</div>
-						<div className="flex justify-center items-center w-10 !my-0 !mx-0 leading-none font-arrayreg text-[14px]">
+						<div className="flex justify-center items-center w-10 !my-0 !mx-0 leading-none font-arrayreg
+						mobile-lg:w-16
+						laptop-lg:w-14">
 							<span>{weather.temp}°C</span>
 						</div>
 					</div>
