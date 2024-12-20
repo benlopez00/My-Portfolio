@@ -70,23 +70,23 @@ export default function LocationMap() {
 				<>
 					<div className="h-8 w-10 opacity-80 absolute top-2 right-[7px] bg-white dark:bg-dark4 px-1.5 py-1 rounded-full flex items-center justify-center shadow-md
 						mobile-lg:h-9 mobile-lg:w-11
-						laptop-lg:h-12 laptop-lg:w-14"
+						laptop:h-12 laptop:w-14"
 					>
 						<img
 							src={weather.icon}
 							alt={weather.condition}
 							className="w-6 h-6
 							mobile-lg:h-7 mobile-lg:w-7
-							laptop-lg:h-8 laptop-lg:w-8"
+							laptop:h-8 laptop:w-8"
 						/>
 					</div>
 
 					<div className="h-8 w-22 opacity-80 absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white dark:bg-dark4 text-light7 dark:text-dark7 px-1.5 py-1 rounded-full text-[14px] flex items-center justify-evenly shadow-md
 					mobile-lg:h-9 mobile-lg:w-32 mobile-lg:text-base
-					laptop-lg:h-10 laptop-lg:w-40 laptop-lg:text-[25px]">
-						<div className="flex justify-center items-center w-10 !my-0 leading-none font-arrayreg
+					laptop:h-10 laptop:w-40 laptop:text-[25px]">
+						<div className="flex justify-center items-center ml-1  w-10 !my-0 leading-none font-arrayreg
 						mobile-lg:w-16
-						laptop-lg:w-14">
+						laptop:w-14">
 							<Clock
 								noSsr={false}
 								format={'HH:mm'}
@@ -96,7 +96,7 @@ export default function LocationMap() {
 						</div>
 						<div className="flex justify-center items-center w-10 !my-0 !mx-0 leading-none font-arrayreg
 						mobile-lg:w-16
-						laptop-lg:w-14">
+						laptop:w-14">
 							<span>{weather.temp}°C</span>
 						</div>
 					</div>

@@ -63,16 +63,15 @@ export default function ClientLayout({ children }) {
 					></div>
 				</div>
 				<div className="w-11/12 h-full flex flex-row justify-between items-center z-10
-					laptop-lg:w-3/4"
+					tablet:w-3/4"
 				>
 					<div className="w-[72px] flex justify-center
-						laptop-lg:w-40 
-						laptop-lg:justify-start"
+						tablet:w-40 tablet:justify-start"
 					>
 						<BotonEstilo />
 					</div>
 					<div className="w-52 flex justify-center
-						laptop-lg:w-64"
+						tablet:w-64"
 					>
 						<Link href="/">
 							<Typography
@@ -80,7 +79,8 @@ export default function ClientLayout({ children }) {
 								className="font-nyght-serif font-bold italic mt-2 text-light7 dark:text-dark7 text-2xl 
 								mobile-md:text-3xl 
 								mobile-lg:text-4xl
-								laptop-lg:text-5xl"
+								tablet:text-[42px]
+								laptop:text-5xl"
 							>
 								BEN LOPEZ
 							</Typography>

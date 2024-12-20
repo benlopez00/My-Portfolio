@@ -53,9 +53,10 @@ module.exports = withMT({
       screens: {
         'mobile-md': '375px',
         'mobile-lg': '425px',
-        'tablet': '768px',
-        'laptop': '1024px',
-        'laptop-lg': '1400px',
+        'tablet': '838px',
+        'laptop': '1080px',
+        'laptop-lg': '1280px',
+        'laptop-xl': '1500px'
       },
       keyframes: {
         triangularMove: {
