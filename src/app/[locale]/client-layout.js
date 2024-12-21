@@ -52,27 +52,29 @@ export default function ClientLayout({ children }) {
 	return (
 		<TProvider>
 			<nav className="w-full h-20 flex flex-col items-center justify-center relative">
-				<div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-[600px] overflow-hidden z-0">
+				<div className="absolute top-0 left-0 w-full h-[600px] overflow-hidden z-0">
 					<div
-						className="absolute bg-green-500 dark:bg-green-400 opacity-95 dark:opacity-70 blur-[50px] rounded-full w-[270px] h-[270px] animate-gradientMove animate-squareMove"
-						style={{ top: '-10%', left: '30%' }}
+						className="absolute bg-green-500 dark:bg-green-400 opacity-95 dark:opacity-70 blur-[50px] rounded-full w-[270px] h-[270px] laptop:w-[330px] laptop:h-[330px] animate-gradientMove animate-squareMove"
+						style={{
+							top: '-15%',
+							right: '50%',
+							transform: 'translateX(calc(-100% - 2rem))',
+						}}
 					></div>
 					<div
-						className="absolute bg-blue-500 dark:bg-blue-400 opacity-90 dark:opacity-70 blur-[50px] rounded-full w-[250px] h-[270px] animate-gradientMove animate-triangularMove"
-						style={{ top: '-10%', right: '40%' }}
+						className="absolute bg-blue-500 dark:bg-blue-400 opacity-90 dark:opacity-70 blur-[50px] rounded-full w-[250px] h-[270px] laptop:w-[310px] laptop:h-[325px] animate-gradientMove animate-triangularMove"
+						style={{
+							top: '-15%',
+							left: '50%',
+							transform: 'translateX(calc(0% + 2rem))',
+						}}
 					></div>
 				</div>
-				<div className="w-11/12 h-full flex flex-row justify-between items-center z-10
-					tablet:w-3/4"
-				>
-					<div className="w-[72px] flex justify-center
-						tablet:w-40 tablet:justify-start"
-					>
+				<div className="w-11/12 h-full flex flex-row justify-between items-center z-10 tablet:w-3/4">
+					<div className="w-[72px] flex justify-center tablet:w-40 tablet:justify-start">
 						<BotonEstilo />
 					</div>
-					<div className="w-52 flex justify-center
-						tablet:w-64"
-					>
+					<div className="w-52 flex justify-center tablet:w-64">
 						<Link href="/">
 							<Typography
 								variant="h1"

@@ -22,23 +22,19 @@ const SocialLink = memo(({ href, icon, gradient }) => (
 		>
 			<ReactSVG
 				src={icon}
-				className="w-8 h-8 fill-light6 dark:fill-dark7 transition-fill duration-300 group-hover:fill-white
-				mobile-lg:w-10 mobile-lg:h-10
-				laptop:w-12 laptop:h-12
-				laptop-lg:w-14 laptop-lg:h-14"
+				className="w-3/5 h-3/5 fill-light6 dark:fill-dark7 transition-fill duration-300 group-hover:fill-white"
 			/>
 		</a>
 	</Card>
 ));
 
 const InfoCard = memo(({ title, children }) => (
-	<Card className="col-span-2 row-span-1 card p-4 bg-light2 dark:bg-dark2
+	<Card className="col-span-2 row-span-1 card p-5 bg-light2 dark:bg-dark2
 		mobile-md:p-5
 		laptop:p-7
 		laptop-lg:p-8"
 	>
-		<CardBody className="p-0 h-full flex flex-col items-start gap-3
-			mobile-lg:gap-4 
+		<CardBody className="p-0 h-full flex flex-col items-start gap-4 
 			laptop-lg:gap-8
 		">
 			<Typography
@@ -88,7 +84,7 @@ export default function Component() {
 		<main className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
 			<div
 				className="grid gap-4 z-20 
-				grid-cols-[repeat(2,_140px)] auto-rows-[140px]
+				grid-cols-[repeat(2,_140px)] auto-rows-[150px]
 				mobile-md:grid-cols-[repeat(2,_150px)] mobile-md:auto-rows-[150px]
 				mobile-lg:grid-cols-[repeat(2,_180px)] mobile-lg:auto-rows-[180px] 
 				tablet:grid-cols-[repeat(4,_190px)] tablet:auto-rows-[190px]
@@ -99,13 +95,13 @@ export default function Component() {
 					<Image
 						src="/Big_Ben.webp"
 						alt="Ben Lopez Profile Photo"
-						width={270}
-						height={270}
+						fill
+						objectFit="cover"
 						loading="eager"
 						priority
 					/>
 				</Card>
-				<Card className="col-span-1 row-span-1 card p-4 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 bg-light2 dark:bg-dark2">
+				<Card className="col-span-1 row-span-1 card p-5 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 bg-light2 dark:bg-dark2">
 					<CardBody className="p-0 h-full flex flex-col items-start justify-between">
 						<Typography
 							variant="h4"
@@ -148,13 +144,13 @@ export default function Component() {
 				>
 					<CardBody className="p-0 h-full flex flex-col items-center">
 						<div className="w-full h-full flex flex-col text-justify justify-around">
-							<Typography className="font-sans text-xs font-normal text-light7 dark:text-dark7
+							<Typography className="font-sans text-[13px] font-normal text-light7 dark:text-dark7
 								mobile-lg:text-sm
 								laptop:text-[16px]"
 							>
 								{t('intro_one')}
 							</Typography>
-							<Typography className="font-sans text-xs font-normal text-light7 dark:text-dark7
+							<Typography className="font-sans text-[13px] font-normal text-light7 dark:text-dark7
 								mobile-lg:text-sm
 								laptop:text-[16px]"
 							>
@@ -167,7 +163,7 @@ export default function Component() {
 					<LocationMap />
 				</Card>
 				<Card
-					className="col-span-1 row-span-1 card p-4 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 bg-light2 dark:bg-dark2 grid gap-2 justify-center content-center
+					className="col-span-1 row-span-1 card p-5 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 bg-light2 dark:bg-dark2 grid gap-2 justify-center content-center
 						grid-cols-[repeat(2,_55px)] grid-rows-[repeat(2,_55px)]
 						mobile-md:grid-cols-[repeat(2,_60px)] mobile-md:grid-rows-[repeat(2,_60px)]
 						mobile-lg:grid-cols-[repeat(2,_70px)] mobile-lg:grid-rows-[repeat(2,_70px)] mobile-lg:gap-3
@@ -182,7 +178,7 @@ export default function Component() {
 				<Card className="col-span-2 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
 					<Link
 						href={`/${locale}/additional-info`}
-						className="w-full h-full card p-4 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 group"
+						className="w-full h-full card p-5 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 group"
 					>
 						<CardBody className="p-0 h-full flex flex-col items-start justify-between">
 							<div className="w-full flex justify-between items-center">
@@ -207,17 +203,17 @@ export default function Component() {
 								mobile-lg:mb-1
 								laptop:mb-5"
 							>
-								<Typography className="font-sans text-xs text-light7 dark:text-dark7
+								<Typography className="font-sans text-[13px] text-light7 dark:text-dark7
 									laptop:text-[16px]"
 								>
 									{t('more_about_me_one')}
 								</Typography>
-								<Typography className="font-sans hidden mobile-lg:flex text-xs text-light7 dark:text-dark7
+								<Typography className="font-sans hidden mobile-lg:flex text-[13px] text-light7 dark:text-dark7
 									laptop:text-[16px]"
 								>
 									{t('more_about_me_two')}
 								</Typography>
-								<Typography className="font-sans hidden mobile-lg:flex text-xs text-light7 dark:text-dark7
+								<Typography className="font-sans hidden mobile-lg:flex text-[13px] text-light7 dark:text-dark7
 									laptop:text-[16px]"
 								>
 									{t('more_about_me_three')}
@@ -227,7 +223,7 @@ export default function Component() {
 						<div className="absolute inset-0 card transition-shadow duration-300 group-hover:shadow-[inset_0px_29px_18px_-20px_rgba(76,175,80,0.5)] pointer-events-none"></div>
 					</Link>
 				</Card>
-				<Card className="col-span-2 row-span-1 card p-4 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 bg-light2 dark:bg-dark2">
+				<Card className="col-span-2 row-span-1 card p-5 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 bg-light2 dark:bg-dark2">
 					<CardBody className="p-0 h-full flex flex-col justify-between">
 						<div className="w-full flex justify-between items-center">
 							<Typography
@@ -262,7 +258,7 @@ export default function Component() {
 									mobile-lg:py-3 mobile-lg:px-6
 									laptop:p-8"
 								>
-									<Typography className="font-sans text-md font-semibold text-light7 dark:text-dark7
+									<Typography className="font-sans text-sm font-semibold text-light7 dark:text-dark7
 										mobile-lg:text-lg
 										laptop:text-xl"
 									>
@@ -281,7 +277,7 @@ export default function Component() {
 										{t('adata_time_span')}
 									</Typography>
 								</div>
-								<div className="h-full flex flex-col justify-around p-4 mobile-md:p-5 laptop:p-7 laptop:p-8">
+								<div className="h-full flex flex-col justify-around p-4 mobile-md:p-5 laptop:p-7 laptop-lg:p-8">
 									<ReactSVG
 										src="/iconos/OpenTab.svg"
 										className="w-5 h-5 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-1

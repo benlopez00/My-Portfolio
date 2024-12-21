@@ -19,42 +19,64 @@ export default function AdditionalInfoOverlay() {
 	return (
 		<main className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
 			<div
-				className="grid gap-6 z-40"
-				style={{
-					gridTemplateColumns: 'repeat(4, 270px)',
-					gridAutoRows: '270px',
-				}}
+				className="grid gap-4 z-20 
+				grid-cols-[repeat(2,_140px)] auto-rows-[140px]
+				mobile-md:grid-cols-[repeat(2,_150px)] mobile-md:auto-rows-[150px]
+				mobile-lg:grid-cols-[repeat(2,_180px)] mobile-lg:auto-rows-[180px] 
+				tablet:grid-cols-[repeat(4,_190px)] tablet:auto-rows-[190px]
+				laptop:grid-cols-[repeat(4,_240px)] laptop:auto-rows-[240px] 
+				laptop-lg:grid-cols-[repeat(4,_270px)] laptop-lg:auto-rows-[270px] laptop-lg:gap-6"
 			>
-				<Card className="col-span-2 row-span-2 card py-8 px-12 bg-light2 dark:bg-dark2">
+				<Card className="card col-span-2 row-span-4 py-5 px-8 bg-light2 dark:bg-dark2
+					laptop:col-span-2 laptop:row-span-2 laptop:py-8 laptop:px-12"
+				>
 					<CardBody className="p-0 h-full flex flex-col items-start gap-5">
 						<div>
 							<Typography
 								variant="h2"
-								className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
+								className="font-nyght-serif font-[500] text-light7 dark:text-dark7 text-xl
+								mobile-lg:text-2xl
+								laptop:text-4xl"
 							>
 								{t('adata_title')}
 							</Typography>
 							<Typography
 								variant="h5"
-								className="font-sans font-medium text-light5 dark:text-dark5"
+								className="font-sans font-[500] text-light7 dark:text-dark7 text-sm
+								mobile-lg:text-lg
+								laptop:text-xl"
 							>
 								{t('adata_time_span')}
 							</Typography>
 						</div>
 						<div className="w-full h-full flex flex-col text-justify justify-center gap-10">
-							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
+							<Typography
+								className="font-sans text-light7 dark:text-dark7 text-[13px]
+								mobile-lg:text-sm
+								laptop:text-[16px]"
+							>
 								{t('adata_description')}
 							</Typography>
-							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
+							<Typography
+								className="font-sans text-light7 dark:text-dark7 text-[13px]
+								mobile-lg:text-sm
+								laptop:text-[16px]"
+							>
 								{t('what_is_mitarbeiter_portal')}
 							</Typography>
-							<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
+							<Typography
+								className="font-sans text-light7 dark:text-dark7 text-[13px]
+								mobile-lg:text-sm
+								laptop:text-[16px]"
+							>
 								{t('adata_year_learnings')}
 							</Typography>
 						</div>
 					</CardBody>
 				</Card>
-				<Card className="col-span-2 row-span-1 card p-0 bg-light2 dark:bg-dark2 overflow-hidden">
+				<Card className="card col-span-2 row-span-2 p-0 bg-light2 dark:bg-dark2
+					laptop:col-span-2 laptop:row-span-1 laptop:p-0"
+				>
 					<CardBody className="p-0 h-full flex flex-col items-start gap-4 overflow-hidden">
 						<Carousel
 							className="h-full bottom-2"
@@ -62,9 +84,9 @@ export default function AdditionalInfoOverlay() {
 								<IconButton
 									variant="text"
 									color="white"
-									size="lg"
+									size="md"
 									onClick={handlePrev}
-									className="!absolute top-1/2 left-2 -translate-y-[47%]"
+									className="!absolute top-1/2 left-1 laptop:left-2 -translate-y-[47%]"
 								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -86,9 +108,9 @@ export default function AdditionalInfoOverlay() {
 								<IconButton
 									variant="text"
 									color="white"
-									size="lg"
+									size="md"
 									onClick={handleNext}
-									className="!absolute top-1/2 !right-2 -translate-y-[47%]"
+									className="!absolute top-1/2 right-1 laptop:right-2 -translate-y-[47%]"
 								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +134,9 @@ export default function AdditionalInfoOverlay() {
 									<div className="text-left w-8/12">
 										<Typography
 											variant="h2"
-											className="font-nyght-serif font-[500] text-light7 dark:text-dark7"
+											className="font-nyght-serif font-[500] text-light7 dark:text-dark7 text-xl
+											mobile-lg:text-2xl
+											laptop:text-4xl"
 										>
 											{t('contributions_title')}
 										</Typography>
@@ -123,7 +147,11 @@ export default function AdditionalInfoOverlay() {
 								<div key={key} className="relative h-full w-full">
 									<div className="absolute inset-0 grid h-full w-full place-items-center">
 										<div className="text-left w-8/12">
-											<Typography className="font-sans text-[16px] font-normal text-light7 dark:text-dark7">
+											<Typography
+												className="font-sans text-light7 dark:text-dark7 text-[13px]
+												mobile-lg:text-sm
+												laptop:text-[16px]"
+											>
 												{t(key)}
 											</Typography>
 										</div>

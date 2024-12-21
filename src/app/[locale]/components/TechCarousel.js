@@ -99,7 +99,7 @@ const Carousel = () => {
 							laptop:w-[100px] laptop:h-[50px] laptop:top-[72px]"
 						>
 							<Typography className="font-sans font-light text-[9px] mb-[1px] dark:text-dark7
-								mobile-lg:text-xs
+								mobile-lg:text-[13px]
 								laptop:text-sm"
 							>
 								{tech.name}
