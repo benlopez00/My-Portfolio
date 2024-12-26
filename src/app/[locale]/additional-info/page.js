@@ -21,7 +21,7 @@ export default function AdditionalInfoOverlay() {
 				laptop-lg:grid-cols-[repeat(4,_270px)] laptop-lg:auto-rows-[270px] laptop-lg:gap-6"
 			>
 				<Card
-					className="card col-span-2 row-span-4 py-5 px-8 bg-light2 dark:bg-dark2
+					className="card col-span-2 row-span-4 py-5 px-8 bg-light2 dark:bg-dark2 order-1 laptop:order-1
 					laptop:col-span-2 laptop:row-span-2 laptop:py-8 laptop:px-12"
 				>
 					<CardBody className="p-0 h-full flex flex-col items-start gap-5">
@@ -72,7 +72,7 @@ export default function AdditionalInfoOverlay() {
 						</div>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
+				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-2 laptop:order-2">
 					<Image
 						src="/berlinTvTower.webp"
 						alt="Berlin Tv Tower"
@@ -82,7 +82,7 @@ export default function AdditionalInfoOverlay() {
 						priority
 					/>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
+				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-3 laptop:order-3">
 					<Image
 						src="/trainTracks.webp"
 						alt="Train Tracks near Bremen"
@@ -92,7 +92,7 @@ export default function AdditionalInfoOverlay() {
 						priority
 					/>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
+				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-5 laptop:order-4">
 					<Image
 						src="/bremenAerial.webp"
 						alt="Aerial Photo of Bremen"
@@ -101,7 +101,7 @@ export default function AdditionalInfoOverlay() {
 						loading="lazy"
 					/>
 				</Card>
-				<Card className="card col-span-2 row-span-2 py-5 px-8 bg-light2 dark:bg-dark2
+				<Card className="card col-span-2 row-span-2 py-5 px-8 bg-light2 dark:bg-dark2 order-4 laptop:order-5
 					laptop:col-span-2 laptop:row-span-1 laptop:py-8 laptop:px-12"
 				>
 					<CardBody className="p-0 h-full">
@@ -116,7 +116,7 @@ export default function AdditionalInfoOverlay() {
 						</div>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
+				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-6 laptop:order-6">
 					<Image
 						src="/bremenNight.webp"
 						alt="Main Square of Bremen at night"
@@ -125,7 +125,7 @@ export default function AdditionalInfoOverlay() {
 						loading="lazy"
 					/>
 				</Card>
-				<Card className="card col-span-2 row-span-2 py-5 px-8 bg-light2 dark:bg-dark2
+				<Card className="card col-span-2 row-span-2 py-5 px-8 bg-light2 dark:bg-dark2 order-7 laptop:order-7
 					laptop:col-span-2 laptop:row-span-1 laptop:py-8 laptop:px-12"
 				>
 					<CardBody className="p-0 h-full">
@@ -140,7 +140,7 @@ export default function AdditionalInfoOverlay() {
 						</div>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
+				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-8 laptop:order-8">
 					<Image
 						src="/werderStadium.webp"
 						alt="Football Match in Wesser Stadium"
@@ -149,7 +149,7 @@ export default function AdditionalInfoOverlay() {
 						loading="lazy"
 					/>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
+				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-9 laptop:order-9">
 					<Image
 						src="/hamburgRathaus.webp"
 						alt="Hamburg City Hall"
@@ -158,8 +158,8 @@ export default function AdditionalInfoOverlay() {
 						loading="lazy"
 					/>
 				</Card>
-				<Card className="card col-span-2 row-span-3 py-5 px-8 bg-light2 dark:bg-dark2
-					laptop:col-span-2 laptop:row-span-1 laptop:py-8 laptop:px-12"
+				<Card className="card col-span-2 row-span-3 py-5 px-8 bg-light2 dark:bg-dark2 order-10 laptop:order-10
+					laptop:col-span-2 laptop:row-span-2 laptop:py-8 laptop:px-12"
 				>
 					<CardBody className="p-0 h-full">
 						<div className="w-full h-full flex flex-col text-justify justify-center gap-16">
@@ -187,7 +187,7 @@ export default function AdditionalInfoOverlay() {
 						</div>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
+				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-11 laptop:order-11">
 					<Image
 						src="/werderWesser.webp"
 						alt="Wesser Stadium from Outside"
@@ -196,8 +196,9 @@ export default function AdditionalInfoOverlay() {
 						loading="lazy"
 					/>
 				</Card>
-				<Card className="card col-span-2 row-span-4 py-5 px-8 bg-light2 dark:bg-dark2
-					laptop:col-span-2 laptop:row-span-1 laptop:py-8 laptop:px-12"
+				<Card className="card col-span-2 row-span-4 py-5 px-8 bg-light2 dark:bg-dark2 order-13 laptop:order-12
+					mobile-lg:row-span-3
+					laptop:col-span-2 laptop:row-span-2 laptop:py-8 laptop:px-12"
 				>
 					<CardBody className="p-0 h-full flex flex-col items-start gap-5">
 						<Typography
@@ -233,7 +234,7 @@ export default function AdditionalInfoOverlay() {
 						</div>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden">
+				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-[12] laptop:order-[13]">
 					<Image
 						src="/lubeckChurch.webp"
 						alt="Church in Luebeck"

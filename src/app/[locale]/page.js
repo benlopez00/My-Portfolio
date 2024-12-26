@@ -29,10 +29,10 @@ const SocialLink = memo(({ href, icon, gradient }) => (
 ));
 
 const InfoCard = memo(({ title, children }) => (
-	<Card className="col-span-2 row-span-1 card p-5 bg-light2 dark:bg-dark2
-		mobile-md:p-5
-		laptop:p-7
-		laptop-lg:p-8"
+	<Card className="col-span-2 row-span-1 card pb-0 px-5 pt-5 bg-light2 dark:bg-dark2
+		mobile-md:px-5 mobile-md:pt-5
+		laptop:px-7 laptop:pt-7
+		laptop-lg:px-8 laptop-lg:pt-8"
 	>
 		<CardBody className="p-0 h-full flex flex-col items-start gap-4 
 			laptop-lg:gap-8
@@ -175,54 +175,6 @@ export default function Component() {
 						<SocialLink key={index} {...link} />
 					))}
 				</Card>
-				<Card className="col-span-2 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
-					<Link
-						href={`/${locale}/additional-info`}
-						className="w-full h-full card p-5 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 group"
-					>
-						<CardBody className="p-0 h-full flex flex-col items-start justify-between">
-							<div className="w-full flex justify-between items-center">
-								<Typography
-									variant="h2"
-									className="font-nyght-serif font-[500] text-xl text-light7 dark:text-dark7
-									mobile-lg:text-2xl
-									laptop:text-4xl"
-								>
-									{t('more_about_me')}
-								</Typography>
-								<div className="rounded-full
-									laptop:pr-3"
-								>
-									<ReactSVG
-										src="/iconos/OpenTab.svg"
-										className="w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-1"
-									/>
-								</div>
-							</div>
-							<div className="w-full flex flex-col items-start justify-between gap-2 mb-5
-								mobile-lg:mb-1
-								laptop:mb-5"
-							>
-								<Typography className="font-sans text-[13px] text-light7 dark:text-dark7
-									laptop:text-[16px]"
-								>
-									{t('more_about_me_one')}
-								</Typography>
-								<Typography className="font-sans hidden mobile-lg:flex text-[13px] text-light7 dark:text-dark7
-									laptop:text-[16px]"
-								>
-									{t('more_about_me_two')}
-								</Typography>
-								<Typography className="font-sans hidden mobile-lg:flex text-[13px] text-light7 dark:text-dark7
-									laptop:text-[16px]"
-								>
-									{t('more_about_me_three')}
-								</Typography>
-							</div>
-						</CardBody>
-						<div className="absolute inset-0 card transition-shadow duration-300 group-hover:shadow-[inset_0px_29px_18px_-20px_rgba(76,175,80,0.5)] pointer-events-none"></div>
-					</Link>
-				</Card>
 				<Card className="col-span-2 row-span-1 card p-5 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 bg-light2 dark:bg-dark2">
 					<CardBody className="p-0 h-full flex flex-col justify-between">
 						<div className="w-full flex justify-between items-center">
@@ -288,6 +240,54 @@ export default function Component() {
 							</div>
 						</Link>
 					</CardBody>
+				</Card>
+				<Card className="col-span-2 row-span-1 card bg-light2 dark:bg-dark2 overflow-hidden">
+					<Link
+						href={`/${locale}/additional-info`}
+						className="w-full h-full card p-5 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 group"
+					>
+						<CardBody className="p-0 h-full flex flex-col items-start justify-between">
+							<div className="w-full flex justify-between items-center">
+								<Typography
+									variant="h2"
+									className="font-nyght-serif font-[500] text-xl text-light7 dark:text-dark7
+									mobile-lg:text-2xl
+									laptop:text-4xl"
+								>
+									{t('more_about_me')}
+								</Typography>
+								<div className="rounded-full
+									laptop:pr-3"
+								>
+									<ReactSVG
+										src="/iconos/OpenTab.svg"
+										className="w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-1"
+									/>
+								</div>
+							</div>
+							<div className="w-full flex flex-col items-start justify-between gap-2 mb-5
+								mobile-lg:mb-1
+								laptop:mb-5"
+							>
+								<Typography className="font-sans text-[13px] text-light7 dark:text-dark7
+									laptop:text-[16px]"
+								>
+									{t('more_about_me_one')}
+								</Typography>
+								<Typography className="font-sans hidden mobile-lg:flex text-[13px] text-light7 dark:text-dark7
+									laptop:text-[16px]"
+								>
+									{t('more_about_me_two')}
+								</Typography>
+								<Typography className="font-sans hidden mobile-lg:flex text-[13px] text-light7 dark:text-dark7
+									laptop:text-[16px]"
+								>
+									{t('more_about_me_three')}
+								</Typography>
+							</div>
+						</CardBody>
+						<div className="absolute inset-0 card transition-shadow duration-300 group-hover:shadow-[inset_0px_29px_18px_-20px_rgba(76,175,80,0.5)] pointer-events-none"></div>
+					</Link>
 				</Card>
 			</div>
 		</main>

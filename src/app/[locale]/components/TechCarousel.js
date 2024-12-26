@@ -60,9 +60,9 @@ const Carousel = () => {
 	}, []);
 
 	return (
-		<div className='overflow-hidden w-full h-[70px] relative
-			mobile-lg:h-[95px]
-			laptop:h-[125px]'
+		<div className='overflow-hidden w-full h-[71px] relative
+			mobile-lg:h-[100px]
+			laptop:h-[127px]'
 			style={{
 				maskImage:
 					'radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)',
@@ -81,9 +81,9 @@ const Carousel = () => {
 				{images.concat(images).map((tech, index) => (
 					<div
 						key={index}
-						className="relative flex items-start justify-center w-[55px] h-[70px]
-						mobile-lg:w-[77px] mobile-lg:h-[95px]
-						laptop:w-[100px] laptop:h-[125px]"
+						className="relative flex items-start justify-center w-[55px] h-[71px]
+						mobile-lg:w-[77px] mobile-lg:h-[100px]
+						laptop:w-[100px] laptop:h-[127px]"
 					>
 						<div className="w-[55px] h-[55px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-xl
 							mobile-lg:w-[75px] mobile-lg:h-[75px]
@@ -94,13 +94,13 @@ const Carousel = () => {
 								className="w-3/5 h-3/5 fill-black dark:fill-white"
 							/>
 						</div>
-						<div className="w-[55px] h-[55px] absolute top-[15px] z-10 bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end rounded-lg
-							mobile-lg:w-[75px] mobile-lg:[40px] mobile-lg:top-[37px]
-							laptop:w-[100px] laptop:h-[50px] laptop:top-[72px]"
+						<div className="w-[55px] h-[55px] absolute top-[16px] z-10 bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end rounded-lg
+							mobile-lg:w-[75px] mobile-lg:[40px] mobile-lg:top-[42px]
+							laptop:w-[100px] laptop:h-[50px] laptop:top-[74px]"
 						>
 							<Typography className="font-sans font-light text-[9px] mb-[1px] dark:text-dark7
 								mobile-lg:text-[13px]
-								laptop:text-sm"
+								laptop:text-sm laptop:mb-[2px]"
 							>
 								{tech.name}
 							</Typography>

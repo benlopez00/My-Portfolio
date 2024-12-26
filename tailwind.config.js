@@ -58,6 +58,9 @@ module.exports = withMT({
         'laptop-lg': '1280px',
         'laptop-xl': '1500px'
       },
+      order: {
+        '13': '13'
+      },
       keyframes: {
         triangularMove: {
           '0%': { transform: 'translate(0px, -22px)' },
