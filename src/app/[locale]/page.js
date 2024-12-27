@@ -29,14 +29,17 @@ const SocialLink = memo(({ href, icon, gradient }) => (
 ));
 
 const InfoCard = memo(({ title, children }) => (
-	<Card className="col-span-2 row-span-1 card pb-0 px-5 pt-5 bg-light2 dark:bg-dark2
+	<Card
+		className="col-span-2 row-span-1 card pb-0 px-5 pt-5 bg-light2 dark:bg-dark2
 		mobile-md:px-5 mobile-md:pt-5
 		laptop:px-7 laptop:pt-7
 		laptop-lg:px-8 laptop-lg:pt-8"
 	>
-		<CardBody className="p-0 h-full flex flex-col items-start gap-4 
+		<CardBody
+			className="p-0 h-full flex flex-col items-start gap-4 
 			laptop-lg:gap-8
-		">
+		"
+		>
 			<Typography
 				variant="h2"
 				className="font-nyght-serif font-[500] text-light7 dark:text-dark7 text-xl
@@ -119,14 +122,16 @@ export default function Component() {
 						>
 							{t('i_am')}
 						</Typography>
-						<div className='w-full'>
-							<Typography className="font-sans text-light7 dark:text-dark7 text-xs
+						<div className="w-full">
+							<Typography
+								className="font-sans text-light7 dark:text-dark7 text-xs
 								mobile-lg:text-sm
 								laptop:text-[16px]"
 							>
 								{t('about_one')}
 							</Typography>
-							<Typography className="font-sans text-light7 dark:text-dark7 text-xs
+							<Typography
+								className="font-sans text-light7 dark:text-dark7 text-xs
 								mobile-lg:text-sm
 								laptop:text-[16px]"
 							>
@@ -138,19 +143,22 @@ export default function Component() {
 				<InfoCard title={t('my_stack')}>
 					<TechCarousel />
 				</InfoCard>
-				<Card className="col-span-2 row-span-2 card py-4 px-8 bg-light2 dark:bg-dark2
+				<Card
+					className="col-span-2 row-span-2 card py-4 px-8 bg-light2 dark:bg-dark2
 					tablet:row-span-1
-					laptop:py-8 laptop-lg:px-12"				
+					laptop:py-8 laptop-lg:px-12"
 				>
 					<CardBody className="p-0 h-full flex flex-col items-center">
 						<div className="w-full h-full flex flex-col text-justify justify-around">
-							<Typography className="font-sans text-[13px] font-normal text-light7 dark:text-dark7
+							<Typography
+								className="font-sans text-[13px] font-normal text-light7 dark:text-dark7
 								mobile-lg:text-sm
 								laptop:text-[16px]"
 							>
 								{t('intro_one')}
 							</Typography>
-							<Typography className="font-sans text-[13px] font-normal text-light7 dark:text-dark7
+							<Typography
+								className="font-sans text-[13px] font-normal text-light7 dark:text-dark7
 								mobile-lg:text-sm
 								laptop:text-[16px]"
 							>
@@ -186,19 +194,23 @@ export default function Component() {
 							>
 								{t('my_exp')}
 							</Typography>
-							<div className="w-24 h-8 rounded-3xl relative bottom-[3px] p-1 bg-light4 dark:bg-dark4 flex flex-row justify-around items-center
+							<div
+								className="w-24 h-8 rounded-3xl relative bottom-[3px] p-1 bg-light4 dark:bg-dark4 flex flex-row justify-around items-center
 								laptop:w-32 laptop:h-10"
 							>
-								<Typography className="font-sans text-xs font-normal text-green-500
+								<Typography
+									className="font-sans text-xs font-normal text-green-500
 									laptop:text-sm"
 								>
 									{t('available')}
 								</Typography>
-								<span className="relative flex h-2 w-2
-									laptop:h-3 laptop:w-3" 
+								<span
+									className="relative flex h-2 w-2
+									laptop:h-3 laptop:w-3"
 								>
 									<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-									<span className="relative inline-flex rounded-full h-2 w-2 bg-green-500
+									<span
+										className="relative inline-flex rounded-full h-2 w-2 bg-green-500
 										laptop:h-3 laptop:w-3"
 									></span>
 								</span>
@@ -206,23 +218,27 @@ export default function Component() {
 						</div>
 						<Link href={`/${locale}/experiencia`} passHref>
 							<div className="w-full flex flex-row items-center justify-between rounded-3xl bg-light3 dark:bg-dark4 group sticky cursor-pointer">
-								<div className="h-full flex flex-col justify-around py-2 px-4
+								<div
+									className="h-full flex flex-col justify-around py-2 px-4
 									mobile-lg:py-3 mobile-lg:px-6
 									laptop:p-8"
 								>
-									<Typography className="font-sans text-sm font-semibold text-light7 dark:text-dark7
+									<Typography
+										className="font-sans text-sm font-semibold text-light7 dark:text-dark7
 										mobile-lg:text-lg
 										laptop:text-xl"
 									>
 										{t('adata_name')}
 									</Typography>
-									<Typography className="font-sans text-xs text-light7 dark:text-dark7
+									<Typography
+										className="font-sans text-xs text-light7 dark:text-dark7
 										mobile-lg:text-sm
 										laptop:text-[16px]"
 									>
 										{t('net_dev')}
 									</Typography>
-									<Typography className="font-sans text-xs text-light6 dark:text-dark6
+									<Typography
+										className="font-sans text-xs text-light6 dark:text-dark6
 										mobile-lg:text-sm
 										laptop:text-[16px]"
 									>
@@ -246,43 +262,30 @@ export default function Component() {
 						href={`/${locale}/additional-info`}
 						className="w-full h-full card p-5 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 group"
 					>
-						<CardBody className="p-0 h-full flex flex-col items-start justify-between">
+						<CardBody className="p-0 h-full flex flex-col justify-between">
 							<div className="w-full flex justify-between items-center">
 								<Typography
 									variant="h2"
 									className="font-nyght-serif font-[500] text-xl text-light7 dark:text-dark7
-									mobile-lg:text-2xl
-									laptop:text-4xl"
+										mobile-lg:text-2xl
+										laptop:text-4xl"
 								>
 									{t('more_about_me')}
 								</Typography>
-								<div className="rounded-full
-									laptop:pr-3"
-								>
+								<div className="rounded-full">
 									<ReactSVG
 										src="/iconos/OpenTab.svg"
 										className="w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-1"
 									/>
 								</div>
 							</div>
-							<div className="w-full flex flex-col items-start justify-between gap-2 mb-5
-								mobile-lg:mb-1
-								laptop:mb-5"
-							>
-								<Typography className="font-sans text-[13px] text-light7 dark:text-dark7
+							<div className="w-full h-full flex flex-row items-center justify-center
+								laptop-lg:mt-7">
+								<Typography className="font-sans text-justify text-[12px] text-light7 dark:text-dark7
+									mobile-lg:text-sm
 									laptop:text-[16px]"
 								>
 									{t('more_about_me_one')}
-								</Typography>
-								<Typography className="font-sans hidden mobile-lg:flex text-[13px] text-light7 dark:text-dark7
-									laptop:text-[16px]"
-								>
-									{t('more_about_me_two')}
-								</Typography>
-								<Typography className="font-sans hidden mobile-lg:flex text-[13px] text-light7 dark:text-dark7
-									laptop:text-[16px]"
-								>
-									{t('more_about_me_three')}
 								</Typography>
 							</div>
 						</CardBody>
