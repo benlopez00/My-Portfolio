@@ -1,31 +1,31 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
 
 const BotonEstilo = () => {
-	const { setTheme, resolvedTheme } = useTheme();
-	const [isActive, setIsActive] = useState(false);
+    const { setTheme, resolvedTheme } = useTheme();
 
-	const toggleTheme = () => {
-		setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
-		setIsActive(!isActive);
-	};
+    const toggleTheme = () => {
+        const newTheme = resolvedTheme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+    };
 
-	return (
-		<div className="flex items-center">
-			<span className="mr-1 text-sm">
-				{resolvedTheme === 'light' ? '☀️' : '🌙'}
-			</span>
-			<div className={`h-[22px] w-[40px] rounded-[40px] flex justify-start items-center relative bg-light7 dark:bg-dark7`}
-			onClick={toggleTheme}
-			>
-				<div className={`h-[16px] w-[16px] rounded-[30px] absolute flex justify-center items-center bg-light1 dark:bg-dark2
-				transform transition-transform duration-300
-				${isActive ? 'translate-x-[20px]' : 'translate-x-[4px]'}`}></div>
-			</div>
-		</div>
-	);
+    return (
+        <div className="flex items-center">
+            <span className="mr-1 text-sm dark:hidden">☀️</span>
+			<span className="mr-1 text-sm hidden dark:block">🌙</span>
+            <div
+                className={`h-[22px] w-[40px] rounded-[40px] flex justify-start items-center relative bg-light6`}
+                onClick={toggleTheme}
+            >
+                <div
+                    className={`!h-4 !w-4 rounded-[30px] absolute flex justify-center items-center bg-light3 
+                    transform transition-transform duration-300
+					translate-x-[4px] dark:translate-x-[20px]`}
+                ></div>
+            </div>
+        </div>
+    );
 };
 
 export default BotonEstilo;
