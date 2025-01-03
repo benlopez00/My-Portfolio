@@ -46,5 +46,11 @@
         "database_optimizations": "Used LINQ and HeidiSQL for efficient database queries and improved performance, ensuring scalability and data optimization.",
         "scrum_practices": "Worked with Scrum methodologies, managing tasks in JIRA, participating in code reviews, and applying best development practices.",
         "return_button": "Back"
+    },
+    "Footer":{
+        "des_dev": "Design & Development",
+        "my_name": "Eduardo Benjamin Lopez Avila",
+        "build_with": "Build with React, Next.js and Material Tailwind.",
+        "copy": "©2025"
     }
 }

@@ -158,7 +158,32 @@ export default function ClientLayout({ children }) {
 					</motion.div>
 				</section>
 			</AnimatePresence>
-			<footer className="w-full h-20"></footer>
-		</TProvider>
+			<footer className="w-full h-20 flex flex-col items-center justify-center relative">
+				<div className="w-11/12 h-full flex flex-row justify-between items-center z-10 tablet:w-3/4">
+					<div className="w-24 flex flex-col justify-start tablet:w-[200px]">
+						<Typography className="font-sans font-light text-[9px] text-light5 dark:text-dark5
+							mobile-lg:text-[9px]
+							laptop:text-[12px]"
+						>{t('des_dev')}</Typography>
+						<Typography className="font-sans font-light text-[9px] text-light5 dark:text-dark5
+							mobile-lg:text-[9px]
+							laptop:text-[12px]"
+						>{t('my_name')}</Typography>
+					</div>
+					<div className="w-32 flex justify-center tablet:w-[350px]">
+						<Typography className="font-sans font-light text-[9px] text-light5 dark:text-dark5
+							mobile-lg:text-[9px]
+							laptop:text-[12px]"
+						>{t('build_with')}</Typography>
+					</div>
+					<div className="w-12 flex justify-end tablet:w-[200px]">
+						<Typography className="font-sans font-light text-[9px] text-light5 dark:text-dark5
+							mobile-lg:text-[9px]
+							laptop:text-[12px]"
+						>{t('copy')}</Typography>
+					</div>
+				</div>
+			</footer>
+		</ThemeProvider>
 	);
 }

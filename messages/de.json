@@ -46,5 +46,11 @@
         "database_optimizations": "Verwendung von LINQ und HeidiSQL für effiziente Datenbankabfragen und Leistungsverbesserungen, Sicherstellung von Skalierbarkeit und Datenoptimierung.",
         "scrum_practices": "Arbeiten mit Scrum-Methoden, Aufgabenverwaltung in JIRA, Teilnahme an Code-Reviews und Anwendung bewährter Entwicklungspraktiken.",
         "return_button": "Zurück"
+    },
+    "Footer":{
+        "des_dev": "Design & Entwicklung",
+        "my_name": "Eduardo Benjamin Lopez Avila",
+        "build_with": "Erstellt mit React, Next.js und Material Tailwind.",
+        "copy": "©2025"
     }
 }
