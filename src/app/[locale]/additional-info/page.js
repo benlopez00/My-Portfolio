@@ -77,7 +77,9 @@ export default function AdditionalInfoOverlay() {
 						src="/berlinTvTower.webp"
 						alt="Berlin Tv Tower"
 						fill
-						objectFit="cover"
+						style={{
+							objectFit: 'cover', 
+						}}
 						loading="eager"
 						priority
 					/>
@@ -87,7 +89,9 @@ export default function AdditionalInfoOverlay() {
 						src="/trainTracks.webp"
 						alt="Train Tracks near Bremen"
 						fill
-						objectFit="cover"
+						style={{
+							objectFit: 'cover', 
+						}}
 						loading="eager"
 						priority
 					/>
@@ -97,11 +101,14 @@ export default function AdditionalInfoOverlay() {
 						src="/bremenAerial.webp"
 						alt="Aerial Photo of Bremen"
 						fill
-						objectFit="cover"
+						style={{
+							objectFit: 'cover', 
+						}}
 						loading="lazy"
 					/>
 				</Card>
-				<Card className="card col-span-2 row-span-2 py-5 px-8 bg-light2 dark:bg-dark2 order-4 laptop:order-5
+				<Card
+					className="card col-span-2 row-span-2 py-5 px-8 bg-light2 dark:bg-dark2 order-4 laptop:order-5
 					laptop:col-span-2 laptop:row-span-1 laptop:py-8 laptop:px-12"
 				>
 					<CardBody className="p-0 h-full">
@@ -121,11 +128,14 @@ export default function AdditionalInfoOverlay() {
 						src="/bremenNight.webp"
 						alt="Main Square of Bremen at night"
 						fill
-						objectFit="cover"
+						style={{
+							objectFit: 'cover', 
+						}}
 						loading="lazy"
 					/>
 				</Card>
-				<Card className="card col-span-2 row-span-2 py-5 px-8 bg-light2 dark:bg-dark2 order-7 laptop:order-7
+				<Card
+					className="card col-span-2 row-span-2 py-5 px-8 bg-light2 dark:bg-dark2 order-7 laptop:order-7
 					laptop:col-span-2 laptop:row-span-1 laptop:py-8 laptop:px-12"
 				>
 					<CardBody className="p-0 h-full">
@@ -145,7 +155,9 @@ export default function AdditionalInfoOverlay() {
 						src="/werderStadium.webp"
 						alt="Football Match in Wesser Stadium"
 						fill
-						objectFit="cover"
+						style={{
+							objectFit: 'cover', 
+						}}
 						loading="lazy"
 					/>
 				</Card>
@@ -154,11 +166,14 @@ export default function AdditionalInfoOverlay() {
 						src="/hamburgRathaus.webp"
 						alt="Hamburg City Hall"
 						fill
-						objectFit="cover"
+						style={{
+							objectFit: 'cover', 
+						}}
 						loading="lazy"
 					/>
 				</Card>
-				<Card className="card col-span-2 row-span-3 py-5 px-8 bg-light2 dark:bg-dark2 order-10 laptop:order-10
+				<Card
+					className="card col-span-2 row-span-3 py-5 px-8 bg-light2 dark:bg-dark2 order-10 laptop:order-10
 					laptop:col-span-2 laptop:row-span-2 laptop:py-8 laptop:px-12"
 				>
 					<CardBody className="p-0 h-full">
@@ -192,11 +207,14 @@ export default function AdditionalInfoOverlay() {
 						src="/werderWesser.webp"
 						alt="Wesser Stadium from Outside"
 						fill
-						objectFit="cover"
+						style={{
+							objectFit: 'cover',
+						}}
 						loading="lazy"
 					/>
 				</Card>
-				<Card className="card col-span-2 row-span-4 py-5 px-8 bg-light2 dark:bg-dark2 order-13 laptop:order-12
+				<Card
+					className="card col-span-2 row-span-4 py-5 px-8 bg-light2 dark:bg-dark2 order-13 laptop:order-12
 					mobile-lg:row-span-3
 					laptop:col-span-2 laptop:row-span-2 laptop:py-8 laptop:px-12"
 				>
@@ -239,7 +257,9 @@ export default function AdditionalInfoOverlay() {
 						src="/lubeckChurch.webp"
 						alt="Church in Luebeck"
 						fill
-						objectFit="cover"
+						style={{
+							objectFit: 'cover', 
+						}}
 						loading="lazy"
 					/>
 				</Card>

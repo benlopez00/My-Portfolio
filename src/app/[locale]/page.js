@@ -30,15 +30,12 @@ const SocialLink = memo(({ href, icon, gradient }) => (
 
 const InfoCard = memo(({ title, children }) => (
 	<Card
-		className="col-span-2 row-span-1 card pb-0 px-5 pt-5 bg-light2 dark:bg-dark2
-		mobile-md:px-5 mobile-md:pt-5
-		laptop:px-7 laptop:pt-7
-		laptop-lg:px-8 laptop-lg:pt-8"
+		className="col-span-2 row-span-1 card p-5 !pb-3 bg-light2 dark:bg-dark2
+		laptop:p-7 laptop:!pb-5
+		laptop-lg:p-8 laptop-lg:!pb-7"
 	>
 		<CardBody
-			className="p-0 h-full flex flex-col items-start gap-4 
-			laptop-lg:gap-8
-		"
+			className="p-0 h-full flex flex-col justify-between"
 		>
 			<Typography
 				variant="h2"
@@ -99,7 +96,9 @@ export default function Component() {
 						src="/Big_Ben.webp"
 						alt="Ben Lopez Profile Photo"
 						fill
-						objectFit="cover"
+						style={{
+							objectFit: 'cover',
+						}}
 						loading="eager"
 						priority
 					/>
@@ -171,7 +170,7 @@ export default function Component() {
 					<LocationMap />
 				</Card>
 				<Card
-					className="col-span-1 row-span-1 card p-5 mobile-md:p-5 laptop:p-7 laptop-lg:p-8 bg-light2 dark:bg-dark2 grid gap-2 justify-center content-center
+					className="col-span-1 row-span-1 card bg-light2 dark:bg-dark2 grid gap-2 justify-center content-center
 						grid-cols-[repeat(2,_55px)] grid-rows-[repeat(2,_55px)]
 						mobile-md:grid-cols-[repeat(2,_60px)] mobile-md:grid-rows-[repeat(2,_60px)]
 						mobile-lg:grid-cols-[repeat(2,_70px)] mobile-lg:grid-rows-[repeat(2,_70px)] mobile-lg:gap-3
@@ -280,6 +279,7 @@ export default function Component() {
 								</div>
 							</div>
 							<div className="w-full h-full flex flex-row items-center justify-center
+								tablet:mt-4
 								laptop-lg:mt-7">
 								<Typography className="font-sans text-justify text-[12px] text-light7 dark:text-dark7
 									mobile-lg:text-sm

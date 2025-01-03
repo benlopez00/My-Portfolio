@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect } from 'react';
-import { TProvider } from './themeProvider';
+import { ThemeProvider } from 'next-themes'
 import './global.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import {
@@ -18,6 +18,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import BotonEstilo from './components/BotonEstilo';
+import { useTranslations } from 'next-intl';
 
 const LanguageButton = ({ src, alt, locale }) => {
 	const pathname = usePathname();
@@ -33,7 +34,7 @@ const LanguageButton = ({ src, alt, locale }) => {
 	return (
 		<span
 			onClick={changeLanguage}
-			className="p-0 w-16 h-14 flex justify-center items-center rounded-xl hover:bg-light2 dark:hover:bg-dark4"
+			className="p-0 w-16 h-14 flex justify-center items-center rounded-2xl hover:bg-light2 dark:hover:bg-dark4"
 		>
 			<Image src={src} alt={alt} width={25} height={25} />
 		</span>
@@ -42,6 +43,7 @@ const LanguageButton = ({ src, alt, locale }) => {
 
 export default function ClientLayout({ children }) {
 	const pathname = usePathname();
+	const t = useTranslations('Footer');
 
 	const memoizedChildren = useCallback(() => children, [children]);
 
@@ -50,7 +52,7 @@ export default function ClientLayout({ children }) {
 	}, [pathname]);
 
 	return (
-		<TProvider>
+		<ThemeProvider attribute="class" defaultTheme='system' enableSystem>
 			<nav className="w-full h-20 flex flex-col items-center justify-center relative">
 				<div className="absolute top-0 left-0 w-full h-[600px] overflow-hidden z-0">
 					<div
@@ -78,7 +80,7 @@ export default function ClientLayout({ children }) {
 						<Link href="/">
 							<Typography
 								variant="h1"
-								className="font-nyght-serif font-bold italic mt-2 text-light7 dark:text-dark7 text-2xl 
+								className="font-nyght-serif font-bold italic mt-[6px] text-light7 dark:text-dark7 text-2xl 
 								mobile-md:text-3xl 
 								mobile-lg:text-4xl
 								tablet:text-[42px]
@@ -110,27 +112,27 @@ export default function ClientLayout({ children }) {
 							<MenuHandler className="p-0 w-12 h-10 flex justify-center items-center bg-light2 dark:bg-dark2">
 								<Button className="w-12 h-10">
 									<ReactSVG
-										src="language.svg"
+										src="/language.svg"
 										className="p-0 w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-white"
 									/>
 								</Button>
 							</MenuHandler>
 							<MenuList className="w-min p-2 flex flex-col justify-center items-center rounded-2xl border-0 bg-light4 dark:bg-dark3">
-								<MenuItem className="p-0 w-16 h-14">
+								<MenuItem className="rounded-2xl p-0 w-16 h-14">
 									<LanguageButton
 										src="/flag-argentina.svg"
 										alt="Español"
 										locale="es"
 									/>
 								</MenuItem>
-								<MenuItem className="p-0 w-16 h-14">
+								<MenuItem className="rounded-2xl p-0 w-16 h-14">
 									<LanguageButton
 										src="/flag-us.svg"
 										alt="English"
 										locale="en"
 									/>
 								</MenuItem>
-								<MenuItem className="p-0 w-16 h-14">
+								<MenuItem className="rounded-2xl p-0 w-16 h-14">
 									<LanguageButton
 										src="/flag-germany.svg"
 										alt="Deutsch"
