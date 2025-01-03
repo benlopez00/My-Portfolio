@@ -60,9 +60,7 @@ const Carousel = () => {
 	}, []);
 
 	return (
-		<div className='overflow-hidden w-full h-[71px] relative
-			mobile-lg:h-[100px]
-			laptop:h-[127px]'
+		<div className='w-full relative'
 			style={{
 				maskImage:
 					'radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%)',
@@ -81,26 +79,26 @@ const Carousel = () => {
 				{images.concat(images).map((tech, index) => (
 					<div
 						key={index}
-						className="relative flex items-start justify-center w-[55px] h-[71px]
-						mobile-lg:w-[77px] mobile-lg:h-[100px]
-						laptop:w-[100px] laptop:h-[127px]"
+						className="relative flex flex-col items-start justify-start w-[60px] bg-light4 dark:bg-dark1 rounded-t-xl rounded-b-lg
+						mobile-lg:w-[75px]
+						laptop:w-[100px] laptop:rounded-t-2xl laptop:rounded-b-2xl"
 					>
-						<div className="w-[55px] h-[55px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-xl
+						<div className="w-[60px] h-[60px] bg-light0 dark:bg-dark4 flex items-center justify-center relative z-20 rounded-xl
 							mobile-lg:w-[75px] mobile-lg:h-[75px]
-							laptop:w-[100px] laptop:h-[100px]"
+							laptop:w-[100px] laptop:h-[100px] laptop:rounded-2xl"
 						>
 							<ReactSVG
 								src={tech.src}
 								className="w-3/5 h-3/5 fill-black dark:fill-white"
 							/>
 						</div>
-						<div className="w-[55px] h-[55px] absolute top-[16px] z-10 bg-light4 dark:bg-dark1 text-center flex flex-row justify-center items-end rounded-lg
-							mobile-lg:w-[75px] mobile-lg:[40px] mobile-lg:top-[42px]
-							laptop:w-[100px] laptop:h-[50px] laptop:top-[74px]"
+						<div className="w-[60px] h-[20px] z-10 flex flex-row justify-center items-center
+							mobile-lg:w-[75px] mobile-lg:h-[25px]
+							laptop:w-[100px] laptop:h-[30px]"
 						>
-							<Typography className="font-sans font-light text-[9px] mb-[1px] dark:text-dark7
-								mobile-lg:text-[13px]
-								laptop:text-sm laptop:mb-[2px]"
+							<Typography className="font-sans font-light text-[9px] dark:text-dark7
+								mobile-lg:text-[12px]
+								laptop:text-sm"
 							>
 								{tech.name}
 							</Typography>
