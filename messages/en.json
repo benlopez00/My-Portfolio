@@ -52,5 +52,10 @@
         "my_name": "Eduardo Benjamin Lopez Avila",
         "build_with": "Build with React, Next.js and Material Tailwind.",
         "copy": "©2025"
+    },
+    "NotFound": {
+        "title": "Page not found",
+        "description": "The page you are looking for does not exist or has been moved.",
+        "goHome": "Go back to Home"
     }
 }

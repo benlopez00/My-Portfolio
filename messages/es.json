@@ -52,5 +52,10 @@
         "my_name": "Eduardo Benjamín López Avila",
         "build_with": "Construido con React, Next.js y Material Tailwind.",
         "copy": "©2025"
+    },
+    "NotFound": {
+        "title": "Página no encontrada",
+        "description": "La página que buscas no existe o ha sido movida.",
+        "goHome": "Volver al inicio"
     }
 }

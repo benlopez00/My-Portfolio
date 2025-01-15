@@ -52,5 +52,10 @@
         "my_name": "Eduardo Benjamin Lopez Avila",
         "build_with": "Erstellt mit React, Next.js und Material Tailwind.",
         "copy": "©2025"
+    },
+    "NotFound": {
+        "title": "Seite nicht gefunden",
+        "description": "Die Seite, die Sie suchen, existiert nicht oder wurde verschoben.",
+        "goHome": "Zurück zur Startseite"
     }
 }
