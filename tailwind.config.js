@@ -31,9 +31,6 @@ module.exports = withMT({
         dark6: "rgb(172, 172, 172)",
         dark7: "rgb(204, 204, 204)", // Más claro
         darkTransparent: "rgba(255, 255, 255, 0.24)",
-        
-        // Verde adicional
-        darkPrimary: "rgb(77,196,108)",
       },
       fontFamily: {
         sans: ['var(--font-dm-sans)'],

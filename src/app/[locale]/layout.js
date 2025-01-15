@@ -4,6 +4,10 @@ import ClientLayout from './client-layout';
 import { dmSans } from '../../../public/fonts/dmSans';
 import { getAsyncLocale } from '../../i18n/getAsyncLocale';
 
+export const metadata = {
+	title: 'Ben Lopez'
+}
+
 export default async function RootLayout(props) {
     const params = await props.params;
 

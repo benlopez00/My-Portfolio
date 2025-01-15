@@ -3,6 +3,7 @@ import { Card } from '@material-tailwind/react';
 import axios from 'axios';
 import { Map, Marker } from '@vis.gl/react-maplibre';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Clock from 'react-live-clock';
 import { useTheme } from 'next-themes';
 
@@ -21,7 +22,7 @@ export default function LocationMap() {
 				setWeather({
 					temp: Math.round(data.current.temp_c),
 					condition: data.current.condition.text,
-					icon: data.current.condition.icon,
+					icon: `https:${data.current.condition.icon}`,
 				});
 			} catch (error) {
 				console.error(
@@ -59,10 +60,11 @@ export default function LocationMap() {
 					pitchAlignment="map"
 					offset={[0, 7]}
 				>
-					<img
+					<Image
 						src="/location-circle-svgrepo-com.svg"
 						alt="Custom Marker"
-						className="w-8 h-8"
+						width={32}
+						height={32}
 					/>
 				</Marker>
 			</Map>
@@ -72,10 +74,12 @@ export default function LocationMap() {
 						mobile-lg:h-9 mobile-lg:w-11
 						laptop:h-12 laptop:w-14"
 					>
-						<img
+						<Image
 							src={weather.icon}
 							alt={weather.condition}
-							className="w-6 h-6
+							width={24}
+							height={24}
+							className="
 							mobile-lg:h-7 mobile-lg:w-7
 							laptop:h-8 laptop:w-8"
 						/>

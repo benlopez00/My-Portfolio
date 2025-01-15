@@ -27,6 +27,7 @@ const SocialLink = memo(({ href, icon, gradient }) => (
 		</a>
 	</Card>
 ));
+SocialLink.displayName = 'SocialLink';
 
 const InfoCard = memo(({ title, children }) => (
 	<Card
@@ -49,6 +50,7 @@ const InfoCard = memo(({ title, children }) => (
 		</CardBody>
 	</Card>
 ));
+InfoCard.displayName = 'InfoCard';
 
 export default function Component() {
 	const t = useTranslations('Home');
