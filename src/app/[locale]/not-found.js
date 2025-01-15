@@ -4,7 +4,7 @@ import { Button } from '@material-tailwind/react';
 import Link from 'next/link';
 import { ReactSVG } from 'react-svg';
 
-export default function notFound() {
+export default function NotFoundPage() {
 	const locale = useLocale();
 	const t = useTranslations('NotFound');
 	return (

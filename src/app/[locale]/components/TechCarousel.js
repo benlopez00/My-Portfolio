@@ -1,6 +1,6 @@
 'use client';
 import { Typography } from '@material-tailwind/react';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { ReactSVG } from 'react-svg';
 
 const Carousel = () => {
@@ -24,25 +24,25 @@ const Carousel = () => {
 
 	const carouselRef = useRef(null);
 	const animationRef = useRef(null);
-	let speed = 0.4;
+	const speedRef = useRef(0.4);
+	const positionRef = useRef(0);
 	const gap = 15;
-	let position = 0;
 
-	const animate = () => {
+	const animate = useCallback(() => {
 		if (!carouselRef.current) return;
-		position -= speed;
+		positionRef.current -= speedRef.current;
 		const scrollWidth = (carouselRef.current.scrollWidth + gap) / 2;
-		if (position <= -scrollWidth) {
-			position = 0;
+		if (positionRef.current <= -scrollWidth) {
+			positionRef.current = 0;
 		}
-		carouselRef.current.style.transform = `translateX(${position}px)`;
+		carouselRef.current.style.transform = `translateX(${positionRef.current}px)`;
 		animationRef.current = requestAnimationFrame(animate);
-	};
+	}, [gap]);
 
 	useEffect(() => {
 		const element = carouselRef.current;
-		const handleMouseEnter = () => (speed = 0.2);
-		const handleMouseLeave = () => (speed = 0.4);
+		const handleMouseEnter = () => (speedRef.current = 0.2);
+		const handleMouseLeave = () => (speedRef.current = 0.4); 
 		if (element) {
 			element.addEventListener('mouseenter', handleMouseEnter);
 			element.addEventListener('mouseleave', handleMouseLeave);
@@ -57,7 +57,7 @@ const Carousel = () => {
 				cancelAnimationFrame(animationRef.current);
 			}
 		};
-	}, []);
+	}, [animate]);
 
 	return (
 		<div className='w-full relative'

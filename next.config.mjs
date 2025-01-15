@@ -4,9 +4,15 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/requests.js');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	images: {
-		domains: ['cdn.weatherapi.com'],
-	},
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'cdn.weatherapi.com',
+                pathname: '/**',
+            },
+        ],
+    },
 };
 
 export default withNextIntl(nextConfig);
