@@ -59,7 +59,7 @@ export default function Component() {
 	const socialLinks = useMemo(
 		() => [
 			{
-				href: 'https://example.com/resume',
+				href: 'https://drive.google.com/drive/folders/1nojnKBnrVMDlulDxjPH6yp1-PJYSF8ZE?usp=sharing',
 				icon: '/iconos/DocLogo.svg',
 				gradient: 'hover:bg-green-400 hover:dark:bg-green-400',
 			},

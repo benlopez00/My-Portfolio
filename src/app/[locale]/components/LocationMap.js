@@ -9,8 +9,18 @@ import { useTheme } from 'next-themes';
 
 export default function LocationMap() {
 	const [weather, setWeather] = useState(null);
-	const { theme } = useTheme();
+	const [mapStyle, setMapStyle] = useState('');
+	const { theme, systemTheme } = useTheme();
 	const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+
+	useEffect(() => {
+		const activeTheme = theme === 'system' ? systemTheme : theme;
+		setMapStyle(
+			activeTheme === 'dark'
+				? '/styles/dark_positron.json'
+				: '/styles/light_positron.json'
+		);
+	}, [theme, systemTheme]);
 
 	useEffect(() => {
 		const fetchWeather = async () => {
@@ -37,10 +47,6 @@ export default function LocationMap() {
 		return () => clearInterval(intervalId);
 	}, [apiKey]);
 
-	const mapStyle =
-		theme === 'dark'
-			? '/styles/dark_positron.json'
-			: '/styles/light_positron.json';
 	return (
 		<Card className="card relative bg-transparent w-full h-full">
 			<Map
