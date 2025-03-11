@@ -1,13 +1,28 @@
 'use client';
+
+import { useEffect, useState } from 'react';
 import { Card, CardBody, Typography, Button } from '@material-tailwind/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactSVG } from 'react-svg';
+import dynamic from 'next/dynamic';
 import { useTranslations, useLocale } from 'next-intl';
+
+const ReactSVG = dynamic(
+	() => import('react-svg').then((mod) => mod.ReactSVG),
+	{
+		ssr: false,
+		loading: () => <span className="w-6 h-6"></span>,
+	}
+);
 
 export default function AdditionalInfoOverlay() {
 	const t = useTranslations('AboutMe');
 	const locale = useLocale();
+	const [isLoaded, setIsLoaded] = useState(false);
+
+	useEffect(() => {
+		setIsLoaded(true);
+	}, []);
 
 	return (
 		<main className="p-2 w-full flex flex-col items-center font-sans bg-transparent">
@@ -73,40 +88,48 @@ export default function AdditionalInfoOverlay() {
 					</CardBody>
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-2 laptop:order-2">
-					<Image
-						src="/berlinTvTower.webp"
-						alt="Berlin Tv Tower"
-						fill
-						style={{
-							objectFit: 'cover', 
-						}}
-						loading="eager"
-						priority
-					/>
+					<div className="relative w-full h-full">
+						<Image
+							src="/berlinTvTower.webp"
+							alt="Berlin Tv Tower"
+							fill
+							sizes="(max-width: 640px) 140px, (max-width: 768px) 180px, (max-width: 1024px) 190px, (max-width: 1280px) 240px, 270px"
+							style={{ objectFit: 'cover' }}
+							priority
+							placeholder="blur"
+							blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NjY2NjYyIvPjwvc3ZnPg=="
+						/>
+					</div>
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-3 laptop:order-3">
-					<Image
-						src="/trainTracks.webp"
-						alt="Train Tracks near Bremen"
-						fill
-						style={{
-							objectFit: 'cover', 
-						}}
-						loading="eager"
-						priority
-					/>
+					<div className="relative w-full h-full">
+						<Image
+							src="/trainTracks.webp"
+							alt="Train Tracks near Bremen"
+							fill
+							sizes="(max-width: 640px) 140px, (max-width: 768px) 180px, (max-width: 1024px) 190px, (max-width: 1280px) 240px, 270px"
+							style={{ objectFit: 'cover' }}
+							priority
+							placeholder="blur"
+							blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NjY2NjYyIvPjwvc3ZnPg=="
+						/>
+					</div>
 				</Card>
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-5 laptop:order-4">
-					<Image
-						src="/bremenAerial.webp"
-						alt="Aerial Photo of Bremen"
-						fill
-						style={{
-							objectFit: 'cover', 
-						}}
-						loading="lazy"
-					/>
+					<div className="relative w-full h-full">
+						<Image
+							src="/bremenAerial.webp"
+							alt="Aerial Photo of Bremen"
+							fill
+							sizes="(max-width: 640px) 140px, (max-width: 768px) 180px, (max-width: 1024px) 190px, (max-width: 1280px) 240px, 270px"
+							style={{ objectFit: 'cover' }}
+							loading="lazy"
+							placeholder="blur"
+							blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NjY2NjYyIvPjwvc3ZnPg=="
+						/>
+					</div>
 				</Card>
+
 				<Card
 					className="card col-span-2 row-span-2 py-5 px-8 bg-light2 dark:bg-dark2 order-4 laptop:order-5
 					laptop:col-span-2 laptop:row-span-1 laptop:py-8 laptop:px-12"
@@ -123,17 +146,22 @@ export default function AdditionalInfoOverlay() {
 						</div>
 					</CardBody>
 				</Card>
+
 				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-6 laptop:order-6">
-					<Image
-						src="/bremenNight.webp"
-						alt="Main Square of Bremen at night"
-						fill
-						style={{
-							objectFit: 'cover', 
-						}}
-						loading="lazy"
-					/>
+					<div className="relative w-full h-full">
+						<Image
+							src="/bremenNight.webp"
+							alt="Main Square of Bremen at night"
+							fill
+							sizes="(max-width: 640px) 140px, (max-width: 768px) 180px, (max-width: 1024px) 190px, (max-width: 1280px) 240px, 270px"
+							style={{ objectFit: 'cover' }}
+							loading="lazy"
+							placeholder="blur"
+							blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NjY2NjYyIvPjwvc3ZnPg=="
+						/>
+					</div>
 				</Card>
+
 				<Card
 					className="card col-span-2 row-span-2 py-5 px-8 bg-light2 dark:bg-dark2 order-7 laptop:order-7
 					laptop:col-span-2 laptop:row-span-1 laptop:py-8 laptop:px-12"
@@ -150,30 +178,45 @@ export default function AdditionalInfoOverlay() {
 						</div>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-8 laptop:order-8">
-					<Image
-						src="/werderStadium.webp"
-						alt="Football Match in Wesser Stadium"
-						fill
-						style={{
-							objectFit: 'cover', 
-						}}
-						loading="lazy"
-					/>
-				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-9 laptop:order-9">
-					<Image
-						src="/hamburgRathaus.webp"
-						alt="Hamburg City Hall"
-						fill
-						style={{
-							objectFit: 'cover', 
-						}}
-						loading="lazy"
-					/>
-				</Card>
+				{isLoaded && (
+					<>
+						<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden 
+						order-8 tablet:order-9 laptop:order-8">
+							<div className="relative w-full h-full">
+								<Image
+									src="/werderStadium.webp"
+									alt="Football Match in Wesser Stadium"
+									fill
+									sizes="(max-width: 640px) 140px, (max-width: 768px) 180px, (max-width: 1024px) 190px, (max-width: 1280px) 240px, 270px"
+									style={{ objectFit: 'cover' }}
+									loading="lazy"
+									placeholder="blur"
+									blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NjY2NjYyIvPjwvc3ZnPg=="
+								/>
+							</div>
+						</Card>
+
+						<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden 
+						order-9 tablet:order-10 laptop:order-9">
+							<div className="relative w-full h-full">
+								<Image
+									src="/hamburgRathaus.webp"
+									alt="Hamburg City Hall"
+									fill
+									sizes="(max-width: 640px) 140px, (max-width: 768px) 180px, (max-width: 1024px) 190px, (max-width: 1280px) 240px, 270px"
+									style={{ objectFit: 'cover' }}
+									loading="lazy"
+									placeholder="blur"
+									blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NjY2NjYyIvPjwvc3ZnPg=="
+								/>
+							</div>
+						</Card>
+					</>
+				)}
+
 				<Card
-					className="card col-span-2 row-span-3 py-5 px-8 bg-light2 dark:bg-dark2 order-10 laptop:order-10
+					className="card col-span-2 row-span-3 py-5 px-8 bg-light2 dark:bg-dark2 
+					order-10 tablet:order-8 laptop:order-10
 					laptop:col-span-2 laptop:row-span-2 laptop:py-8 laptop:px-12"
 				>
 					<CardBody className="p-0 h-full">
@@ -202,19 +245,28 @@ export default function AdditionalInfoOverlay() {
 						</div>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-11 laptop:order-11">
-					<Image
-						src="/werderWesser.webp"
-						alt="Wesser Stadium from Outside"
-						fill
-						style={{
-							objectFit: 'cover',
-						}}
-						loading="lazy"
-					/>
-				</Card>
+
+				{isLoaded && (
+					<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden 
+					order-11 tablet:order-[13] laptop:order-11">
+						<div className="relative w-full h-full">
+							<Image
+								src="/werderWesser.webp"
+								alt="Wesser Stadium from Outside"
+								fill
+								sizes="(max-width: 640px) 140px, (max-width: 768px) 180px, (max-width: 1024px) 190px, (max-width: 1280px) 240px, 270px"
+								style={{ objectFit: 'cover' }}
+								loading="lazy"
+								placeholder="blur"
+								blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NjY2NjYyIvPjwvc3ZnPg=="
+							/>
+						</div>
+					</Card>
+				)}
+
 				<Card
-					className="card col-span-2 row-span-4 py-5 px-8 bg-light2 dark:bg-dark2 order-13 laptop:order-12
+					className="card col-span-2 row-span-4 py-5 px-8 bg-light2 dark:bg-dark2 
+					order-[13] tablet:order-11 laptop:order-12
 					mobile-lg:row-span-3
 					laptop:col-span-2 laptop:row-span-2 laptop:py-8 laptop:px-12"
 				>
@@ -252,17 +304,24 @@ export default function AdditionalInfoOverlay() {
 						</div>
 					</CardBody>
 				</Card>
-				<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden order-[12] laptop:order-[13]">
-					<Image
-						src="/lubeckChurch.webp"
-						alt="Church in Luebeck"
-						fill
-						style={{
-							objectFit: 'cover', 
-						}}
-						loading="lazy"
-					/>
-				</Card>
+
+				{isLoaded && (
+					<Card className="col-span-1 row-span-2 card bg-light2 dark:bg-dark2 overflow-hidden 
+					order-12 tablet:order-12 laptop:order-[13]">
+						<div className="relative w-full h-full">
+							<Image
+								src="/lubeckChurch.webp"
+								alt="Church in Luebeck"
+								fill
+								sizes="(max-width: 640px) 140px, (max-width: 768px) 180px, (max-width: 1024px) 190px, (max-width: 1280px) 240px, 270px"
+								style={{ objectFit: 'cover' }}
+								loading="lazy"
+								placeholder="blur"
+								blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NjY2NjYyIvPjwvc3ZnPg=="
+							/>
+						</div>
+					</Card>
+				)}
 			</div>
 			<div className="w-full my-6 flex justify-center items-center">
 				<Link href={`/${locale}`} className="transform group">
@@ -271,10 +330,12 @@ export default function AdditionalInfoOverlay() {
 						className="flex items-center gap-6 px-6 rounded-xl bg-light2 dark:bg-dark2 text-light7 dark:text-dark7"
 					>
 						{t('return_button')}
-						<ReactSVG
-							src="/iconos/OpenTab.svg"
-							className="w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-[2px]"
-						/>
+						{isLoaded && (
+							<ReactSVG
+								src="/iconos/OpenTab.svg"
+								className="w-6 h-6 fill-light7 dark:fill-dark7 transition-fill duration-300 group-hover:fill-green-500 group-hover:-translate-y-[2px]"
+							/>
+						)}
 						<div className="absolute inset-0 rounded-xl transition-shadow duration-300 group-hover:shadow-[inset_0px_29px_18px_-20px_rgba(76,175,80,0.5)] pointer-events-none"></div>
 					</Button>
 				</Link>

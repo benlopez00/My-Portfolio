@@ -131,13 +131,6 @@ export default function Component() {
 							>
 								{t('about_one')}
 							</Typography>
-							<Typography
-								className="font-sans text-light7 dark:text-dark7 text-xs
-								mobile-lg:text-sm
-								laptop:text-[16px]"
-							>
-								{t('about_two')}
-							</Typography>
 						</div>
 					</CardBody>
 				</Card>
